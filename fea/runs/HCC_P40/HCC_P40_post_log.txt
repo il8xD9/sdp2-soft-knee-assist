@@ -1,0 +1,19 @@
+HCC_P40: 18/18 subcases converged
+   1 S 3% vented              th  -0.76 p   0.0  M  -0.414 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  425.1  it 6 bis 0
+   2 S 6% vented              th   0.01 p   0.0  M   0.005 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  423.4  it 7 bis 0
+   3 S 9% vented              th   0.88 p   0.0  M   0.482 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  421.4  it 7 bis 0
+   4 S 12% vented             th   2.59 p   0.0  M   1.407 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  417.1  it 8 bis 0
+   5 F13 fill 1/5             th   3.28 p   8.0  M   3.230 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  442.6  it 20 bis 1
+   6 F13 fill 2/5             th   3.28 p  16.0  M   5.115 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  451.5  it 13 bis 0
+   7 F13 fill 3/5             th   3.28 p  24.0  M   7.476 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  456.7  it 18 bis 0
+   8 F13 fill 4/5             th   3.28 p  32.0  M   8.944 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  466.7  it 31 bis 1
+   9 F13 fill 5/5             th   3.28 p  40.0  M  10.643 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  473.9  it 74 bis 2
+  10 W 13%                    th   3.28 p  40.0  M  10.731 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  474.1  it 19 bis 0
+  11 W 15%                    th   4.50 p  40.0  M  11.693 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  475.1  it 33 bis 1
+  12 W 18%                    th   5.53 p  40.0  M  13.414 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  466.1  it 69 bis 1
+  13 W 21%                    th   5.78 p  40.0  M  12.706 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  469.7  it 52 bis 1
+  14 W 24%                    th   5.59 p  40.0  M  13.429 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  465.7  it 31 bis 0
+  15 W 27%                    th   5.25 p  40.0  M  12.985 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  466.9  it 22 bis 0
+  16 W 30%                    th   4.98 p  40.0  M  11.979 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  472.6  it 36 bis 1
+  17 W 33%                    th   4.79 p  40.0  M  12.519 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  468.7  it 25 bis 0
+  18 W 36%                    th   4.63 p  40.0  M  11.720 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  474.1  it 104 bis 5

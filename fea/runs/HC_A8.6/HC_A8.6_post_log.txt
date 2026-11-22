@@ -1,0 +1,4 @@
+HC_A8.6: 3/8 subcases converged
+   1 flex vented to 8.63 deg  th   2.16 p   0.0  M   1.119 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  418.2  it 10 bis 0
+   2 flex vented to 8.63 deg  th   4.32 p   0.0  M   1.899 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  409.4  it 19 bis 0
+   3 flex vented to 8.63 deg  th   6.47 p   0.0  M   3.027 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  396.8  it 30 bis 0

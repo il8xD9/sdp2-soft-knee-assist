@@ -1,0 +1,1 @@
+﻿HC_A8.6 exit=-1 seconds=4613 peakMB=1656 stopped=True start=2026-11-17T00:35:30

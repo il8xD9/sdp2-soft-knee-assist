@@ -1,0 +1,8 @@
+bladder shell elements 2052 (body 1824, caps 228), edges 4076, free edges 0, edges on >2 elements 0
+  -> closed cavity, no leak path: YES
+PLOAD4 cards 0: 
+no PLOAD4 (0 kPa run): vented reference, pressure check not applicable
+shell elements inside the PLOAD4 range: 0, by PSHELL id {}
+  -> pressure on all 2052 bladder elements and nothing else: n/a (0 kPa)
+bladder grid y: -95.10 .. 92.31 mm, mean -2.57; z: -32.00 .. 32.00; x: 74.93 .. 137.63
+  -> symmetric about the knee line y = 0 within 2.79 mm (ends), centred medial-lateral within 0.00 mm

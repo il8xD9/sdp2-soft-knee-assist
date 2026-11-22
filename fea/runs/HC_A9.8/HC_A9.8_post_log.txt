@@ -1,0 +1,5 @@
+HC_A9.8: 3/8 subcases converged
+   1 flex vented to 9.78 deg  th   2.44 p   0.0  M   1.255 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  417.4  it 10 bis 0
+   2 flex vented to 9.78 deg  th   4.89 p   0.0  M   2.025 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  405.8  it 23 bis 0
+   3 flex vented to 9.78 deg  th   7.33 p   0.0  M   2.352 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  387.4  it 55 bis 0
+FATAL: ['FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED', 'FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED          (1)']

@@ -1,0 +1,14 @@
+# Run list for scripts\run_queue.ps1 (one deck per line, relative to the fea folder). One job at a time.
+# Solver time with RAM=2000, NPROCESSORS=4: about 18 h for all 12 runs.
+model\CHK_FB\CHK_FB.nas
+model\HCC_P0\HCC_P0.nas
+model\HCC_P20\HCC_P20.nas
+model\HCC_PROJ\HCC_PROJ.nas
+model\HCC_P40\HCC_P40.nas
+model\HCC_P60\HCC_P60.nas
+model\HC_A7.3\HC_A7.3.nas
+model\HC_A8.6\HC_A8.6.nas
+model\HC_A9.8\HC_A9.8.nas
+model\HC_A13.0\HC_A13.0.nas
+model\HC_A16.0\HC_A16.0.nas
+model\HC_A19.0\HC_A19.0.nas

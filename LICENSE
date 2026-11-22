@@ -1,0 +1,18 @@
+Copyright (c) 2026 SDP II team, Yanbu Industrial College: Mohannad Ahmed Aljawi, Nawaf Ahmed Masoud, Meshal Baothman,
+Basem Aymen Aljohani. All rights reserved.
+
+This repository (the appendices of the final report, and the finite element model with its scripts, input decks, mesh,
+CAD files, results, figures, report and the raw solver output attached to its release) is published so that the
+examining committee and other readers can view it and re-run the simulation for review. It belongs to the SDP II final
+report "Analytical and Simulation-Based Feasibility Study of a Soft Pneumatic Knee Assist Concept for Post-ACL
+Reconstruction Gait" (Yanbu Industrial College, 2026).
+
+No other use is permitted without the prior written permission of the copyright holders. This includes copying,
+modifying, redistributing, publishing, or using any part in other work. Short quotations with a full citation of the
+report are allowed.
+
+Material from other sources (for example the gait data digitised from Buettner et al., J. Orthop. Res. 43(2):322-336,
+2025, doi:10.1002/jor.26001, standards and data sheets) is cited where it is used and remains under the terms of its owners.
+
+THE CONTENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. It is a student feasibility study based on calculation
+and simulation only, not a validated medical device, and must not be used for clinical decisions.

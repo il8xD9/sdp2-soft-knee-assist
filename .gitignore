@@ -1,0 +1,16 @@
+# raw Nastran output (attached to the release "raw-solver-output"; 100-350 MB per file)
+*.OUT
+*.FNO
+*.RSF
+*.NDB
+*.TMP
+*.ECD
+*_console.txt
+tmp_*/
+# generated Word file of the FEA report (the PDF is committed)
+fea/report/*.docx
+# Python
+__pycache__/
+*.pyc
+# Office lock files
+~$*

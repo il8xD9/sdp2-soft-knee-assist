@@ -1,0 +1,9 @@
+{
+ "contracted": {
+  "thigh_far": -0.45762991914765255,
+  "thigh_near": -0.21577440943185835,
+  "shank_near": -0.14735414397512386,
+  "shank_far": -0.2082328567287973
+ },
+ "note": "rigid-leg reference: pre-shrink of the four strap rings, scaled linearly to the design strap pre-tensions 20.89 / 19.59 / 13.3 / 9.4 N (used only when the strap rings are part of the model)"
+}

@@ -1,0 +1,12 @@
+subcase,name,kind,frame_pct,time_ms,theta_deg,p_kPa,ninc,thermal
+1,flex vented to 16.00 deg sub 1/7,S_sub,0,0.0,2.2857,0.0,3,True
+2,flex vented to 16.00 deg sub 2/7,S_sub,0,0.0,4.5714,0.0,3,True
+3,flex vented to 16.00 deg sub 3/7,S_sub,0,0.0,6.8571,0.0,3,True
+4,flex vented to 16.00 deg sub 4/7,S_sub,0,0.0,9.1429,0.0,3,True
+5,flex vented to 16.00 deg sub 5/7,S_sub,0,0.0,11.4286,0.0,3,True
+6,flex vented to 16.00 deg sub 6/7,S_sub,0,0.0,13.7143,0.0,3,True
+7,flex vented to 16.00 deg,S,0,0.0,16.0,0.0,3,True
+8,P 20 kPa at 16.00 deg,W,0,0.0,16.0,20.0,4,True
+9,P 40 kPa at 16.00 deg,W,0,0.0,16.0,40.0,4,True
+10,P 60 kPa at 16.00 deg,W,0,0.0,16.0,60.0,4,True
+11,VREF vented at 16.00 deg,VREF,0,0.0,16.0,0.0,6,True

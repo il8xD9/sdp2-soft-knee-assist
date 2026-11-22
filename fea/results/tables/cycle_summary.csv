@@ -1,0 +1,8 @@
+family,run,status,M_device_21pct_Nm,M_hc_21pct_Nm,ratio_21pct,M_device_window_max_Nm
+HCC,HCC_P0,1/1 window frames,,,,0.0
+HCC,HCC_P20,21/21 window frames,6.892517,4.1398,1.664939610609208,6.892517
+HCC,HCC_P40,9/9 window frames,10.281564000000001,8.2796,1.2417947726943332,11.0340726
+HCC,HCC_P60,1/1 window frames,,,,13.720431
+HCC,HCC_P80,not run,,,,
+HCC,HCC_P100,not run,,,,
+HCC,HCC_PROJ,10/10 window frames,6.893144000000001,4.1398,1.6650910672013144,6.893144000000001

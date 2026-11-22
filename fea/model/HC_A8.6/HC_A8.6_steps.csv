@@ -1,0 +1,9 @@
+subcase,name,kind,frame_pct,time_ms,theta_deg,p_kPa,ninc,thermal
+1,flex vented to 8.63 deg sub 1/4,S_sub,0,0.0,2.1575,0.0,3,True
+2,flex vented to 8.63 deg sub 2/4,S_sub,0,0.0,4.315,0.0,3,True
+3,flex vented to 8.63 deg sub 3/4,S_sub,0,0.0,6.4725,0.0,3,True
+4,flex vented to 8.63 deg,S,0,0.0,8.63,0.0,3,True
+5,P 20 kPa at 8.63 deg,W,0,0.0,8.63,20.0,4,True
+6,P 40 kPa at 8.63 deg,W,0,0.0,8.63,40.0,4,True
+7,P 60 kPa at 8.63 deg,W,0,0.0,8.63,60.0,4,True
+8,VREF vented at 8.63 deg,VREF,0,0.0,8.63,0.0,6,True

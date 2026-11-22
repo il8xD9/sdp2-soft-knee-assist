@@ -1,0 +1,1 @@
+﻿HCC_P0 exit=0 seconds=3521 peakMB=2299 stopped=False start=2026-11-16T10:48:59

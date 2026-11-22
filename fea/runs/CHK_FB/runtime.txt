@@ -1,0 +1,1 @@
+﻿CHK_FB exit=0 seconds=5265 peakMB=1544 stopped=False start=2026-11-16T09:17:12

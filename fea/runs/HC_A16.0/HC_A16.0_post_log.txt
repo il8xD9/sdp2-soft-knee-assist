@@ -1,0 +1,4 @@
+HC_A16.0: 2/11 subcases converged
+   1 flex vented to 16.00 deg th   2.29 p   0.0  M   1.181 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  417.9  it 10 bis 0
+   2 flex vented to 16.00 deg th   4.57 p   0.0  M   1.958 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  407.8  it 22 bis 0
+FATAL: ['FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED', 'FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED          (1)']

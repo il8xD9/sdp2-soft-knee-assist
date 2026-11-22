@@ -1,0 +1,1 @@
+﻿HCC_PROJ exit=0 seconds=13443 peakMB=2500 stopped=False start=2026-11-16T15:10:43

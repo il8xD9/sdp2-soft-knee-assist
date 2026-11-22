@@ -1,0 +1,1 @@
+﻿HCC_P40 exit=0 seconds=7474 peakMB=1918 stopped=False start=2026-11-16T18:55:22

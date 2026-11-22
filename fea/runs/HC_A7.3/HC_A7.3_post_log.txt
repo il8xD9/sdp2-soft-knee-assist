@@ -1,0 +1,7 @@
+HC_A7.3: 5/7 subcases converged
+   1 flex vented to 7.28 deg  th   2.43 p   0.0  M   1.247 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  417.5  it 10 bis 0
+   2 flex vented to 7.28 deg  th   4.85 p   0.0  M   2.018 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  406.1  it 23 bis 0
+   3 flex vented to 7.28 deg  th   7.28 p   0.0  M   2.348 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  387.8  it 52 bis 0
+   4 P 20 kPa at 7.28 deg     th   7.28 p  20.0  M   8.101 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  442.1  it 71 bis 2
+   5 P 40 kPa at 7.28 deg     th   7.28 p  40.0  M  12.979 N.m  T tn    nan sn    nan tf    nan sf    nan N  p_bl    nan/  0.00 kPa  V  464.4  it 53 bis 0
+FATAL: ['FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED', 'FATAL ERROR E5076: MAXIMUM NUMBER OF BISECTIONS PERMITTED REACHED          (1)']
