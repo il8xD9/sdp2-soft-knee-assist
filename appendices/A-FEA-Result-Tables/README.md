@@ -7,4 +7,4 @@ Appendix A of the SDP II final report *Analytical and Simulation-Based Feasibili
 
 ## Contents
 
-_No sub-headings; the appendix is one section._
+_No sub-headings; the appendix is one section.
