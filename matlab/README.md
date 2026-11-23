@@ -11,10 +11,10 @@ All files are in this one folder; the scripts find each other and their output f
 
 - MATLAB with Simulink (checked with MATLAB R2026b). Simulink is needed only for the Simulink check
   (`run27_simulink`, `sim_ka_simulink`, `make_report_figures('simulink')`).
-- Input data in `data/`: `B3_deficit.csv`, `B3_patient_moment_opt2.csv` and `B4_knee_angle.csv`
-  (stance-phase deficit, patient moment and knee angle of the reference patient). These files are needed to
-  reproduce the values of the report. Without them the model still runs, but `ka_gait_data` uses a built-in
-  approximation of the curves and the results differ from the report.
+- Input data in `data/` (included): `B3_deficit.csv`, `B3_patient_moment_opt2.csv` and `B4_knee_angle.csv`
+  (stance-phase deficit, patient moment and knee angle of the reference patient, from the biomechanics
+  model). Keep them in `data/` with these names: `ka_gait_data` reads them from there, and without them it
+  falls back to a built-in approximation of the curves and the results differ from the report.
 
 ## How to run
 

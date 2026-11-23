@@ -8,7 +8,7 @@ function p = ka_params(pcase, n_in, window)
 %                                    only, Basem O1 v10 B7), trip 29.6 kPa(g)
 %   p = ka_params(pc, n)     n MHJ10 inlets in parallel (1 = Rev 27 system; 2 = comparison: meets N1 in window 2)
 %   p = ka_params(pc, n, w)  w = 2: window option 2, 13-36 % stance, torque capped
-%                                   at the patient's own moment (MAIN, owner D-2)
+%                                   at the patient's own moment (MAIN, decision D-2)
 %                            w = 1: window option 1, 8.43-44 % stance (comparison)
 %
 %   Rev 27 = Rev 25a model updated with the Week 11 handover of Meshal and Basem
@@ -33,7 +33,7 @@ function p = ka_params(pcase, n_in, window)
 %   Then call p = ka_prepare(p) before any run (or use ka_setup).
 
 if nargin < 1 || isempty(pcase),  pcase = 1;  end   % design point 20 kPa
-if nargin < 2 || isempty(n_in),   n_in = 1;   end   % Rev 27 system: ONE MHJ10 (owner decision; two = comparison)
+if nargin < 2 || isempty(n_in),   n_in = 1;   end   % Rev 27 system: ONE MHJ10 (team decision; two = comparison)
 if nargin < 3 || isempty(window), window = 2; end   % window option 2 (main)
 if ~ismember(pcase, [1 2]),  error('ka_params: pressure case must be 1 (20 kPa) or 2 (27 kPa)'); end
 if ~ismember(window, [1 2]), error('ka_params: window must be 1 or 2'); end
@@ -60,10 +60,10 @@ p.exh_C_mult  = 1;                       % sensitivity factor on the exhaust flo
 p.exh_t_close = 2.3e-3 * 1.1;            % s, powered -> shut (Festo 2.3 ms + 10 %)
 p.exh_t_open  = 2.8e-3 * 1.1;            % s, released -> open (Festo 2.8 ms + 10 %)
 p.ex_nmax     = 6;                       % exhaust tables for 1..6 valves
-p.n_exh_sys   = 2;                       % Rev 27 complete system: TWO MHE3 at the bladder port (owner decision 14 Nov 2026; five needed for N4-2)
+p.n_exh_sys   = 2;                       % Rev 27 complete system: TWO MHE3 at the bladder port (team decision 14 Nov 2026; five needed for N4-2)
 % Inlet: Festo MHJ10 HF/LP 567800, normally closed                  [4]
 p.in_C_one    = 0.66e-8;                 % m^3/(s Pa) = 0.66 l/(s bar) per valve
-p.n_in        = n_in;                    % Rev 27 system: ONE MHJ10 (owner decision); 2 = comparison
+p.n_in        = n_in;                    % Rev 27 system: ONE MHJ10 (team decision); 2 = comparison
 p.in_b        = 0.36;
 p.in_t_open   = 1.0e-3;                  % s
 p.in_t_close  = 0.5e-3;                  % s
@@ -89,7 +89,7 @@ p.supply_holdup = 0;                     % s, power-supply hold-up before the ex
 p.foot_Ts       = 1e-3;                  % s, controller ADC sampling
 p.foot_filter   = 1.6e-3;                % s, group delay of the first-order 100 Hz filter
 p.insole_delay  = 3e-3;                  % s, insole detection delay (Crea et al.: 3 mean, 7 max)
-% Pressure-relief valve: FUTURE WORK in Rev 27 (owner decision, 13 Nov 2026).
+% Pressure-relief valve: FUTURE WORK in Rev 27 (team decision, 13 Nov 2026).
 % The code path is kept so the study can be resumed; it is OFF in every Rev 27 run.
 p.relief_on     = false;
 p.rel_crack_kPa = 22.1;                  % Circle Seal L500, 3.2 psig (future work)

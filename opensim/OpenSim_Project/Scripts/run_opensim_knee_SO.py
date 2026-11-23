@@ -40,7 +40,7 @@ WHAT IT DOES (all automatic):
   (To run one MuscleAnalysis by hand in the GUI instead: open Models/<group>/<cond>.osim
    first, then Tools > Analyze > Load the condition's _Setup_MuscleAnalysis.xml > Run;
    the GUI uses the currently open model.)
-  Then: upload the folder Results/OpenSim_SO (zip) to Claude, or run
+  Then: run
         python Scripts/05_postprocess_opensim_results.py   to make the muscle graphs/tables.
 
 Compatible with Jython 2.7 (OpenSim GUI) and CPython 3 (opensim package).  ASCII only.

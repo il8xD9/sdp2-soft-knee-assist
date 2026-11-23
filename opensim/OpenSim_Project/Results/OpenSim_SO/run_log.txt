@@ -1,5 +1,5 @@
 RUNTIME=OpenSim GUI scripting (Jython 2.5.2)
-MODEL=C:\Users\Personal Use\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
+MODEL=C:\Users\<user>\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
 SCALE_MODEL=True
 TARGET_MASS_KG=70
 TARGET_HEIGHT_M=1.7
@@ -12,7 +12,7 @@ elapsed_s=69.4
 
 [17:28:52] Runtime: OpenSim GUI scripting (Jython 2.5.2)
 [17:28:52] Project folder: C:\SDP2_Opensim_Last_New\OpenSim_Project
-[17:28:52] Generic model: C:\Users\Personal Use\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
+[17:28:52] Generic model: C:\Users\<user>\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
 [17:28:52] Generic model mass 75.16 kg, 92 muscles, 23 coordinates
 [17:28:52] Scaled uniformly x0.9444, mass now 70.00 kg
 [17:28:52] Base model saved: C:\SDP2_Opensim_Last_New\OpenSim_Project\Models\gait2392_scaled_70kg_170cm.osim

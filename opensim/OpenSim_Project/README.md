@@ -18,7 +18,7 @@ Healthy vs ACL (pre-op, 2, 4, 6, 12 months), with and without the posterior-knee
 OpenSim_Project/
 ├── README.md
 ├── Docs/          PROJECT_REPORT.md · HOW_TO_RUN_OpenSim.md · Data_Inspection_Available_Missing_Used.csv
-├── Input_Data/    tidy CSV tables extracted from the workbook + Source_Files/ (original 4 files)
+├── Input_Data/    tidy CSV tables extracted from the workbook + Source_Files/ (original 3 files)
 ├── Models/        Healthy/ ACL/  -> .osim files are written here by the OpenSim run (see Models/README.md)
 ├── Actuator/      parameters, OpenSim actuator component, torque/force/pressure/power profiles, checks
 ├── Simulations/   116 condition folders: .mot (kinematics), .sto (knee speed, net moment, actuator controls),

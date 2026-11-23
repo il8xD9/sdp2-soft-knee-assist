@@ -1,5 +1,5 @@
 [18:40:51] Runtime: Jython 2.5.2 + OpenSim Java API | version 4.6, build date 21:02:28 Jul  8 2026
-[18:40:51] Model: C:\Users\Personal Use\Desktop\OPensim Result\Actuator_Run\Models\gait2392_scaled_70kg_170cm.osim
+[18:40:51] Model: C:\Users\<user>\Desktop\OPensim Result\Actuator_Run\Models\gait2392_scaled_70kg_170cm.osim
 [18:40:51] 2-month data: 101 frames (1-100 % + 8.43 %); healthy peak 41.428 N.m; patient peak 8.659 N.m; deficit peak 32.956 N.m at 21 %; net moment vs OpenSim input file max diff 5.00e-09 N.m
 [18:40:51] Device: k = 206990 mm3 -> T(20 kPa) = 4.1398 N.m, T(27 kPa) = 5.5887 N.m; alpha_lim = 0.1254 / 0.1694 (on 33 N.m)
 [18:40:52] Knee-crossing muscles (13): semimem_r, semiten_r, bifemlh_r, bifemsh_r, sar_r, tfl_r, grac_r, rect_fem_r, vas_med_r, vas_int_r, vas_lat_r, med_gas_r, lat_gas_r

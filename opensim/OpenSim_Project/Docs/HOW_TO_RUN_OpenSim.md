@@ -7,8 +7,8 @@
 2. افتح **OpenSim 4.6** (GUI). لا تحتاج إلى فتح أي model.
 3. من القائمة: **Scripts → Run…**، ثم اختر الملف `OpenSim_Project\Scripts\run_opensim_knee_SO.py`.
 4. انتظر حتى تظهر في نافذة الرسائل (Messages) جملة `FINISHED: 116 of 116 conditions`، وقد يستغرق ذلك نحو 5 إلى 15 دقيقة. وللتجربة السريعة أولًا ضع `ONLY_PRIMARY_12 = True` (السطر 67) فيعمل على 12 حالة فقط.
-5. اضغط المجلد `OpenSim_Project\Results\OpenSim_SO` بصيغة zip وأرسله لي. سأرسم بعدها Fig03 و04 و08 و11 و14 و20 وأُكمل جداول العضلات.
-   أو شغّل بنفسك: `python Scripts\05_postprocess_opensim_results.py`
+5. لرسم الأشكال Fig03 و04 و08 و11 و14 و20 وإكمال جداول العضلات، شغّل:
+   `python Scripts\05_postprocess_opensim_results.py`
 
 ## If something goes wrong
 
@@ -18,7 +18,7 @@
 | `gait2392_simbody.osim not found` | Set `MODEL_PATH` to your file, usually `C:\Users\<you>\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim` |
 | `scaling failed` | The run continues with the generic (unscaled) model, and this is written in `run_log.txt` |
 | `native AnalyzeTool skipped` | Optional cross-check only; the static-optimization results are still complete |
-| `ERROR in <condition>` | Send `Results/OpenSim_SO/run_log.txt` |
+| `ERROR in <condition>` | See `Results/OpenSim_SO/run_log.txt` for the cause |
 
 ## Alternative: Python instead of the GUI
 ```
