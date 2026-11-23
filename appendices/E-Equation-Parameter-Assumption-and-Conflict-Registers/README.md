@@ -2,7 +2,7 @@
 
 Appendix E of the SDP II final report *Analytical and Simulation-Based Feasibility Study of a Soft Pneumatic Knee Assist Concept for Post-ACL Reconstruction Gait*.
 
-- **File:** [Appendix_E.pdf](Appendix_E.pdf) (20 pages, 484 kB)
+- **File:** [Appendix_E.pdf](Appendix_E.pdf) (20 pages, 483 kB)
 - **All appendices:** [list A–P](../)
 
 ## Contents

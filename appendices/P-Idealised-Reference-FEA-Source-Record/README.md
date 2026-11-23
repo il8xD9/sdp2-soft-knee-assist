@@ -2,7 +2,7 @@
 
 Appendix P of the SDP II final report *Analytical and Simulation-Based Feasibility Study of a Soft Pneumatic Knee Assist Concept for Post-ACL Reconstruction Gait*.
 
-- **File:** [Appendix_P.pdf](Appendix_P.pdf) (47 pages, 1497 kB)
+- **File:** [Appendix_P.pdf](Appendix_P.pdf) (47 pages, 1496 kB)
 - **All appendices:** [list A–P](../)
 
 ## Contents
@@ -41,4 +41,4 @@ The finite element model, scripts and results of this appendix, organised for re
 
 ## Note
 
-The pages are the same as in the final report, except that in the error log of Appendix P (report pages 370, 371 and 376) a local Windows folder path was replaced by `<PROJECT>`.
+The pages are the same as in the final report, except that in the error log of Appendix P (report pages 374, 375 and 380) a local Windows folder path was replaced by `<PROJECT>`.

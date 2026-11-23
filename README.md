@@ -66,7 +66,7 @@ To download everything: **Code → Download ZIP** on this page (the release zips
 | [O](appendices/O-Tissue-Tolerance-Workbook-Record/) | [Tissue-Tolerance Workbook Record](appendices/O-Tissue-Tolerance-Workbook-Record/Appendix_O.pdf) | 9 |
 | [P](appendices/P-Idealised-Reference-FEA-Source-Record/) | [Idealised Reference FEA: Source Record](appendices/P-Idealised-Reference-FEA-Source-Record/Appendix_P.pdf) | 47 |
 
-The pages are the same as in the final report, except that in the error log of Appendix P (report pages 370, 371 and 376)
+The pages are the same as in the final report, except that in the error log of Appendix P (report pages 374, 375 and 380)
 a local Windows folder path was replaced by `<PROJECT>`.
 
 ## Licence
