@@ -1,0 +1,6 @@
+epoch,full_deficit_peak_Nm(alpha=1),alpha_0.20_peak_Nm,alpha_0.25_peak_Nm,alpha_0.30_peak_Nm,alpha_0.50_peak_Nm,capability_100kPa_Nm,alpha_max_at_100kPa,pressure_needed_alpha0.20_kPa,pressure_needed_alpha0.30_kPa,alpha_0.20_within_capability,alpha_0.30_within_capability
+Pre-op,19.956,3.991,4.989,5.987,9.978,10.756,0.539,37.1,55.7,True,True
+2 Months,32.968,6.594,8.242,9.89,16.484,10.756,0.3262,61.3,92.0,True,True
+4 Months,25.627,5.125,6.407,7.688,12.814,10.756,0.4197,47.7,71.5,True,True
+6 Months,25.931,5.186,6.483,7.779,12.965,10.756,0.4148,48.2,72.3,True,True
+12 Months,17.96,3.592,4.49,5.388,8.98,10.756,0.5989,33.4,50.1,True,True

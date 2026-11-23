@@ -1,0 +1,33 @@
+parameter,value
+name,knee_assist_r
+type_in_OpenSim,"CoordinateActuator on knee_angle_r (generalized torque about the knee flexion axis, extension +) driven by a PrescribedController"
+physical_device,"Posterior-knee TPU bladder (actuator-V4), restraint cover, strap harness"
+working_principle,pressure p on the shank-side contact patch -> force F = p*A acting at the patch centroid -> knee extension torque T = F*r (Section 6)
+max_pressure_kPa,100.0
+contact_width_mm,45.400000000000006
+contact_length_mm,68.5
+contact_area_mm2,3140.3
+moment_arm_mm,34.25
+moment_arm_basis,Case 1 - fixed r (no angle-dependent r_eff(theta) data exist; +/-20 % r -> +/-20 % T)
+max_force_N,314.03
+max_torque_Nm,10.756
+torque_direction,knee EXTENSION only (bladder can only push); min control 0
+attachment,"posterior knee; strap harness two arms above / two below joint line; shank-side patch starts at knee-centre level, centroid 34.25 mm distal"
+operating_window_pct_stance,"{""preop"": [9, 37], ""2 months"": [9, 44], ""4 months"": [9, 44], ""6 months"": [9, 44], ""12 months"": [9, 40]}"
+window_source,Table 7 candidate window (8.4-44 / 9-40 % stance) on the 1 % grid used by team Table 6A (in_candidate_window flags)
+timing_rule,"torque = alpha * m * g * h * dM(phi) inside window, 0 outside (Table G0 / CALC-BIO-03)"
+alpha_primary,0.2
+alpha_primary_reason,"largest tabulated alpha that the 100 kPa actuator meets at every epoch for 70 kg / 1.70 m (Table 6-1, constraint C18; used in C20)"
+alpha_low,0.25
+alpha_max_rule,"alpha_max = T_max / peak full-deficit torque (capability-limited, peak = 10.65 N.m)"
+alpha_sweep,"[0.1, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]"
+alpha_sweep_profiles,"requested = alpha x m g h dM (ideal torque source, may exceed the device); device_limited = min(requested, 10.76 N.m) (what the V4.1 bladder delivers at <= 100 kPa)"
+stroke_mm,NOT PROVIDED
+speed,"NOT PROVIDED (t_system, valve/tube flow open - C20/C21)"
+rated_power,NOT PROVIDED (mechanical power is computed here from torque x knee angular velocity)
+mass_on_leg_g,97.04
+free_flexion,vented outside the window; must not resist ~30 deg before toe-off and ~65 deg in swing
+body_mass_kg,70.0
+stature_m,1.7
+alpha_max_per_epoch,"{""Pre-op"": 0.539, ""2 Months"": 0.3262, ""4 Months"": 0.4197, ""6 Months"": 0.4148, ""12 Months"": 0.5989}"
+stance_duration_s,"{""healthy"": 0.655, ""preop"": 0.7078, ""2months"": 0.705, ""4months"": 0.685, ""6months"": 0.683, ""12months"": 0.677}"

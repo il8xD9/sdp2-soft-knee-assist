@@ -1,0 +1,67 @@
+Group,alpha,Required peak torque (N.m),Required peak force (N),Required peak pressure (kPa),Achievable at <= 100 kPa,Delivered peak torque (N.m),Delivered peak pressure (kPa),"KMR early-stance peak, requested (%)","KMR early-stance peak, delivered (%)","KMR window impulse, requested (%)","KMR window impulse, delivered (%)","Over-assisted window, requested (%)","Over-assisted window, delivered (%)","Min muscle moment in window, delivered (N.m)","Total assistance impulse, requested (N.m.s)","Total assistance impulse, delivered (N.m.s)","Net mechanical work, delivered (J)","H2 restored peak M+T, requested (% healthy)","H2 restored peak M+T, delivered (% healthy)",cond_requested,cond_delivered
+Healthy (matched controls),0.1,3.3,96.3,30.7,yes,3.3,30.7,7.9,7.9,8.9,8.9,2.8,2.8,-0.57,0.493,0.493,-0.052,,,Healthy_Assisted_a010,Healthy_Assisted_a010
+Healthy (matched controls),0.2,6.59,192.5,61.3,yes,6.59,61.3,15.9,15.9,17.7,17.7,2.8,2.8,-1.19,0.986,0.986,-0.104,,,Healthy_Assisted_a020,Healthy_Assisted_a020
+Healthy (matched controls),0.25,8.24,240.6,76.6,yes,8.24,76.6,19.8,19.8,22.2,22.2,5.6,5.6,-1.5,1.233,1.233,-0.129,,,Healthy_Assisted_a025,Healthy_Assisted_a025
+Healthy (matched controls),0.3,9.89,288.8,92.0,yes,9.89,92.0,23.8,23.8,26.6,26.6,8.3,8.3,-1.81,1.48,1.48,-0.155,,,Healthy_Assisted_a030,Healthy_Assisted_a030
+Healthy (matched controls),0.4,13.19,385.0,122.6,NO,10.76,100.0,31.7,26.0,35.5,33.2,8.3,8.3,-2.43,1.973,1.847,-0.203,,,Healthy_Assisted_a040,Healthy_Assisted_a040_lim
+Healthy (matched controls),0.5,16.48,481.3,153.3,NO,10.76,100.0,39.6,26.0,44.4,36.7,11.1,11.1,-3.05,2.466,2.043,-0.221,,,Healthy_Assisted_a050,Healthy_Assisted_a050_lim
+Healthy (matched controls),0.6,19.78,577.5,183.9,NO,10.76,100.0,47.6,26.0,53.2,39.1,13.9,13.9,-3.67,2.959,2.174,-0.22,,,Healthy_Assisted_a060,Healthy_Assisted_a060_lim
+Healthy (matched controls),0.7,23.08,673.8,214.6,NO,10.76,100.0,55.5,26.0,62.1,40.8,16.7,16.7,-4.29,3.452,2.268,-0.213,,,Healthy_Assisted_a070,Healthy_Assisted_a070_lim
+Healthy (matched controls),0.8,26.37,770.0,245.2,NO,10.76,100.0,63.4,26.0,71.0,42.1,19.4,19.4,-4.91,3.945,2.338,-0.206,,,Healthy_Assisted_a080,Healthy_Assisted_a080_lim
+Healthy (matched controls),0.9,29.67,866.3,275.9,NO,10.76,100.0,71.3,26.0,79.9,43.0,25.0,22.2,-5.53,4.439,2.389,-0.19,,,Healthy_Assisted_a090,Healthy_Assisted_a090_lim
+Healthy (matched controls),1.0,32.97,962.6,306.5,NO,10.76,100.0,79.1,26.0,88.7,43.7,33.3,22.2,-6.15,4.932,2.432,-0.182,,,Healthy_Assisted_a100,Healthy_Assisted_a100_lim
+ACL Pre-op,0.1,2.0,58.3,18.6,yes,2.0,18.6,9.2,9.2,9.4,9.4,6.9,6.9,-2.99,0.279,0.279,-0.086,56.8,56.8,ACL_PreOp_Assisted_a010,ACL_PreOp_Assisted_a010
+ACL Pre-op,0.2,3.99,116.5,37.1,yes,3.99,37.1,18.4,18.4,18.9,18.9,6.9,6.9,-3.46,0.558,0.558,-0.171,61.6,61.6,ACL_PreOp_Assisted_a020,ACL_PreOp_Assisted_a020
+ACL Pre-op,0.25,4.99,145.7,46.4,yes,4.99,46.4,22.9,22.9,23.6,23.6,6.9,6.9,-3.7,0.697,0.697,-0.214,64.0,64.0,ACL_PreOp_Assisted_a025,ACL_PreOp_Assisted_a025
+ACL Pre-op,0.3,5.99,174.8,55.7,yes,5.99,55.7,27.5,27.5,28.3,28.3,6.9,6.9,-3.94,0.837,0.837,-0.257,66.4,66.4,ACL_PreOp_Assisted_a030,ACL_PreOp_Assisted_a030
+ACL Pre-op,0.4,7.98,233.1,74.2,yes,7.98,74.2,36.5,36.5,37.7,37.7,10.3,10.3,-4.42,1.116,1.116,-0.342,71.2,71.2,ACL_PreOp_Assisted_a040,ACL_PreOp_Assisted_a040
+ACL Pre-op,0.5,9.98,291.3,92.8,yes,9.98,92.8,45.5,45.5,47.1,47.1,10.3,10.3,-4.9,1.395,1.395,-0.428,76.0,76.0,ACL_PreOp_Assisted_a050,ACL_PreOp_Assisted_a050
+ACL Pre-op,0.6,11.97,349.6,111.3,NO,10.76,100.0,54.1,49.9,56.6,55.0,13.8,13.8,-5.37,1.674,1.627,-0.516,80.8,78.0,ACL_PreOp_Assisted_a060,ACL_PreOp_Assisted_a060_lim
+ACL Pre-op,0.7,13.97,407.9,129.9,NO,10.76,100.0,62.1,49.9,66.0,59.7,13.8,13.8,-5.85,1.953,1.766,-0.594,85.6,78.0,ACL_PreOp_Assisted_a070,ACL_PreOp_Assisted_a070_lim
+ACL Pre-op,0.8,15.96,466.1,148.4,NO,10.76,100.0,67.8,49.9,75.4,63.0,17.2,17.2,-6.33,2.232,1.864,-0.652,90.4,78.0,ACL_PreOp_Assisted_a080,ACL_PreOp_Assisted_a080_lim
+ACL Pre-op,0.9,17.96,524.4,167.0,NO,10.76,100.0,67.8,49.9,84.9,65.5,24.1,17.2,-6.8,2.511,1.939,-0.698,95.2,78.0,ACL_PreOp_Assisted_a090,ACL_PreOp_Assisted_a090_lim
+ACL Pre-op,1.0,19.96,582.6,185.5,NO,10.76,100.0,67.8,49.9,94.3,67.5,31.0,17.2,-7.28,2.789,1.996,-0.732,100.0,78.0,ACL_PreOp_Assisted_a100,ACL_PreOp_Assisted_a100_lim
+ACL 2 months,0.1,3.3,96.3,30.7,yes,3.3,30.7,37.4,37.4,56.3,56.3,41.7,41.7,-6.75,0.531,0.531,-0.109,28.7,28.7,ACL_2Months_Assisted_a010,ACL_2Months_Assisted_a010
+ACL 2 months,0.2,6.59,192.5,61.3,yes,6.59,61.3,74.1,74.1,112.7,112.7,61.1,61.1,-7.54,1.062,1.062,-0.219,36.6,36.6,ACL_2Months_Assisted_a020,ACL_2Months_Assisted_a020
+ACL 2 months,0.25,8.24,240.6,76.6,yes,8.24,76.6,92.4,92.4,140.8,140.8,77.8,77.8,-7.95,1.327,1.327,-0.273,40.6,40.6,ACL_2Months_Assisted_a025,ACL_2Months_Assisted_a025
+ACL 2 months,0.3,9.89,288.8,92.0,yes,9.89,92.0,110.2,110.2,169.0,169.0,100.0,100.0,-8.36,1.592,1.592,-0.328,44.5,44.5,ACL_2Months_Assisted_a030,ACL_2Months_Assisted_a030
+ACL 2 months,0.4,13.19,385.0,122.6,NO,10.76,100.0,144.0,124.2,225.3,211.0,100.0,100.0,-9.18,2.123,1.988,-0.433,52.5,46.9,ACL_2Months_Assisted_a040,ACL_2Months_Assisted_a040_lim
+ACL 2 months,0.5,16.48,481.3,153.3,NO,10.76,100.0,157.7,124.2,281.7,233.3,100.0,100.0,-10.0,2.654,2.198,-0.507,60.4,46.9,ACL_2Months_Assisted_a050,ACL_2Months_Assisted_a050_lim
+ACL 2 months,0.6,19.78,577.5,183.9,NO,10.76,100.0,157.7,124.2,338.0,248.3,100.0,100.0,-10.81,3.185,2.34,-0.553,68.3,46.9,ACL_2Months_Assisted_a060,ACL_2Months_Assisted_a060_lim
+ACL 2 months,0.7,23.08,673.8,214.6,NO,10.76,100.0,157.7,124.2,394.3,259.0,100.0,100.0,-11.63,3.716,2.441,-0.582,76.3,46.9,ACL_2Months_Assisted_a070,ACL_2Months_Assisted_a070_lim
+ACL 2 months,0.8,26.37,770.0,245.2,NO,10.76,100.0,157.7,124.2,450.7,267.1,100.0,100.0,-12.45,4.247,2.517,-0.603,84.2,46.9,ACL_2Months_Assisted_a080,ACL_2Months_Assisted_a080_lim
+ACL 2 months,0.9,29.67,866.3,275.9,NO,10.76,100.0,157.7,124.2,507.0,272.9,100.0,100.0,-13.27,4.777,2.572,-0.611,92.1,46.9,ACL_2Months_Assisted_a090,ACL_2Months_Assisted_a090_lim
+ACL 2 months,1.0,32.97,962.6,306.5,NO,10.76,100.0,157.7,124.2,563.4,277.8,100.0,100.0,-14.26,5.308,2.617,-0.621,100.0,46.9,ACL_2Months_Assisted_a100,ACL_2Months_Assisted_a100_lim
+ACL 4 months,0.1,2.56,74.8,23.8,yes,2.56,23.8,16.1,16.1,22.0,22.0,27.8,27.8,-6.14,0.411,0.411,-0.077,44.5,44.5,ACL_4Months_Assisted_a010,ACL_4Months_Assisted_a010
+ACL 4 months,0.2,5.13,149.6,47.7,yes,5.13,47.7,32.2,32.2,44.1,44.1,30.6,30.6,-6.7,0.823,0.823,-0.155,50.7,50.7,ACL_4Months_Assisted_a020,ACL_4Months_Assisted_a020
+ACL 4 months,0.25,6.41,187.1,59.6,yes,6.41,59.6,40.1,40.1,55.1,55.1,33.3,33.3,-6.98,1.029,1.029,-0.194,53.7,53.7,ACL_4Months_Assisted_a025,ACL_4Months_Assisted_a025
+ACL 4 months,0.3,7.69,224.5,71.5,yes,7.69,71.5,48.1,48.1,66.1,66.1,36.1,36.1,-7.27,1.234,1.234,-0.232,56.8,56.8,ACL_4Months_Assisted_a030,ACL_4Months_Assisted_a030
+ACL 4 months,0.4,10.25,299.3,95.3,yes,10.25,95.3,64.0,64.0,88.2,88.2,44.4,44.4,-7.83,1.646,1.646,-0.31,63.0,63.0,ACL_4Months_Assisted_a040,ACL_4Months_Assisted_a040
+ACL 4 months,0.5,12.81,374.1,119.1,NO,10.76,100.0,79.9,67.8,110.2,104.4,55.6,55.6,-8.41,2.057,1.949,-0.389,69.2,64.3,ACL_4Months_Assisted_a050,ACL_4Months_Assisted_a050_lim
+ACL 4 months,0.6,15.38,448.9,143.0,NO,10.76,100.0,95.6,67.8,132.3,114.1,80.6,63.9,-9.12,2.469,2.129,-0.446,75.3,64.3,ACL_4Months_Assisted_a060,ACL_4Months_Assisted_a060_lim
+ACL 4 months,0.7,17.94,523.8,166.8,NO,10.76,100.0,111.1,67.8,154.3,120.9,100.0,63.9,-9.83,2.88,2.256,-0.48,81.5,64.3,ACL_4Months_Assisted_a070,ACL_4Months_Assisted_a070_lim
+ACL 4 months,0.8,20.5,598.6,190.6,NO,10.76,100.0,125.9,67.8,176.3,126.0,100.0,63.9,-10.55,3.292,2.352,-0.502,87.7,64.3,ACL_4Months_Assisted_a080,ACL_4Months_Assisted_a080_lim
+ACL 4 months,0.9,23.06,673.4,214.4,NO,10.76,100.0,132.3,67.8,198.4,129.8,100.0,63.9,-11.26,3.703,2.423,-0.512,93.8,64.3,ACL_4Months_Assisted_a090,ACL_4Months_Assisted_a090_lim
+ACL 4 months,1.0,25.63,748.2,238.3,NO,10.76,100.0,132.3,67.8,220.4,132.9,100.0,63.9,-11.97,4.115,2.48,-0.521,100.0,64.3,ACL_4Months_Assisted_a100,ACL_4Months_Assisted_a100_lim
+ACL 6 months,0.1,2.59,75.7,24.1,yes,2.59,24.1,16.6,16.6,24.6,24.6,30.6,30.6,-7.15,0.427,0.427,-0.078,43.9,43.9,ACL_6Months_Assisted_a010,ACL_6Months_Assisted_a010
+ACL 6 months,0.2,5.19,151.4,48.2,yes,5.19,48.2,33.2,33.2,49.1,49.1,36.1,36.1,-7.81,0.854,0.854,-0.157,50.1,50.1,ACL_6Months_Assisted_a020,ACL_6Months_Assisted_a020
+ACL 6 months,0.25,6.48,189.3,60.3,yes,6.48,60.3,41.3,41.3,61.4,61.4,38.9,38.9,-8.13,1.068,1.068,-0.196,53.2,53.2,ACL_6Months_Assisted_a025,ACL_6Months_Assisted_a025
+ACL 6 months,0.3,7.78,227.1,72.3,yes,7.78,72.3,49.5,49.5,73.7,73.7,41.7,41.7,-8.46,1.281,1.281,-0.235,56.3,56.3,ACL_6Months_Assisted_a030,ACL_6Months_Assisted_a030
+ACL 6 months,0.4,10.37,302.8,96.4,yes,10.37,96.4,65.9,65.9,98.2,98.2,52.8,52.8,-9.11,1.708,1.708,-0.313,62.6,62.6,ACL_6Months_Assisted_a040,ACL_6Months_Assisted_a040
+ACL 6 months,0.5,12.97,378.5,120.5,NO,10.76,100.0,82.2,69.0,122.8,115.7,63.9,61.1,-9.77,2.135,2.011,-0.387,68.8,63.6,ACL_6Months_Assisted_a050,ACL_6Months_Assisted_a050_lim
+ACL 6 months,0.6,15.56,454.3,144.7,NO,10.76,100.0,98.6,69.0,147.4,125.8,88.9,63.9,-10.42,2.562,2.188,-0.436,75.0,63.6,ACL_6Months_Assisted_a060,ACL_6Months_Assisted_a060_lim
+ACL 6 months,0.7,18.15,530.0,168.8,NO,10.76,100.0,114.6,69.0,171.9,132.9,100.0,63.9,-11.07,2.989,2.311,-0.463,81.3,63.6,ACL_6Months_Assisted_a070,ACL_6Months_Assisted_a070_lim
+ACL 6 months,0.8,20.74,605.7,192.9,NO,10.76,100.0,130.6,69.0,196.5,138.1,100.0,63.9,-11.74,3.416,2.401,-0.48,87.5,63.6,ACL_6Months_Assisted_a080,ACL_6Months_Assisted_a080_lim
+ACL 6 months,0.9,23.34,681.4,217.0,NO,10.76,100.0,131.2,69.0,221.1,142.0,100.0,63.9,-12.52,3.843,2.469,-0.49,93.7,63.6,ACL_6Months_Assisted_a090,ACL_6Months_Assisted_a090_lim
+ACL 6 months,1.0,25.93,757.1,241.1,NO,10.76,100.0,131.2,69.0,245.6,144.9,100.0,63.9,-13.3,4.27,2.52,-0.491,100.0,63.6,ACL_6Months_Assisted_a100,ACL_6Months_Assisted_a100_lim
+ACL 12 months,0.1,1.8,52.4,16.7,yes,1.8,16.7,7.6,7.6,9.3,9.3,6.2,6.2,-3.44,0.274,0.274,-0.056,61.2,61.2,ACL_12Months_Assisted_a010,ACL_12Months_Assisted_a010
+ACL 12 months,0.2,3.59,104.9,33.4,yes,3.59,33.4,15.2,15.2,18.6,18.6,6.2,6.2,-3.96,0.549,0.549,-0.112,65.5,65.5,ACL_12Months_Assisted_a020,ACL_12Months_Assisted_a020
+ACL 12 months,0.25,4.49,131.1,41.7,yes,4.49,41.7,19.0,19.0,23.3,23.3,6.2,6.2,-4.22,0.686,0.686,-0.141,67.6,67.6,ACL_12Months_Assisted_a025,ACL_12Months_Assisted_a025
+ACL 12 months,0.3,5.39,157.3,50.1,yes,5.39,50.1,22.8,22.8,27.9,27.9,9.4,9.4,-4.48,0.823,0.823,-0.169,69.8,69.8,ACL_12Months_Assisted_a030,ACL_12Months_Assisted_a030
+ACL 12 months,0.4,7.18,209.8,66.8,yes,7.18,66.8,30.4,30.4,37.2,37.2,9.4,9.4,-5.0,1.098,1.098,-0.225,74.1,74.1,ACL_12Months_Assisted_a040,ACL_12Months_Assisted_a040
+ACL 12 months,0.5,8.98,262.2,83.5,yes,8.98,83.5,38.0,38.0,46.5,46.5,15.6,15.6,-5.52,1.372,1.372,-0.281,78.4,78.4,ACL_12Months_Assisted_a050,ACL_12Months_Assisted_a050
+ACL 12 months,0.6,10.78,314.6,100.2,NO,10.76,100.0,45.6,45.6,55.8,55.8,15.6,15.6,-6.04,1.647,1.647,-0.337,82.8,82.8,ACL_12Months_Assisted_a060,ACL_12Months_Assisted_a060_lim
+ACL 12 months,0.7,12.57,367.1,116.9,NO,10.76,100.0,53.2,45.7,65.1,62.0,21.9,21.9,-6.56,1.921,1.829,-0.393,87.1,82.8,ACL_12Months_Assisted_a070,ACL_12Months_Assisted_a070_lim
+ACL 12 months,0.8,14.37,419.5,133.6,NO,10.76,100.0,60.8,45.7,74.4,66.1,25.0,25.0,-7.08,2.196,1.95,-0.434,91.4,82.8,ACL_12Months_Assisted_a080,ACL_12Months_Assisted_a080_lim
+ACL 12 months,0.9,16.16,471.9,150.3,NO,10.76,100.0,68.3,45.7,83.7,69.1,31.2,31.2,-7.6,2.47,2.039,-0.464,95.7,82.8,ACL_12Months_Assisted_a090,ACL_12Months_Assisted_a090_lim
+ACL 12 months,1.0,17.96,524.4,167.0,NO,10.76,100.0,75.9,45.7,93.0,71.4,40.6,37.5,-8.12,2.745,2.107,-0.485,100.0,82.8,ACL_12Months_Assisted_a100,ACL_12Months_Assisted_a100_lim

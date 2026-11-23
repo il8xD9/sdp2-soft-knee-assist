@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Knee-assist actuator + controller for condition HealthyWinter_FullGait_Assisted_a020.
+     Paste inside <ForceSet><objects> (actuator) and <ControllerSet><objects> (controller)
+     of a gait2392 model, or let Scripts/run_opensim_knee_SO.py add them automatically. -->
+<OpenSimDocument Version="40000">
+  <CoordinateActuator name="knee_assist_r">
+    <!-- equivalent of the posterior bladder: T = p*A*r ; extension (+) only -->
+    <coordinate>knee_angle_r</coordinate>
+    <optimal_force>1</optimal_force>
+    <min_control>0</min_control>
+    <max_control>10.7555</max_control>
+  </CoordinateActuator>
+  <PrescribedController name="knee_assist_controller">
+    <actuator_list>knee_assist_r</actuator_list>
+    <FunctionSet name="ControlFunctions">
+      <objects>
+        <PiecewiseLinearFunction name="knee_assist_r">
+          <x> 0.000000 0.022792 0.045584 0.068376 0.091168 0.113960 0.136752 0.159544 0.182336 0.205128 0.227920 0.250712 0.273504 0.296296 0.319088 0.341880 0.364672 0.387464 0.410256 0.433048 0.455840 0.478632 0.501424 0.524216 0.547008 0.569800 0.592592 0.615384 0.638176 0.660968 0.683760 0.706552 0.729344 0.752136 0.774928 0.797720 0.820512 0.843304 0.866096 0.888888 0.911680 0.934472 0.957264 0.980056 1.002848 1.025640 1.048432 1.071224 1.094016 1.116808 1.139600 </x>
+          <y> 0.000000 0.000000 0.000000 2.114588 4.087582 5.758713 6.544487 6.424676 5.716702 4.761325 3.786498 2.870021 2.037567 1.356044 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 0.000000 </y>
+        </PiecewiseLinearFunction>
+      </objects>
+    </FunctionSet>
+  </PrescribedController>
+</OpenSimDocument>

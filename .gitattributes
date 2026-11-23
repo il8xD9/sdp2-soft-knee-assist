@@ -8,3 +8,8 @@
 *.xlsx binary
 *.png binary
 *.pdf binary
+*.slx binary
+*.mat binary
+*.fig binary
+# OpenSim package: keep every file byte-for-byte as delivered (no line-ending conversion)
+opensim/** -text

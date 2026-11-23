@@ -1,0 +1,17 @@
+epoch,alpha,max_abs_diff_Nm,peak_this_work_Nm,peak_team_table6A_Nm,PASS(<=0.01 N.m)
+2 months,0.25,0.0017,8.242,8.241,True
+2 months,0.5,0.0027,16.484,16.482,True
+2 months,0.75,0.0041,24.726,24.724,True
+2 months,1.0,0.0058,32.968,32.965,True
+4 months,0.25,0.0016,6.407,6.407,True
+4 months,0.5,0.003,12.814,12.814,True
+4 months,0.75,0.0045,19.22,19.222,True
+4 months,1.0,0.0057,25.627,25.629,True
+6 months,0.25,0.0017,6.483,6.483,True
+6 months,0.5,0.0034,12.965,12.966,True
+6 months,0.75,0.0041,19.448,19.449,True
+6 months,1.0,0.0057,25.931,25.932,True
+12 months,0.25,0.0016,4.49,4.489,True
+12 months,0.5,0.0031,8.98,8.978,True
+12 months,0.75,0.0041,13.47,13.467,True
+12 months,1.0,0.0053,17.96,17.957,True

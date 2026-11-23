@@ -1,0 +1,7 @@
+epoch,walking_speed_m_s,cadence,stride_duration_s_ASM,stance_fraction,stance_duration_s_ASM,IC_ms,assist_onset_ms,torque_peak_ms,decay_start_ms,assist_offset_ms,toe_off_ms,assist_onset_pctGC_ASM,assist_offset_pctGC_ASM,source,status
+healthy (Winter 1987),NR (not reported),105.3 steps/min,1.14,0.60 (Winter label),0.684,0.0,NA,NA,NA,NA,684.0,NA,NA,Winter 1987 Sec.4.24 p.34 + TOE OFF=60%,DERIVED (healthy reference; not ACLR)
+matched controls (Buttner),1.36,NR,1.092,0.60 (ASM-BIO-05),0.655,0.0,NA,NA,NA,NA,655.0,NA,NA,Buttner Table 1 speed + Garcia 2023 contralateral-limb fit (ASM-BIO-04),ASSUMPTION-derived
+2 months,1.17,NR,1.175,0.60 (ASM-BIO-05),0.705,0.0,59.0,148.0,148.0,310.0,705.0,5.1,26.4,Buttner 2025 (speed; window) + Garcia 2023 (stance time vs speed),ASSUMPTION-derived (ASM-BIO-04/05)
+4 months,1.24,NR,1.142,0.60 (ASM-BIO-05),0.685,0.0,58.0,144.0,144.0,302.0,685.0,5.1,26.4,Buttner 2025 (speed; window) + Garcia 2023 (stance time vs speed),ASSUMPTION-derived (ASM-BIO-04/05)
+6 months,1.25,NR,1.138,0.60 (ASM-BIO-05),0.683,0.0,58.0,143.0,143.0,300.0,683.0,5.1,26.4,Buttner 2025 (speed; window) + Garcia 2023 (stance time vs speed),ASSUMPTION-derived (ASM-BIO-04/05)
+12 months,1.27,NR,1.128,0.60 (ASM-BIO-05),0.677,0.0,61.0,142.0,142.0,271.0,677.0,5.4,24.0,Buttner 2025 (speed; window) + Garcia 2023 (stance time vs speed),ASSUMPTION-derived (ASM-BIO-04/05)

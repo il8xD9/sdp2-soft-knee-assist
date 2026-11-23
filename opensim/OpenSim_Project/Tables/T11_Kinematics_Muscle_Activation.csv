@@ -1,0 +1,13 @@
+Condition,Stance knee ROM (deg),Peak net knee ext. moment (N.m),Peak quadriceps force (N),Peak activation RF / VL / VM / VI,Peak mean quadriceps activation,Max |reserve| (N.m)
+Healthy (matched controls) (no actuator),32.76,41.41,985.5,0.252 / 0.272 / 0.192 / 0.207,0.231,0.011
+Healthy (matched controls) + Actuator,32.76,41.41,834.8,0.214 / 0.231 / 0.163 / 0.175,0.196,0.011
+ACL Pre-op (no actuator),29.21,21.54,530.3,0.132 / 0.143 / 0.101 / 0.109,0.121,0.005
+ACL Pre-op + Actuator,29.21,21.54,440.0,0.110 / 0.119 / 0.084 / 0.090,0.101,0.005
+ACL 2 months (no actuator),29.73,8.66,235.8,0.065 / 0.063 / 0.046 / 0.051,0.056,0.006
+ACL 2 months + Actuator,29.73,8.66,85.6,0.024 / 0.023 / 0.017 / 0.019,0.021,0.006
+ACL 4 months (no actuator),32.24,15.87,406.8,0.113 / 0.111 / 0.081 / 0.089,0.099,0.007
+ACL 4 months + Actuator,32.24,15.87,287.3,0.080 / 0.079 / 0.058 / 0.063,0.07,0.007
+ACL 6 months (no actuator),32.59,15.58,399.7,0.112 / 0.110 / 0.081 / 0.088,0.098,0.009
+ACL 6 months + Actuator,32.59,15.58,279.0,0.079 / 0.077 / 0.056 / 0.061,0.068,0.009
+ACL 12 months (no actuator),34.14,23.54,587.0,0.162 / 0.162 / 0.118 / 0.128,0.142,0.008
+ACL 12 months + Actuator,34.14,23.54,503.0,0.139 / 0.139 / 0.101 / 0.110,0.122,0.008

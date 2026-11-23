@@ -1,0 +1,58 @@
+[2026-11-21 18:15:29.651] [info] Preparing to run AnalyzeTool.
+[2026-11-21 18:15:29.652] [info] AbstractTool ACL2mo_O2_20kPa_a125 loading model ../Models/ACL2mo_O2_20kPa_a125.osim
+[2026-11-21 18:15:29.733] [info] Loaded model gait2392_knee_assist_ACL2mo_O2_20kPa_a125 from file ../Models/ACL2mo_O2_20kPa_a125.osim
+[2026-11-21 18:15:29.734] [warning] Couldn't find file 'treadmill.vtp'.
+[2026-11-21 18:15:29.734] [warning] Couldn't find file 'sacrum.vtp'.
+[2026-11-21 18:15:29.734] [warning] Couldn't find file 'pelvis.vtp'.
+[2026-11-21 18:15:29.734] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2026-11-21 18:15:29.734] [warning] Couldn't find file 'femur_r.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'tibia_r.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'fibula.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'talus.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'foot.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'bofoot.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'femur_l.vtp'.
+[2026-11-21 18:15:29.735] [warning] Couldn't find file 'tibia_l.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'l_fibula.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'l_talus.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'l_foot.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'hat_spine.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'hat_skull.vtp'.
+[2026-11-21 18:15:29.736] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2026-11-21 18:15:29.763] [info] No external loads will be applied (external loads file not specified).
+[2026-11-21 18:15:29.783] [info] Loading coordinates from file 'ACL_2Months_kinematics.mot'.
+[2026-11-21 18:15:29.797] [info] Storage: read data file = ACL_2Months_kinematics.mot (nr=101 nc=24)
+[2026-11-21 18:15:29.847] [info] Found 101 state vectors with time stamps ranging from 0.00705 to 0.705.
+[2026-11-21 18:15:29.847] [info] Executing the analyses from 0.00705 to 0.705...
+[2026-11-21 18:15:31.195] [info] Printing results of investigation ACL2mo_O2_20kPa_a125 to ./Analyze_ACL2mo_O2_20kPa_a125
+[2026-11-21 18:15:31.771] [info] Preparing to run AnalyzeTool.
+[2026-11-21 18:15:31.773] [info] AbstractTool ACL2mo_O1_27kPa_a169 loading model ../Models/ACL2mo_O1_27kPa_a169.osim
+[2026-11-21 18:15:31.865] [info] Loaded model gait2392_knee_assist_ACL2mo_O1_27kPa_a169 from file ../Models/ACL2mo_O1_27kPa_a169.osim
+[2026-11-21 18:15:31.866] [warning] Couldn't find file 'treadmill.vtp'.
+[2026-11-21 18:15:31.866] [warning] Couldn't find file 'sacrum.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'pelvis.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'l_pelvis.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'femur_r.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'tibia_r.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'fibula.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'talus.vtp'.
+[2026-11-21 18:15:31.867] [warning] Couldn't find file 'foot.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'bofoot.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'femur_l.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'tibia_l.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'l_fibula.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'l_talus.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'l_foot.vtp'.
+[2026-11-21 18:15:31.868] [warning] Couldn't find file 'l_bofoot.vtp'.
+[2026-11-21 18:15:31.869] [warning] Couldn't find file 'hat_spine.vtp'.
+[2026-11-21 18:15:31.869] [warning] Couldn't find file 'hat_jaw.vtp'.
+[2026-11-21 18:15:31.869] [warning] Couldn't find file 'hat_skull.vtp'.
+[2026-11-21 18:15:31.869] [warning] Couldn't find file 'hat_ribs.vtp'.
+[2026-11-21 18:15:31.901] [info] No external loads will be applied (external loads file not specified).
+[2026-11-21 18:15:31.928] [info] Loading coordinates from file 'ACL_2Months_kinematics.mot'.
+[2026-11-21 18:15:31.929] [info] Storage: read data file = ACL_2Months_kinematics.mot (nr=101 nc=24)
+[2026-11-21 18:15:31.989] [info] Found 101 state vectors with time stamps ranging from 0.00705 to 0.705.
+[2026-11-21 18:15:31.989] [info] Executing the analyses from 0.00705 to 0.705...
+[2026-11-21 18:15:34.115] [info] Printing results of investigation ACL2mo_O1_27kPa_a169 to ./Analyze_ACL2mo_O1_27kPa_a169

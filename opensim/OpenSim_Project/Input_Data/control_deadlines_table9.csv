@@ -1,0 +1,5 @@
+epoch,IC_ms,torque_must_begin_by_ms,required_torque_at_onset_Nm_a050_m70,peak_torque_deadline_ms,peak_torque_Nm_a050_m70,peak_torque_Nm_a025_m70,decay_begins_ms,torque_near_zero_deadline_ms,next_gait_event,next_event_ms,available_duration_ms,timing_uncertainty_ms,source_status
+2 months,0.0,59.0,4.09,148.0,16.48,8.24,148.0,310.0,toe-off (end of stance),705.0,251.0,'+/-23,BIOMECHANICAL REQUIREMENT - DRAFT; timing ASSUMPTION-derived
+4 months,0.0,58.0,3.56,144.0,12.81,6.41,144.0,302.0,toe-off (end of stance),685.0,244.0,'+/-22,BIOMECHANICAL REQUIREMENT - DRAFT; timing ASSUMPTION-derived
+6 months,0.0,58.0,3.9,143.0,12.97,6.48,143.0,300.0,toe-off (end of stance),683.0,243.0,'+/-22,BIOMECHANICAL REQUIREMENT - DRAFT; timing ASSUMPTION-derived
+12 months,0.0,61.0,2.6,142.0,8.98,4.49,142.0,271.0,toe-off (end of stance),677.0,210.0,'+/-21,BIOMECHANICAL REQUIREMENT - DRAFT; timing ASSUMPTION-derived

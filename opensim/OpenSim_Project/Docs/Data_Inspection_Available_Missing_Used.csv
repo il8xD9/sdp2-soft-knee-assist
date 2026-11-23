@@ -1,0 +1,29 @@
+Variable,Status,What exists (source / sheet),Used in the model?,How it is used / why not
+Knee angle - healthy full gait cycle,AVAILABLE,"Winter 1987 natural cadence, N=19, mean +/- SD, 0-100 %GC every 2 % (sheet 01)",YES,Supplementary full-cycle simulation (HealthyWinter_*); Fig01A; full-cycle ROM
+Knee angle - stance (healthy controls + ACL),AVAILABLE,"Buttner 2025 matched controls (n=58) + ACLR limb + uninvolved limb, pre-op / 2 / 4 / 6 / 12 months, 1-100 % stance every 1 % (sheet 05)",YES,knee_angle_r of every primary simulation (.mot); uninvolved limb not used
+Knee angle - ACL swing phase,MISSING,No ACL swing-phase data in any project source (Table 2B / 3),NO,ACL simulations are stance-only (1-100 % stance)
+Knee moment - healthy full cycle,AVAILABLE,"Winter 1987 internal moment N.m/kg +/- SD (sheet 01)",YES,Net knee moment of HealthyWinter_* simulations
+Knee moment - stance (healthy + ACL),AVAILABLE,"Buttner 2025 internal KEM in BW*height, extension + (sheet 06)",YES,Net knee moment target (N.m = KEM x m x g x h) for the knee static optimization
+Knee torque (absolute N.m),DERIVED,"Not measured; obtained from normalised moments with m = 70 kg, h = 1.70 m (ASM-BIO-02/03)",YES,All N.m values in this project
+Knee moment deficit (healthy - ACL),AVAILABLE,"Table 5A (sheet 07), per epoch, BW*height and N.m/kg",YES,Actuator torque profile T = alpha x m x g x h x dM
+Ground reaction forces - vertical,PARTIAL,"Winter vGRF waveform N/kg (sheet 01); Buttner vGRF only as significant-difference intervals (Table 2B), no waveform",NO,Not needed: the net knee moment is already the source inverse-dynamics result
+"Ground reaction forces - AP / ML, COP, free moment",MISSING,Not in any file,NO,Full-body inverse dynamics in OpenSim is therefore not possible
+Marker trajectories (.trc / .c3d),MISSING,WBDSinfo.csv lists WBDS file NAMES only (7203 rows); the .c3d / mkr.txt / grf.txt files were not supplied,NO,Scaling by markers and inverse kinematics not possible
+Hip and ankle angles / moments,MISSING,Not in any file (healthy or ACL),NO,Hip and ankle held at 0 deg (neutral) in the OpenSim knee analysis (assumption; user-adjustable)
+Muscle forces,MISSING,Not in any file,-,Computed by OpenSim static optimization (run_opensim_knee_SO.py) - NOT YET EXECUTED
+Muscle activations / EMG,MISSING,Not in any file,-,Computed by OpenSim static optimization - NOT YET EXECUTED
+Gait cycle timing - healthy,AVAILABLE (derived),"Winter: stride 1.1396 s (from cadence 105.3 steps/min), toe-off 60 %GC (sheet 01, Table 1b)",YES,Time axis of HealthyWinter_* simulations
+Stance phase timing - ACL / controls,DERIVED (assumption),"Stance durations from Garcia 2023 stance-time vs speed (ASM-BIO-04): controls 0.655 s, 2/4/6/12 mo 0.705/0.685/0.683/0.677 s (Table 8); pre-op 0.708 s computed with the same relation (v = 1.16 m/s)",YES,% stance -> seconds; needed for knee angular velocity (force-velocity) and actuator power
+Swing phase timing - ACL,MISSING,"No cadence, stride time or stance fraction for ACL",NO,-
+Walking speed,AVAILABLE,"Buttner Table 1: controls 1.36, pre-op 1.16, 2 mo 1.17, 4 mo 1.24, 6 mo 1.25, 12 mo 1.27 m/s",YES (indirect),Through the stance-duration relation
+Body mass,MISSING (single subject) / SCENARIO,"Design basis 70 kg (scenarios 60/90 kg, ASM-BIO-03); WBDS metadata: 51 healthy subjects, young group mean 68.4 kg",YES,70 kg design patient
+Stature,MISSING (single subject) / SCENARIO,"h_ref = 1.70 m (ASM-BIO-02); WBDS young group mean 1.71 m",YES,1.70 m (moment conversion and uniform model scaling 1.70/1.80)
+Segment data (lengths / masses / inertia),MISSING,Not in any file,NO,Generic OpenSim gait2392 segments scaled uniformly to 70 kg / 1.70 m
+Actuator torque requirement,AVAILABLE,"Rule T = alpha x m x g x h x dM inside the candidate window (Table G0, CALC-BIO-02); Tables 6A/6B, 9, 10",YES,Torque profile of every assisted simulation (reproduced within 0.006 N.m of Table 6A)
+Actuator capability,AVAILABLE,"CAD V4.1: p_max 100 kPa, contact 3140.3 mm2, r = 34.25 mm, F = 314.0 N, T = 10.76 N.m",YES,Max control of the OpenSim actuator; force / pressure conversion
+Actuator timing / window,AVAILABLE,"8.4-44 % stance (2/4/6 mo), 9-40 % (12 mo), 9-37 % (pre-op) - Table 7; deadlines Table 9",YES,Window of the torque profile
+Actuator direction,AVAILABLE,Knee extension only (bladder pushes the posterior shank),YES,Control limits 0 ... 10.76 N.m
+Actuator moment arm vs knee angle r_eff(theta),MISSING,Only fixed r (Case 1); Case 2 needs FEA,NO,Fixed r used (+/-20 % r -> +/-20 % T)
+"Actuator stroke, speed, flow, valve time t_system, rated power",MISSING,Open items C20/C21 (pneumatic workstream),NO,Mechanical power computed from T x knee angular velocity instead
+Actuator mass,AVAILABLE,97.04 g on the leg (Sec. 8),NO,Inertial effect of 97 g not included (knee-only static analysis)
+Subject anthropometrics (WBDS),AVAILABLE (metadata),"51 subjects: age, height, mass, leg length, gait speed per trial",NO (context only),Supports the 70 kg / 1.70 m design basis; no motion data supplied

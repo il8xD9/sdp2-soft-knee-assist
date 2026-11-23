@@ -1,0 +1,51 @@
+[18:40:51] Runtime: Jython 2.5.2 + OpenSim Java API | version 4.6, build date 21:02:28 Jul  8 2026
+[18:40:51] Model: C:\Users\Personal Use\Desktop\OPensim Result\Actuator_Run\Models\gait2392_scaled_70kg_170cm.osim
+[18:40:51] 2-month data: 101 frames (1-100 % + 8.43 %); healthy peak 41.428 N.m; patient peak 8.659 N.m; deficit peak 32.956 N.m at 21 %; net moment vs OpenSim input file max diff 5.00e-09 N.m
+[18:40:51] Device: k = 206990 mm3 -> T(20 kPa) = 4.1398 N.m, T(27 kPa) = 5.5887 N.m; alpha_lim = 0.1254 / 0.1694 (on 33 N.m)
+[18:40:52] Knee-crossing muscles (13): semimem_r, semiten_r, bifemlh_r, bifemsh_r, sar_r, tfl_r, grac_r, rect_fem_r, vas_med_r, vas_int_r, vas_lat_r, med_gas_r, lat_gas_r
+[18:40:52]    Healthy_Baseline             peak device 0.000 N.m (model read-back max diff 0.0e+00)  peak quad 985.5 N  max|reserve| 0.0109
+[18:40:53]    ACL2mo_Baseline              peak device 0.000 N.m (model read-back max diff 0.0e+00)  peak quad 235.8 N  max|reserve| 0.0060
+[18:40:53] Reference: healthy peak quad 985.5 N (30 Oct run: 985.5)  ACL 2 mo peak quad 235.8 N (30 Oct run: 235.8)
+[18:40:53]    ACL2mo_O1_ideal_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:40:54]    ACL2mo_O1_20kPa_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:40:54]    ACL2mo_O1_27kPa_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:40:54]    ACL2mo_O1_ideal_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:40:55]    ACL2mo_O1_20kPa_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:40:55]    ACL2mo_O1_27kPa_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:40:56]    ACL2mo_O1_ideal_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:56]    ACL2mo_O1_20kPa_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:57]    ACL2mo_O1_27kPa_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:57]    ACL2mo_O1_ideal_a150         peak device 4.943 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:57]    ACL2mo_O1_20kPa_a150         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:58]    ACL2mo_O1_27kPa_a150         peak device 4.943 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:58]    ACL2mo_O1_ideal_a169         peak device 5.570 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:59]    ACL2mo_O1_20kPa_a169         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:40:59]    ACL2mo_O1_27kPa_a169         peak device 5.570 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:00]    ACL2mo_O1_ideal_a200         peak device 6.591 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:00]    ACL2mo_O1_20kPa_a200         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:01]    ACL2mo_O1_27kPa_a200         peak device 5.589 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:01]    ACL2mo_O1_ideal_a500         peak device 16.478 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:01]    ACL2mo_O1_20kPa_a500         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:02]    ACL2mo_O1_27kPa_a500         peak device 5.589 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:02]    ACL2mo_O2_ideal_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:41:02]    ACL2mo_O2_20kPa_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:41:03]    ACL2mo_O2_27kPa_a050         peak device 1.648 N.m (model read-back max diff 0.0e+00)  peak quad 197.9 N  max|reserve| 0.0060
+[18:41:03]    ACL2mo_O2_ideal_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:41:04]    ACL2mo_O2_20kPa_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:41:04]    ACL2mo_O2_27kPa_a100         peak device 3.296 N.m (model read-back max diff 0.0e+00)  peak quad 159.9 N  max|reserve| 0.0060
+[18:41:04]    ACL2mo_O2_ideal_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:05]    ACL2mo_O2_20kPa_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:05]    ACL2mo_O2_27kPa_a125         peak device 4.119 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:05]    ACL2mo_O2_ideal_a150         peak device 4.943 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:06]    ACL2mo_O2_20kPa_a150         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:06]    ACL2mo_O2_27kPa_a150         peak device 4.943 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:06]    ACL2mo_O2_ideal_a169         peak device 5.570 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:07]    ACL2mo_O2_20kPa_a169         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:07]    ACL2mo_O2_27kPa_a169         peak device 5.570 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:07]    ACL2mo_O2_ideal_a200         peak device 6.591 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:08]    ACL2mo_O2_20kPa_a200         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:08]    ACL2mo_O2_27kPa_a200         peak device 5.589 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:08]    ACL2mo_O2_ideal_a500         peak device 8.659 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:09]    ACL2mo_O2_20kPa_a500         peak device 4.140 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:09]    ACL2mo_O2_27kPa_a500         peak device 5.589 N.m (model read-back max diff 0.0e+00)  peak quad 152.4 N  max|reserve| 0.0060
+[18:41:09] FINISHED 43 conditions (+ healthy reference) in 18.1 s

@@ -1,0 +1,149 @@
+RUNTIME=OpenSim GUI scripting (Jython 2.5.2)
+MODEL=C:\Users\Personal Use\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
+SCALE_MODEL=True
+TARGET_MASS_KG=70
+TARGET_HEIGHT_M=1.7
+HIP_FLEXION_DEG=0
+ANKLE_ANGLE_DEG=0
+QUAD_STRENGTH_FACTOR=1
+RESERVE_OPTIMAL_FORCE=1
+conditions_ok=116/116
+elapsed_s=69.4
+
+[17:28:52] Runtime: OpenSim GUI scripting (Jython 2.5.2)
+[17:28:52] Project folder: C:\SDP2_Opensim_Last_New\OpenSim_Project
+[17:28:52] Generic model: C:\Users\Personal Use\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim
+[17:28:52] Generic model mass 75.16 kg, 92 muscles, 23 coordinates
+[17:28:52] Scaled uniformly x0.9444, mass now 70.00 kg
+[17:28:52] Base model saved: C:\SDP2_Opensim_Last_New\OpenSim_Project\Models\gait2392_scaled_70kg_170cm.osim
+[17:28:52] Conditions to run: 116
+[17:28:52] Knee-crossing muscles (13): semimem_r, semiten_r, bifemlh_r, bifemsh_r, sar_r, tfl_r, grac_r, rect_fem_r, vas_med_r, vas_int_r, vas_lat_r, med_gas_r, lat_gas_r
+[17:28:53]    Healthy_Baseline                       muscles=13  peak quad force=985.5 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:54]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> Healthy_Baseline\MuscleAnalysis
+[17:28:55]    Healthy_Assisted_a020cap               muscles=13  peak quad force=834.8 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:55]    Healthy_Assisted_a010                  muscles=13  peak quad force=910.1 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:56]    Healthy_Assisted_a020                  muscles=13  peak quad force=834.8 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:57]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> Healthy_Assisted/a020\MuscleAnalysis
+[17:28:57]    Healthy_Assisted_a025                  muscles=13  peak quad force=797.1 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:58]    Healthy_Assisted_a030                  muscles=13  peak quad force=759.4 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 2.22e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:28:58]    Healthy_Assisted_a040_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:59]    Healthy_Assisted_a040                  muscles=13  peak quad force=684.0 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:59]    Healthy_Assisted_a050_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:28:59]    Healthy_Assisted_a050                  muscles=13  peak quad force=608.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:00]    Healthy_Assisted_a060_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:00]    Healthy_Assisted_a060                  muscles=13  peak quad force=533.3 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:00]    Healthy_Assisted_a070_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:01]    Healthy_Assisted_a070                  muscles=13  peak quad force=457.9 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:01]    Healthy_Assisted_a080_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:02]    Healthy_Assisted_a080                  muscles=13  peak quad force=383.2 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:02]    Healthy_Assisted_a090_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 8.88e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:02]    Healthy_Assisted_a090                  muscles=13  peak quad force=308.8 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 8.88e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:03]    Healthy_Assisted_a100_lim              muscles=13  peak quad force=738.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:03]    Healthy_Assisted_a100                  muscles=13  peak quad force=295.6 N  max|reserve|=0.011 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:04]    ACL_PreOp_Baseline                     muscles=13  peak quad force=530.3 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:05]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_PreOp/Baseline\MuscleAnalysis
+[17:29:06]    ACL_PreOp_Assisted_a010                muscles=13  peak quad force=485.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:07]    ACL_PreOp_Assisted_a020                muscles=13  peak quad force=440.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:09]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_PreOp/Assisted_a020\MuscleAnalysis
+[17:29:09]    ACL_PreOp_Assisted_a025                muscles=13  peak quad force=417.5 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:10]    ACL_PreOp_Assisted_a030                muscles=13  peak quad force=395.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:10]    ACL_PreOp_Assisted_a040                muscles=13  peak quad force=350.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:11]    ACL_PreOp_Assisted_a050                muscles=13  peak quad force=305.9 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:11]    ACL_PreOp_Assisted_a060_lim            muscles=13  peak quad force=282.7 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:11]    ACL_PreOp_Assisted_a060                muscles=13  peak quad force=263.2 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:12]    ACL_PreOp_Assisted_a070_lim            muscles=13  peak quad force=282.7 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:12]    ACL_PreOp_Assisted_a070                muscles=13  peak quad force=224.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:13]    ACL_PreOp_Assisted_a080_lim            muscles=13  peak quad force=282.7 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:13]    ACL_PreOp_Assisted_a080                muscles=13  peak quad force=200.1 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:14]    ACL_PreOp_Assisted_a090_lim            muscles=13  peak quad force=282.7 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:14]    ACL_PreOp_Assisted_a090                muscles=13  peak quad force=200.1 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:14]    ACL_PreOp_Assisted_a100_lim            muscles=13  peak quad force=282.7 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:15]    ACL_PreOp_Assisted_a100                muscles=13  peak quad force=200.1 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:15]    ACL_PreOp_Assisted_a020cap             muscles=13  peak quad force=440.0 N  max|reserve|=0.005 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:16]    ACL_2Months_Baseline                   muscles=13  peak quad force=235.8 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:17]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_2Months/Baseline\MuscleAnalysis
+[17:29:18]    ACL_2Months_Assisted_a010              muscles=13  peak quad force=159.9 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:18]    ACL_2Months_Assisted_a020              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:20]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_2Months/Assisted_a020\MuscleAnalysis
+[17:29:20]    ACL_2Months_Assisted_a025              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:20]    ACL_2Months_Assisted_a030              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 2.22e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:21]    ACL_2Months_Assisted_a040_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:21]    ACL_2Months_Assisted_a040              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:22]    ACL_2Months_Assisted_a050_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:22]    ACL_2Months_Assisted_a050              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:23]    ACL_2Months_Assisted_a060_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:23]    ACL_2Months_Assisted_a060              muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:23]    ACL_2Months_Assisted_a070_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:24]    ACL_2Months_Assisted_a070              muscles=13  peak quad force=152.4 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:24]    ACL_2Months_Assisted_a080_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:25]    ACL_2Months_Assisted_a080              muscles=13  peak quad force=152.4 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:25]    ACL_2Months_Assisted_a090_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:26]    ACL_2Months_Assisted_a090              muscles=13  peak quad force=152.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:26]    ACL_2Months_Assisted_a100_lim          muscles=13  peak quad force=152.4 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:26]    ACL_2Months_Assisted_a100              muscles=13  peak quad force=152.4 N  max|reserve|=0.010 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:27]    ACL_2Months_Assisted_a020cap           muscles=13  peak quad force=152.4 N  max|reserve|=0.006 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:27]    ACL_4Months_Baseline                   muscles=13  peak quad force=406.8 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:29]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_4Months/Baseline\MuscleAnalysis
+[17:29:29]    ACL_4Months_Assisted_a010              muscles=13  peak quad force=346.8 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:29]    ACL_4Months_Assisted_a020              muscles=13  peak quad force=287.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:31]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_4Months/Assisted_a020\MuscleAnalysis
+[17:29:31]    ACL_4Months_Assisted_a025              muscles=13  peak quad force=257.7 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 2.22e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:32]    ACL_4Months_Assisted_a030              muscles=13  peak quad force=228.1 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:32]    ACL_4Months_Assisted_a040              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:33]    ACL_4Months_Assisted_a050_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:33]    ACL_4Months_Assisted_a050              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:34]    ACL_4Months_Assisted_a060_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:34]    ACL_4Months_Assisted_a060              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:34]    ACL_4Months_Assisted_a070_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:35]    ACL_4Months_Assisted_a070              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:35]    ACL_4Months_Assisted_a080_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:36]    ACL_4Months_Assisted_a080              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:36]    ACL_4Months_Assisted_a090_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:36]    ACL_4Months_Assisted_a090              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:37]    ACL_4Months_Assisted_a100_lim          muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 8.88e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:37]    ACL_4Months_Assisted_a100              muscles=13  peak quad force=189.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 8.88e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:38]    ACL_4Months_Assisted_a020cap           muscles=13  peak quad force=287.3 N  max|reserve|=0.007 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:38]    ACL_6Months_Baseline                   muscles=13  peak quad force=399.7 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:40]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_6Months/Baseline\MuscleAnalysis
+[17:29:40]    ACL_6Months_Assisted_a010              muscles=13  peak quad force=339.0 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:41]    ACL_6Months_Assisted_a020              muscles=13  peak quad force=279.0 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:42]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_6Months/Assisted_a020\MuscleAnalysis
+[17:29:43]    ACL_6Months_Assisted_a025              muscles=13  peak quad force=249.1 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:43]    ACL_6Months_Assisted_a030              muscles=13  peak quad force=219.1 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:44]    ACL_6Months_Assisted_a040              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:44]    ACL_6Months_Assisted_a050_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:45]    ACL_6Months_Assisted_a050              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:45]    ACL_6Months_Assisted_a060_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:45]    ACL_6Months_Assisted_a060              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:46]    ACL_6Months_Assisted_a070_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:46]    ACL_6Months_Assisted_a070              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:47]    ACL_6Months_Assisted_a080_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:47]    ACL_6Months_Assisted_a080              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:47]    ACL_6Months_Assisted_a090_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:48]    ACL_6Months_Assisted_a090              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:48]    ACL_6Months_Assisted_a100_lim          muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:49]    ACL_6Months_Assisted_a100              muscles=13  peak quad force=194.4 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:49]    ACL_6Months_Assisted_a020cap           muscles=13  peak quad force=279.0 N  max|reserve|=0.009 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:49]    ACL_12Months_Baseline                  muscles=13  peak quad force=587.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:51]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_12Months/Baseline\MuscleAnalysis
+[17:29:51]    ACL_12Months_Assisted_a010             muscles=13  peak quad force=545.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:52]    ACL_12Months_Assisted_a020             muscles=13  peak quad force=503.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:53]       native AnalyzeTool (MuscleAnalysis + Actuation) done -> ACL_12Months/Assisted_a020\MuscleAnalysis
+[17:29:54]    ACL_12Months_Assisted_a025             muscles=13  peak quad force=482.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:54]    ACL_12Months_Assisted_a030             muscles=13  peak quad force=461.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:54]    ACL_12Months_Assisted_a040             muscles=13  peak quad force=419.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:55]    ACL_12Months_Assisted_a050             muscles=13  peak quad force=377.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:55]    ACL_12Months_Assisted_a060_lim         muscles=13  peak quad force=335.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:56]    ACL_12Months_Assisted_a060             muscles=13  peak quad force=335.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:56]    ACL_12Months_Assisted_a070_lim         muscles=13  peak quad force=334.5 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:57]    ACL_12Months_Assisted_a070             muscles=13  peak quad force=293.1 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 4.44e-16)  F_max method={'rigid-tendon FLV': 100}
+[17:29:57]    ACL_12Months_Assisted_a080_lim         muscles=13  peak quad force=334.5 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:57]    ACL_12Months_Assisted_a080             muscles=13  peak quad force=251.6 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:58]    ACL_12Months_Assisted_a090_lim         muscles=13  peak quad force=334.5 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:58]    ACL_12Months_Assisted_a090             muscles=13  peak quad force=238.6 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:59]    ACL_12Months_Assisted_a100_lim         muscles=13  peak quad force=334.5 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:59]    ACL_12Months_Assisted_a100             muscles=13  peak quad force=238.6 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:29:59]    ACL_12Months_Assisted_a020cap          muscles=13  peak quad force=503.0 N  max|reserve|=0.008 N.m  device-from-model={'getControl': 100} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 100}
+[17:30:00]    HealthyWinter_FullGait_Baseline        muscles=13  peak quad force=998.7 N  max|reserve|=0.013 N.m  device-from-model={'getControl': 51} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 51}
+[17:30:00]    HealthyWinter_FullGait_Assisted_a020   muscles=13  peak quad force=854.5 N  max|reserve|=0.013 N.m  device-from-model={'getControl': 51} (max diff vs file 0.00e+00)  F_max method={'rigid-tendon FLV': 51}
+[17:30:01] FINISHED: 116 of 116 conditions in 69.4 s

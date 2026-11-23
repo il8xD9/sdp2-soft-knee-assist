@@ -1,0 +1,13 @@
+check,item,max_abs_difference,tolerance,unit,outcome,note
+R1,"05_Stance_Angle, 15 columns x 100 points",0.0,1e-09,deg,PASS,
+R2,"06_Stance_Moment, 15 columns x 100 points",0.0,1e-09,BW*h,PASS,
+R3,Full-deficit peak torque 2 months,0.006100000000003547,0.05,N.m,PASS,package 32.968 vs CALC-BIO-03 32.9619
+R3,Full-deficit peak torque 4 months,0.00039999999999906777,0.05,N.m,PASS,package 25.627 vs CALC-BIO-03 25.6266
+R3,Full-deficit peak torque 6 months,0.0016999999999995907,0.05,N.m,PASS,package 25.931 vs CALC-BIO-03 25.9293
+R3,Full-deficit peak torque 12 months,0.005000000000002558,0.05,N.m,PASS,package 17.960 vs CALC-BIO-03 17.9550
+R4,Window frames preop (CALC-BIO-03 9.00-37.00 vs package 9.0-37.0),0.0,0.0,frames,PASS,
+R4,Window frames 2 months (CALC-BIO-03 8.43-44.04 vs package 8.4-44.0),0.0,0.0,frames,PASS,
+R4,Window frames 4 months (CALC-BIO-03 8.44-44.03 vs package 8.4-44.0),0.0,0.0,frames,PASS,
+R4,Window frames 6 months (CALC-BIO-03 8.44-44.03 vs package 8.4-44.0),0.0,0.0,frames,PASS,
+R4,Window frames 12 months (CALC-BIO-03 9.00-40.00 vs package 9.0-40.0),0.0,0.0,frames,PASS,
+R5,Stance durations Table 8,0.0,1e-06,s,PASS,

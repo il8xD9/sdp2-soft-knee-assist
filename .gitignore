@@ -14,3 +14,7 @@ __pycache__/
 *.pyc
 # Office lock files
 ~$*
+# MATLAB model: output of a run (re-made by run_all_rev27 / make_report_figures)
+matlab/results/
+# OpenSim (Jython cache made by the launcher)
+jycache/

@@ -25,13 +25,25 @@ The feasibility study was completed; on the analytical design basis the studied 
 
 ## Contents
 
-| Folder | What it holds |
-|---|---|
-| [`appendices/`](appendices/) | Appendices A–P of the final report: [all in one PDF](appendices/SDP_II_Final_Report_Appendices_A-P.pdf) (236 pages, with bookmarks) and one folder per appendix. |
-| [`fea/`](fea/) | The idealised reference finite element model of the bladder (Appendix P): [report](fea/report/FEA_Idealised_Reference_Report.pdf), results, input decks, CAD and scripts. Start with [`fea/README.md`](fea/README.md). |
+```
+sdp2-soft-knee-assist/
+├── appendices/   Appendices A–P of the final report (PDF)
+├── opensim/      Musculoskeletal model: knee moments and muscle forces (OpenSim 4.6)
+├── matlab/       Pneumatic system model: valves, bladder, controller (MATLAB / Simulink)
+└── fea/          Finite element model of the bladder actuator (Inventor Nastran)
+```
+
+| Folder | What it holds | Software | Start with |
+|---|---|---|---|
+| [`appendices/`](appendices/) | Appendices A–P of the final report: [all in one PDF](appendices/SDP_II_Final_Report_Appendices_A-P.pdf) (236 pages, with bookmarks) and one folder per appendix. | PDF reader | [`appendices/README.md`](appendices/README.md) |
+| [`opensim/`](opensim/) | Knee static optimisation of a healthy subject and of ACL patients (pre-op, 2, 4, 6 and 12 months), without the device (116 conditions) and with the bladder actuator (44 conditions): models, inputs, results, tables and figures. | OpenSim 4.6; Python 3 for post-processing | [`opensim/README.md`](opensim/README.md) |
+| [`matlab/`](matlab/) | Time-domain model of the pneumatic system (Rev 27): set point, venting, fault cases, air supply, and the pneumatic and analytical figures of the report. | MATLAB + Simulink | [`matlab/README.md`](matlab/README.md) |
+| [`fea/`](fea/) | The idealised reference finite element model of the bladder (Appendix P): [report](fea/report/FEA_Idealised_Reference_Report.pdf), results, input decks, CAD and scripts. | Autodesk Inventor Nastran 2026; Python 3 | [`fea/README.md`](fea/README.md) |
 
 The raw solver output of the FEA (12 zip files, 0.45 GB) is attached to the release
 [`raw-solver-output`](https://github.com/il8xD9/sdp2-soft-knee-assist/releases/tag/raw-solver-output).
+
+To download everything: **Code → Download ZIP** on this page (the release zips are downloaded separately).
 
 ## Appendices
 

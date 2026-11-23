@@ -1,0 +1,13 @@
+Condition,Peak net knee ext. moment (N.m),"Peak biological knee ext. moment, early stance (N.m)","Peak quadriceps force, early stance (N)",Peak actuator torque (N.m),"Knee moment reduction, early-stance peak (%)","Quadriceps force reduction, peak (%)","Quadriceps force reduction, window impulse (%)"
+Healthy (matched controls) (no actuator),41.41,41.41,985.5,0.0,-,-,-
+Healthy (matched controls) + Actuator,41.41,34.85,834.8,6.59,15.9,15.3,16.5
+ACL Pre-op (no actuator),21.54,21.54,530.3,0.0,-,-,-
+ACL Pre-op + Actuator,21.54,17.58,440.0,3.99,18.4,17.0,16.6
+ACL 2 months (no actuator),8.66,8.66,235.8,0.0,-,-,-
+ACL 2 months + Actuator,8.66,2.24,85.6,6.59,74.1,63.7,55.2
+ACL 4 months (no actuator),15.87,15.87,406.8,0.0,-,-,-
+ACL 4 months + Actuator,15.87,10.76,287.3,5.13,32.2,29.4,31.5
+ACL 6 months (no actuator),15.58,15.58,399.7,0.0,-,-,-
+ACL 6 months + Actuator,15.58,10.41,279.0,5.19,33.2,30.2,33.2
+ACL 12 months (no actuator),23.54,23.54,587.0,0.0,-,-,-
+ACL 12 months + Actuator,23.54,19.96,503.0,3.59,15.2,14.3,16.3

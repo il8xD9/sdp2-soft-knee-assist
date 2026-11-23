@@ -1,0 +1,6 @@
+epoch,window_pct_stance,pct_of_window_with_ACL_net_moment_<=0,stance_pct_with_net_<=0,alpha_where_device_equals_net_at_deficit_peak,alpha_max_capability
+preop,9-37,3.4,9,1.071,0.539
+2months,9-44,33.3,"9, 10, 11, 12, 37, 38, 39, 40, 41, 42, 43, 44",0.254,0.326
+4months,9-44,22.2,"9, 10, 39, 40, 41, 42, 43, 44",0.612,0.42
+6months,9-44,25.0,"9, 10, 11, 39, 40, 41, 42, 43, 44",0.593,0.415
+12months,9-40,3.1,9,1.301,0.599

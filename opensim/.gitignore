@@ -1,0 +1,5 @@
+jycache/
+__pycache__/
+*.pyc
+*.class
+~$*

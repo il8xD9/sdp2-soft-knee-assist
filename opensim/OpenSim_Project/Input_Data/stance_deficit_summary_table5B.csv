@@ -1,0 +1,6 @@
+epoch,days_since_ACLR,n_ACLR,walking_speed_m_s,peak_healthy_KEM_BWh,pct_at_healthy_peak,peak_ACLR_KEM_BWh,pct_at_ACLR_peak,peak_dM_BWh,pct_at_dM_peak,peak_dM_Nm_per_kg_href,pct_difference_of_peaks,deficit_onset_dM_gt0,deficit_offset_dM_gt0,documented_sig_interval_Table5,knee_flex_excursion_ACLR_deg,knee_flex_excursion_Control_deg,evidence_quality
+preop,10.6 +/- 10.2 d before ACLR,50.0,1.16,0.03548,22.0,0.01846,22.0,0.0171,21.0,0.285,48.0,2.4,43.3,2037-09-01,10.1,13.8,Primary prospective cohort; functional mixed-effects group means (peer-reviewed
+2 months,56.6 +/- 5.5 d,54.0,1.17,0.0355,22.0,0.00742,23.0,0.02825,21.0,0.471,79.1,1.0,53.0,2045-07-01,7.7,13.8,Primary prospective cohort; functional mixed-effects group means (peer-reviewed
+4 months,114.4 +/- 6.3 d,55.0,1.24,0.03548,22.0,0.0136,22.0,0.02196,21.0,0.366,61.7,1.0,54.9,2045-08-01,9.5,13.8,Primary prospective cohort; functional mixed-effects group means (peer-reviewed
+6 months,174.6 +/- 9.3 d,53.0,1.25,0.03547,22.0,0.01335,22.0,0.02222,21.0,0.37,62.4,1.0,59.0,2047-07-01,9.8,13.8,Primary prospective cohort; functional mixed-effects group means (peer-reviewed
+12 months,346.9 +/- 15.8 d,50.0,1.27,0.0355,22.0,0.02017,22.0,0.01539,21.0,0.257,43.2,1.0,54.0,2040-09-01,11.0,13.8,Primary prospective cohort; functional mixed-effects group means (peer-reviewed

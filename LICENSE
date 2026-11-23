@@ -1,9 +1,10 @@
 Copyright (c) 2026 SDP II team, Yanbu Industrial College: Mohannad Ahmed Aljawi, Nawaf Ahmed Masoud, Meshal Baothman,
 Basem Aymen Aljohani. All rights reserved.
 
-This repository (the appendices of the final report, and the finite element model with its scripts, input decks, mesh,
-CAD files, results, figures, report and the raw solver output attached to its release) is published so that the
-examining committee and other readers can view it and re-run the simulation for review. It belongs to the SDP II final
+This repository (the appendices of the final report; the finite element model with its scripts, input decks, mesh,
+CAD files, results, figures, report and the raw solver output attached to its release; the OpenSim musculoskeletal
+model and the MATLAB / Simulink pneumatic model with their scripts, inputs, results and figures) is published so that
+the examining committee and other readers can view it and re-run the simulations for review. It belongs to the SDP II final
 report "Analytical and Simulation-Based Feasibility Study of a Soft Pneumatic Knee Assist Concept for Post-ACL
 Reconstruction Gait" (Yanbu Industrial College, 2026).
 

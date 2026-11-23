@@ -1,0 +1,18 @@
+file,source_sheet_table,rows
+healthy_winter1987_full_gait.csv,01_Healthy_Full_Gait / TABLE 1,51
+healthy_winter1987_events.csv,01_Healthy_Full_Gait / TABLE 1b,15
+aclr_recovery_epochs_table2A.csv,02_ACLR_Recovery_Epochs / TABLE 2A,11
+aclr_gait_evolution_table2B.csv,03_ACLR_Full_Gait / TABLE 2B,18
+buttner2025_stance_knee_angle_deg.csv,05_Stance_Angle / TABLE 4,100
+buttner2025_stance_knee_moment_BWh.csv,06_Stance_Moment / TABLE 4,100
+stance_deficit_table5A.csv,07_Stance_Deficit / TABLE 5A,100
+stance_deficit_summary_table5B.csv,07_Stance_Deficit / TABLE 5B,5
+team_torque_envelope_table6B.csv,08_Assist_Torque / TABLE 6B,36
+team_required_torque_table6A.csv,08_Assist_Torque / TABLE 6A,4800
+assist_window_table7.csv,09_Assist_Window / TABLE 7,5
+gait_timing_table8.csv,10_Gait_Timing / TABLE 8,6
+control_deadlines_table9.csv,11_Control_Deadlines / TABLE 9,4
+assumptions_ASM_BIO.csv,15_Assumptions / ASSUMPTIONS,8
+conflicts_CF.csv,16_Conflicts / CONFLICTS,9
+handover_time_series_table10B2.csv,13_Nawaf_Handover / TABLE 10B-2,400
+wbds_subject_anthropometrics.csv,WBDSinfo.csv (one row per subject),51

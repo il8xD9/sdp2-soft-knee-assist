@@ -1,0 +1,16 @@
+event,pct_GC,time_s,value,unit,basis
+M_int zero crossing (neg->pos),4.68,0.0534,0.0,N.m/kg,DERIVED linear interpolation of Tab.4.24(b)
+M_int zero crossing (pos->neg),27.46,0.313,0.0,N.m/kg,DERIVED linear interpolation of Tab.4.24(b)
+M_int zero crossing (neg->pos),52.14,0.5942,0.0,N.m/kg,DERIVED linear interpolation of Tab.4.24(b)
+M_int zero crossing (pos->neg),76.62,0.8731,0.0,N.m/kg,DERIVED linear interpolation of Tab.4.24(b)
+Peak internal extensor moment (stance),14.0,0.1595,0.615,N.m/kg,DIRECT (grid max)
+Second extensor peak (pre-swing),58.0,0.661,0.157,N.m/kg,DIRECT (grid max 40-70 %GC)
+Peak internal flexor moment (mid/terminal stance),44.0,0.5014,-0.27,N.m/kg,DIRECT (grid min 20-60 %GC)
+Peak internal flexor moment (terminal swing),96.0,1.094,-0.263,N.m/kg,DIRECT (grid min 62-100 %GC)
+Loading-response knee flexion peak,14.0,0.1595,21.67,deg,DIRECT (grid max 0-40 %GC)
+Mid/terminal-stance extension minimum,40.0,0.4558,7.72,deg,DIRECT (grid min 20-60 %GC)
+Swing knee flexion peak,72.0,0.8205,64.86,deg,DIRECT (grid max 60-100 %GC)
+Terminal-swing knee angle minimum,98.0,1.1168,0.54,deg,DIRECT (grid min 85-100 %GC)
+Toe-off,60.0,0.6838,NA,'-,Winter 1987 Figs 4.24(a)-(c) p.34 label TOE OFF=60% (Perry 62 % = CONFLICT)
+Stride duration,100.0,1.1396,NA,s,DERIVED T=120/f_cad (f_cad 105.3 steps/min Sec.4.24 p.34)
+Stance duration,60.0,0.6838,NA,s,DERIVED 0.60 x stride
