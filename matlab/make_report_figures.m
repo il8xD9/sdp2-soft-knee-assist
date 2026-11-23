@@ -1,5 +1,5 @@
 function T = make_report_figures(mode, show)
-%MAKE_REPORT_FIGURES  The pneumatic and analytical graphs of the SDP-II final report (D36),
+%MAKE_REPORT_FIGURES  The pneumatic and analytical graphs of the SDP-II final report,
 %   made by the Rev 27 MATLAB / Simulink model and saved under their report numbers in
 %   results\report_figures\ (Figure_6_7.png, Figure_6_7.fig, ...).
 %
@@ -18,7 +18,7 @@ function T = make_report_figures(mode, show)
 %                                       (also written to report_figure_index.csv)
 %
 %   Report figure  <- package output
-%     4.2, 4.8, 4.9, 6.10, M.2, M.3, M.4   rpt_fig_*.m (analytical, Basem's data, k3D band)
+%     4.2, 4.8, 4.9, 6.10, M.2, M.3, M.4   rpt_fig_*.m (analytical, gait data, k3D band)
 %     4.10  fig19 (ka_system_diagram)      5.4  fig01 (run27_inputs)
 %     5.5   fig15 (run27_simulink)         5.6  fig14 ..._P20_W2_in1 (sim_ka_simulink)
 %     6.7   fig08 (run27_n1_n4)            6.8  fig11 (run27_n1_n4)
@@ -31,7 +31,7 @@ function T = make_report_figures(mode, show)
 %   moments and knee angle, Bittner et al. digitised), 4.4-4.7 (CAD), 5.1-5.3, 6.1-6.6,
 %   7.1 and M.10 (OpenSim / FEA), 6.13 (evidence chain), M.15 (earlier Simulink layout).
 %
-%   HARDWARE VALUES ARE PROPOSED, NOT APPROVED - see ka_params.m.
+%   Hardware values: see ka_params.m.
 
 if nargin < 1 || isempty(mode), mode = 'quick'; end
 if nargin < 2 || isempty(show), show = false; end
@@ -48,7 +48,7 @@ old_vis = get(0, 'DefaultFigureVisible');
 restore = onCleanup(@() set(0, 'DefaultFigureVisible', old_vis));
 set(0, 'DefaultFigureVisible', 'off');
 t0 = tic;
-fprintf('\n===== Report figures (SDP-II final report D36) from the Rev 27 model, mode ''%s'' =====\n', mode);
+fprintf('\n===== Report figures (SDP-II final report) from the Rev 27 model, mode ''%s'' =====\n', mode);
 
 %% ---- 1. simulation runs (optional) ----
 switch mode
@@ -62,7 +62,7 @@ end
 close all
 
 %% ---- 2. analytical figures (drawn here) ----
-p = rpt_base(1, 2);                      % 20 kPa, window option 2, Basem's data, k3D
+p = rpt_base(1, 2);                      % 20 kPa, window option 2, gait data, k3D
 fprintf('Design point: k = %.4f N m/kPa, alpha = %.4f, onset demand %.2f kPa(g)\n', ...
         p.k_Nm_per_kPa, p.alpha, p.p_on_kPa);
 ana = {'Figure_4_2',  @rpt_fig_4_2;

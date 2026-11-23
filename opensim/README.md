@@ -39,9 +39,9 @@ More details are in `OpenSim_Project/README.md` and `OpenSim_Project/Docs/HOW_TO
 
 ---
 
-## بالعربي
+## Quick reference
 
-- `OpenSim_Project`: التشغيل **بدون** الـ actuator.
-- `Actuator_Run`: التشغيل **مع** الـ actuator.
-- شغّل `RUN_OpenSim.bat` واختر رقم: 1 بدون actuator، 2 تجربة سريعة، 3 مع actuator، 4 الاثنين.
-- لازم يكون OpenSim 4.6 مثبّت، والمجلد في مسار كل حروفه إنجليزية.
+- `OpenSim_Project`: the run **without** the actuator.
+- `Actuator_Run`: the run **with** the actuator.
+- Run `RUN_OpenSim.bat` and choose a number: 1 without actuator, 2 quick test, 3 with actuator, 4 both.
+- OpenSim 4.6 must be installed, and the folder must be on a path written in English letters only.

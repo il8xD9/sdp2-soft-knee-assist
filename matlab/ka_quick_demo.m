@@ -1,4 +1,4 @@
-%KA_QUICK_DEMO  First test: one stride at the design alpha for the Rev 27 DESIGN SYSTEM:
+%KA_QUICK_DEMO  First test: one stride at the design alpha for the DESIGN SYSTEM:
 %   design point 20 kPa(g), window option 2 (13-36 % stance, capped at the
 %   patient's moment), ONE MHJ10 inlet, two MHE3 at the bladder port,
 %   3D torque constant 0.207 N m/kPa. About 1-2 min (most of it the tables

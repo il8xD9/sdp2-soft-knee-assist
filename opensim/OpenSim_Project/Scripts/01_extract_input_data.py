@@ -2,7 +2,7 @@
 """
 01_extract_input_data.py
 ------------------------
-PURPOSE : Read the team's Biomechanics_Master_Data.xlsx (closure package, 29 Sep 2026)
+PURPOSE : Read the biomechanics workbook Biomechanics_Master_Data.xlsx
           and write tidy, machine-readable CSV files into Input_Data/.
           Nothing is invented: every column is copied from a named sheet/table.
 INPUT   : Input_Data/Source_Files/Biomechanics_Master_Data.xlsx
@@ -91,7 +91,7 @@ df = table_after_header(r, i5b + 1, ncols=18)
 df.to_csv(os.path.join(OUT, "stance_deficit_summary_table5B.csv"), index=False)
 log.append(("stance_deficit_summary_table5B.csv", "07_Stance_Deficit / TABLE 5B", len(df)))
 
-# --- Sheet 08: required torque (team calculation CALC-BIO-02, used for VALIDATION) ---
+# --- Sheet 08: required torque (biomechanics calculation, used for VALIDATION) -------
 r = sheet_rows("08_Assist_Torque")
 df = table_after_header(r, 3, ncols=14)
 df.to_csv(os.path.join(OUT, "team_torque_envelope_table6B.csv"), index=False)
@@ -112,7 +112,7 @@ for sh, fn, tag in [("09_Assist_Window", "assist_window_table7.csv", "TABLE 7"),
     df.to_csv(os.path.join(OUT, fn), index=False)
     log.append((fn, sh + " / " + tag, len(df)))
 
-# --- Sheet 13: Nawaf handover (knee angle / torque vs time) --------------------------
+# --- Sheet 13: knee angle / torque vs time (input table of the pneumatic model) -------
 r = sheet_rows("13_Nawaf_Handover")
 i = [k for k, x in enumerate(r) if x[0] and str(x[0]).startswith("TABLE 10B-2")][0]
 df = table_after_header(r, i + 1, ncols=13)

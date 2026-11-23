@@ -1,10 +1,10 @@
 # Models folder
 
-The OpenSim models are generated ON YOUR COMPUTER by `Scripts/run_opensim_knee_SO.py`, because the
-base model (OpenSim's bundled `gait2392_simbody.osim`, 23 DOF / 92 muscles) is part of your OpenSim
-installation and could not be downloaded into the cloud workspace (no network access there).
+The OpenSim models in this folder are written by `Scripts/run_opensim_knee_SO.py` from OpenSim's bundled
+`gait2392_simbody.osim` (23 DOF / 92 muscles), which is part of the OpenSim 4.6 installation.
+Running the script again re-writes them.
 
-After the run this folder contains:
+This folder contains:
 
 | File | Content |
 |---|---|

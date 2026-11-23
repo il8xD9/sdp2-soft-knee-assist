@@ -1,10 +1,10 @@
 function mdl = build_ka_simulink(mdl)
-%BUILD_KA_SIMULINK  Builds the Simulink model knee_assist_rev27.slx from blocks (Rev 27, Week 11).
+%BUILD_KA_SIMULINK  Builds the Simulink model knee_assist_rev27.slx from blocks.
 %
 %   Structure (same order of operations as ka_simulate.m):
 %     Pressure sensor (Delay 1.0 ms)  ->  Controller board  ->  Valves  ->  Pneumatic plant
 %       Controller board : Interpreted MATLAB Function sl_ka_logic -> ka_logic_step
-%                          (contact rules G-1..G-5, window clock, PI + FF + AW (Rev 22),
+%                          (contact rules G-1..G-5, window clock, PI + FF + AW,
 %                           200 Hz PWM, faults, trip, watchdog, supply switch, pump switch)
 %       Valves           : MHJ10 inlet  = min(Delay 1.0 ms, Delay 0.5 ms) of its command
 %                          (design system: ONE MHJ10; the flow comes from ka_p.n_in)
@@ -180,7 +180,7 @@ add_line(mdl, 'Controller board/6', 'Scope mux/2', 'autorouting', 'on');
 add_line(mdl, 'Scope mux/1', 'Bladder and reference (kPa g)/1');
 
 try
-    add_block('built-in/Note', [mdl '/Knee assist Rev 27 (Week 11) - pneumatic loop, actuator-V8 (391 mL), k3D 0.207 N m per kPa. Design system: 20 kPa, window 2 (13-36 %), ONE MHJ10, two MHE3 at the port; relief valve = future work. Hardware PROPOSED, NOT APPROVED (ka_params.m).'], ...
+    add_block('built-in/Note', [mdl '/Knee assist Rev 27 - pneumatic loop, bladder 391 mL, k3D 0.207 N m per kPa. Design system: 20 kPa, window 2 (13-36 %), ONE MHJ10, two MHE3 at the port; no relief valve. Hardware values in ka_params.m.'], ...
               'Position', [150 20]);
 catch
 end

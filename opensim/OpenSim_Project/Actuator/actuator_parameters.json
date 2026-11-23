@@ -1,8 +1,8 @@
 {
   "name": "knee_assist_r",
   "type_in_OpenSim": "CoordinateActuator on knee_angle_r (generalized torque about the knee flexion axis, extension +) driven by a PrescribedController",
-  "physical_device": "Posterior-knee TPU bladder (actuator-V4), restraint cover, strap harness",
-  "working_principle": "pressure p on the shank-side contact patch -> force F = p*A acting at the patch centroid -> knee extension torque T = F*r (Section 6)",
+  "physical_device": "Posterior-knee TPU bladder (CAD V4.1), restraint cover, strap harness",
+  "working_principle": "pressure p on the shank-side contact patch -> force F = p*A acting at the patch centroid -> knee extension torque T = F*r",
   "max_pressure_kPa": 100.0,
   "contact_width_mm": 45.400000000000006,
   "contact_length_mm": 68.5,
@@ -35,10 +35,10 @@
       40
     ]
   },
-  "window_source": "Table 7 candidate window (8.4-44 / 9-40 % stance) on the 1 % grid used by team Table 6A (in_candidate_window flags)",
+  "window_source": "Table 7 candidate window (8.4-44 / 9-40 % stance) on the 1 % grid used by Table 6A of the biomechanics workbook (in_candidate_window flags)",
   "timing_rule": "torque = alpha * m * g * h * dM(phi) inside window, 0 outside (Table G0 / CALC-BIO-03)",
   "alpha_primary": 0.2,
-  "alpha_primary_reason": "largest tabulated alpha that the 100 kPa actuator meets at every epoch for 70 kg / 1.70 m (Table 6-1, constraint C18; used in C20)",
+  "alpha_primary_reason": "working case of the design (6.59 N.m at 2 months, CALC-BIO-03 Table 6B); within the 100 kPa capability at every epoch for 70 kg / 1.70 m",
   "alpha_low": 0.25,
   "alpha_max_rule": "alpha_max = T_max / peak full-deficit torque (capability-limited, peak = 10.65 N.m)",
   "alpha_sweep": [
@@ -56,7 +56,7 @@
   ],
   "alpha_sweep_profiles": "requested = alpha x m g h dM (ideal torque source, may exceed the device); device_limited = min(requested, 10.76 N.m) (what the V4.1 bladder delivers at <= 100 kPa)",
   "stroke_mm": "NOT PROVIDED",
-  "speed": "NOT PROVIDED (t_system, valve/tube flow open - C20/C21)",
+  "speed": "NOT PROVIDED (t_system and valve/tube flow belong to the pneumatic model, not to this package)",
   "rated_power": "NOT PROVIDED (mechanical power is computed here from torque x knee angular velocity)",
   "mass_on_leg_g": 97.04,
   "free_flexion": "vented outside the window; must not resist ~30 deg before toe-off and ~65 deg in swing",

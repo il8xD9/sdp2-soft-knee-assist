@@ -8,7 +8,7 @@ import numpy as np
 from scipy.interpolate import PchipInterpolator
 
 OUT = os.path.dirname(os.path.abspath(__file__))
-# CAD v8 (12 Nov 2026): option A150 = thigh strap at +150 (Biomech B8 row 32, main), A100 = thigh strap at +100 (comparison).
+# Final CAD: option A150 = thigh strap at +150 (biomechanics table B8, main), A100 = thigh strap at +100 (comparison).
 # Both: calf strap at -120 (widest calf girth, C1), pad extended (Q1), M3 webbing carriers (Q2), cover follows the bladder (C4/C5).
 OPT = sys.argv[1] if len(sys.argv) > 1 else 'A150'
 Y_TF = 150.0 if OPT == 'A150' else 100.0          # thigh far strap centre (mm above the knee line)

@@ -1,11 +1,11 @@
 function p = ka_derived(p)
 %KA_DERIVED  Values that follow from the pressure case, the window and the torque relation.
 %   k      torque per kPa (N m/kPa):
-%          '3D' (Rev 27, governing, team T4): k3D = dV/dtheta on the CAD cavity
-%               = 206 990 mm^3 at d_h 65 mm -> 0.2070 N m/kPa (Meshal hand calc v5 SH-C04);
+%          '3D' (governing): k3D = dV/dtheta on the CAD cavity
+%               = 206 990 mm^3 at d_h 65 mm -> 0.2070 N m/kPa (hand calculation SH-C04);
 %               other d_h from the k3D band (0/50/65/80 mm), linear between them
 %          '2D' (comparison): k2D = A_i (d_h + 28 mm) = 198 707 mm^3 -> 0.1987 N m/kPa
-%   alpha  design alpha: Basem's deficit peak (33 N m) x alpha just reaches the set point
+%   alpha  design alpha: deficit peak (33 N m) x alpha just reaches the set point
 %          -> 0.1255 / 0.1694 (20 / 27 kPa) with k3D
 %   p_on   onset demand = tau_req(onset) / k, capped at the set point:
 %          window 1: alpha x 7.056 N m / k  (21.4 % of the set point)

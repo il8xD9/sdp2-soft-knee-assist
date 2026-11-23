@@ -1,12 +1,12 @@
 function out = ka_report(cmd, varargin)
-%KA_REPORT  Collects Rev 27 model values next to the hand-calculation value (if any).
+%KA_REPORT  Collects model values next to the hand-calculation value (if any).
 %   ka_report('reset')
 %   ka_report('add', id, item, model_value, hand_value, unit)
 %        hand_value NaN = no hand calculation for this value (model only)
 %   T = ka_report('table')               all rows as a table
 %   ka_report('save', file)              CSV: id, item, model, hand, diff, diff_pct, unit
-%   The hand values are those of Nawaf_Rev27_Hand_Calculations (Week 11) and of
-%   Meshal & Nawaf hand calc v5, where a hand check exists.
+%   The hand values are those of the pneumatic hand calculations (Appendix J of
+%   the final report), where a hand check exists.
 persistent R
 if isempty(R), R = cell(0, 5); end
 out = [];

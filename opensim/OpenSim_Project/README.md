@@ -2,8 +2,8 @@
 
 Healthy vs ACL (pre-op, 2, 4, 6, 12 months), with and without the posterior-knee pneumatic actuator.
 
-**Status (12 Nov 2026):**
-- The OpenSim 4.6 run was executed by Basem (results of 30 Oct 2026; package reconciled to CALC-BIO-03 on 27 Oct 2026).
+**Contents and results:**
+- OpenSim 4.6 knee static optimisation of 116 conditions.
   Outputs: `Results/OpenSim_SO/` (116 conditions + ALL_conditions_SO_*.csv + run_log), `Tables/T12-T14`, `Graphs/Fig03/04/08/11/14/20`.
 - Biomechanics inputs = CALC-BIO-03 (12/12 reconciliation checks PASS, `Results/CALC-BIO-03_reconciliation.csv`); 34/34 verification checks PASS.
 - Actuator in the assisted runs = CAD V4.1 (A = 3140.3 mm2, r = 34.25 mm, T_max = 10.76 N.m at 100 kPa); working case alpha = 0.20.
@@ -11,7 +11,8 @@ Healthy vs ACL (pre-op, 2, 4, 6, 12 months), with and without the posterior-knee
   phases and the two assist windows (Option 1 8.43-44 %, Option 2 13-36 %). Made by `Scripts/08_plot_knee_healthy_vs_ACL2mo.py`.
 - `Models/` contains the .osim files of the run: `gait2392_scaled_70kg_170cm.osim` + 12 primary condition models (`Healthy/` 2, `ACL/` 10),
   each 92 muscles, 70 kg, with the `knee_assist_r` actuator and its PrescribedController (controls stored inside the model).
-- Rule used in the biomechanics files (B1-B8 FINAL): only the NO-DEVICE results are used. A run with the device follows Meshal's final bag.
+- Only the NO-DEVICE results of this package are used in the project report; the assisted conditions are included for completeness.
+  The run with the final bladder actuator is in `../Actuator_Run/`.
 - Full report: `Docs/PROJECT_REPORT.md`; how to run: `Docs/HOW_TO_RUN_OpenSim.md`.
 
 ```
@@ -38,23 +39,23 @@ OpenSim_Project/
 Re-run every Python step: `python Scripts/run_all_python_steps.py` (pandas, numpy, scipy, matplotlib, openpyxl).
 
 
-## Running on another computer (checked 12 Nov 2026)
+## Running on another computer
 
-What the receiver needs:
+Requirements and steps:
 1. Windows with **OpenSim 4.6** installed (the GUI ships `gait2392_simbody.osim`, which the run needs).
-2. Unzip into a path with **English letters only** (e.g. `C:\sdp2_opensim\OpenSim_Project`) - OpenSim cannot open non-ASCII paths.
+2. Place the folder in a path with **English letters only** (e.g. `C:\sdp2_opensim\OpenSim_Project`) - OpenSim cannot open non-ASCII paths.
 3. OpenSim GUI -> Scripts -> Run -> `Scripts/run_opensim_knee_SO.py` (or `run_opensim_QUICK_TEST_12.py` for a 12-condition test).
    The script finds the project folder and the gait2392 model by itself; if not, set `PROJECT_DIR` / `MODEL_PATH` at the top.
    It re-writes the .osim models in `Models/` and the results in `Results/OpenSim_SO/`.
 4. Python steps (no OpenSim needed): `python Scripts/run_all_python_steps.py` (pandas, numpy, scipy, matplotlib, openpyxl).
 
-Checks done on this zip (12 Nov 2026, Linux, Python 3):
+## Package properties
 - `run_all_python_steps.py` runs end to end: steps 01-04, 06 (34/34 verification PASS), 05 (muscle tables from the included OpenSim results), 08 (Fig21).
 - All 116 conditions in `Simulations/conditions_manifest.csv` have their 4 input files (.mot, knee speed, net moment, controls); the 12 primary conditions have their AnalyzeTool setup .xml.
-- No absolute paths of the author's computer in the scripts or setup files (relative paths / auto-detect only).
-- `run_opensim_knee_SO.py` compiles. It was executed by Basem in OpenSim 4.6 (30 Oct 2026); it cannot be run in the cloud check workspace.
+- The scripts and setup files contain no absolute paths (relative paths / auto-detect only).
+- `run_opensim_knee_SO.py` runs in the OpenSim 4.6 GUI (Jython) and in CPython with the `opensim` package.
 - The 12 AnalyzeTool setup files point to `Models/<group>/<condition>.osim`; all 12 files are included and the names match.
 - The 13 .osim files: OpenSim format 40600 (4.x), 92 muscles each, total mass 70.0 kg, no absolute paths; bone meshes (.vtp) are
   taken from the OpenSim 4.6 installation (Geometry folder) - without it the model still runs, only the bones are not drawn.
-- With the models included, a receiver can also open `Models/<group>/<condition>.osim` in the GUI and run Tools > Analyze with the
+- With the models included, a user can also open `Models/<group>/<condition>.osim` in the GUI and run Tools > Analyze with the
   condition's `_Setup_MuscleAnalysis.xml` directly, without running the script first. Running the script again re-writes the models.

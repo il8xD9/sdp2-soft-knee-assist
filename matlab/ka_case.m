@@ -7,5 +7,5 @@ p = ka_set_option(p, pcase);
 p = ka_set_window(p, window);
 p = ka_derived(p);
 p.fill_floor = NaN;  p.t_fill_demand = NaN;
-p.hw_status = sprintf('PROPOSED, NOT APPROVED - Rev 27, %s, %s, %d MHJ10', p.opt_name, p.win_name, p.n_in);
+p.hw_status = sprintf('Hardware of the final report: %s, %s, %d MHJ10', p.opt_name, p.win_name, p.n_in);
 end

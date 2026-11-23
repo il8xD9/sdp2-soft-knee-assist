@@ -7,7 +7,7 @@ PURPOSE : Pre-process the gait data, build the knee-assist actuator torque profi
           simulation condition.
 INPUT   : Input_Data/*.csv  (written by 01_extract_input_data.py)
 OUTPUT  : Simulations/<condition folders>/*  + Simulations/conditions_manifest.csv
-          Actuator/*  (parameters, torque profiles, capability check, validation vs team table)
+          Actuator/*  (parameters, torque profiles, capability check, validation vs workbook Table 6A)
 RUN     : python Scripts/02_build_conditions.py
 
 PRE-PROCESSING DONE HERE (all automatic, nothing typed by hand):
@@ -38,21 +38,21 @@ M_BODY = 70.0        # kg   design patient (ASM-BIO-03 table basis)
 H_BODY = 1.70        # m    design stature (ASM-BIO-02)
 
 # ---------------------------------------------------------------------------------
-# ACTUATOR PARAMETERS  (Acuator_data.docx, SDP-II Mechanical Design & FEA, progress 6.4)
+# ACTUATOR PARAMETERS  (posterior-knee bladder actuator, CAD V4 / CAD V4.1 design data)
 # ---------------------------------------------------------------------------------
-P_MAX_PA = 100e3                      # Table 3-2 row 3; constraint C7 (0-100 kPa, relief-limited)
-CONTACT_W = 45.4e-3                   # m  Section 6 Step 1 (29.8 flat + 2 x 7.8 R20 arcs)
-CONTACT_S = 68.5e-3                   # m  Section 6 Step 1 (shank half of 137 mm straight length)
-AREA_V4 = CONTACT_W * CONTACT_S       # m2 = 3109.9 mm2 (actuator V4, Acuator_data.docx) - superseded
-AREA = 3140.3e-6                      # m2 = 3140.3 mm2  CAD V4.1 contact area (current mechanical baseline)
+P_MAX_PA = 100e3                      # Pa maximum operating pressure (0-100 kPa, relief-limited)
+CONTACT_W = 45.4e-3                   # m  contact width (29.8 flat + 2 x 7.8 R20 arcs)
+CONTACT_S = 68.5e-3                   # m  contact length (shank half of 137 mm straight length)
+AREA_V4 = CONTACT_W * CONTACT_S       # m2 = 3109.9 mm2 (CAD V4 contact area; comparison only, not used)
+AREA = 3140.3e-6                      # m2 = 3140.3 mm2  CAD V4.1 contact area (used for every condition)
 R_ARM = 34.25e-3                      # m  moment arm, Section 6 Case 1 (fixed r)
 F_MAX = P_MAX_PA * AREA               # N  = 310.99 N
-T_MAX = F_MAX * R_ARM                 # N.m = 10.76 N.m (capability at 100 kPa, CAD V4.1; was 10.65 with V4)
+T_MAX = F_MAX * R_ARM                 # N.m = 10.76 N.m (capability at 100 kPa, CAD V4.1; 10.65 with the CAD V4 area)
 TMAX_TXT = "%.2f N.m" % T_MAX
-ALPHA_PRIMARY = 0.20                  # team working case: alpha 0.20 -> 6.59 N.m at 2 months (CALC-BIO-03 Table 6B)
+ALPHA_PRIMARY = 0.20                  # working case: alpha 0.20 -> 6.59 N.m at 2 months (CALC-BIO-03 Table 6B)
 APTXT = "%.2f" % ALPHA_PRIMARY
 ALPHA_LOW = 0.25
-ALPHAS = [0.10, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]   # alpha sweep (user request)
+ALPHAS = [0.10, 0.20, 0.25, 0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 1.00]   # alpha sweep
 
 
 def atag(a):
@@ -63,9 +63,9 @@ actuator = {
     "name": "knee_assist_r",
     "type_in_OpenSim": "CoordinateActuator on knee_angle_r (generalized torque about the knee "
                        "flexion axis, extension +) driven by a PrescribedController",
-    "physical_device": "Posterior-knee TPU bladder (actuator-V4), restraint cover, strap harness",
+    "physical_device": "Posterior-knee TPU bladder (CAD V4.1), restraint cover, strap harness",
     "working_principle": "pressure p on the shank-side contact patch -> force F = p*A acting at the "
-                         "patch centroid -> knee extension torque T = F*r (Section 6)",
+                         "patch centroid -> knee extension torque T = F*r",
     "max_pressure_kPa": P_MAX_PA / 1e3,
     "contact_width_mm": CONTACT_W * 1e3,
     "contact_length_mm": CONTACT_S * 1e3,
@@ -80,17 +80,17 @@ actuator = {
     "operating_window_pct_stance": {"preop": [9, 37], "2 months": [9, 44], "4 months": [9, 44],
                                     "6 months": [9, 44], "12 months": [9, 40]},
     "window_source": "Table 7 candidate window (8.4-44 / 9-40 % stance) on the 1 % grid used by "
-                     "team Table 6A (in_candidate_window flags)",
+                     "Table 6A of the biomechanics workbook (in_candidate_window flags)",
     "timing_rule": "torque = alpha * m * g * h * dM(phi) inside window, 0 outside (Table G0 / CALC-BIO-03)",
     "alpha_primary": ALPHA_PRIMARY,
-    "alpha_primary_reason": "largest tabulated alpha that the 100 kPa actuator meets at every epoch "
-                            "for 70 kg / 1.70 m (Table 6-1, constraint C18; used in C20)",
+    "alpha_primary_reason": "working case of the design (6.59 N.m at 2 months, CALC-BIO-03 Table 6B); "
+                            "within the 100 kPa capability at every epoch for 70 kg / 1.70 m",
     "alpha_low": ALPHA_LOW,
     "alpha_max_rule": "alpha_max = T_max / peak full-deficit torque (capability-limited, peak = 10.65 N.m)",
     "alpha_sweep": ALPHAS,
     "alpha_sweep_profiles": "requested = alpha x m g h dM (ideal torque source, may exceed the device); "
                             "device_limited = min(requested, %s) (what the V4.1 bladder delivers at <= 100 kPa)" % TMAX_TXT,
-    "stroke_mm": "NOT PROVIDED", "speed": "NOT PROVIDED (t_system, valve/tube flow open - C20/C21)",
+    "stroke_mm": "NOT PROVIDED", "speed": "NOT PROVIDED (t_system and valve/tube flow belong to the pneumatic model, not to this package)",
     "rated_power": "NOT PROVIDED (mechanical power is computed here from torque x knee angular velocity)",
     "mass_on_leg_g": 97.04,
     "free_flexion": "vented outside the window; must not resist ~30 deg before toe-off and ~65 deg in swing",
@@ -135,7 +135,7 @@ def full_deficit_torque(epoch):
     return np.where(inwin, bwh_to_nm(dM), 0.0), inwin
 
 
-# ---- validation of the torque rule against the team's own Table 6A (alpha .25/.50/.75/1.0, 70 kg)
+# ---- validation of the torque rule against Table 6A of the biomechanics workbook (alpha .25/.50/.75/1.0, 70 kg)
 val = []
 for e in ["2months", "4months", "6months", "12months"]:
     tf, _ = full_deficit_torque(e)
@@ -302,7 +302,7 @@ make_condition("Healthy_Assisted_" + atag(ALPHA_PRIMARY) + "cap", "Healthy_Assis
                "Healthy + Actuator (alpha %s, capped at own net ext. moment)" % APTXT, "Healthy", "healthy",
                ctrl_kfa, kem_h, t_h, pct, "pct_stance",
                np.minimum(ALPHA_PRIMARY * tau_full[DESIGN_EPOCH], np.clip(kem_h, 0, None)), ALPHA_PRIMARY,
-               "design command x " + APTXT + " capped so that T <= max(M_net; 0) (proposed over-assistance guard; not team spec)",
+               "design command x " + APTXT + " capped so that T <= max(M_net; 0) (over-assistance guard; study option, not part of the device specification)",
                False, "stance 1-100 %", profile_type="capped")
 add_alpha_sweep("Healthy_Assisted_", "Healthy_Assisted/", "Healthy + Actuator", "Healthy", "healthy",
                 ctrl_kfa, kem_h, t_h, tau_full[DESIGN_EPOCH],
@@ -324,7 +324,7 @@ for e in EPOCHS:
     make_condition(folder + "_Assisted_" + atag(ALPHA_PRIMARY) + "cap", folder + "/Assisted_" + atag(ALPHA_PRIMARY) + "cap",
                    "ACL %s + Actuator (alpha %s, capped)" % (EPOCH_LABEL[e], APTXT), "ACL", e, kfa, kem, t_e, pct,
                    "pct_stance", np.minimum(ALPHA_PRIMARY * tau_full[e], np.clip(kem, 0, None)), ALPHA_PRIMARY,
-                   "alpha " + APTXT + " x deficit capped so that T <= max(M_net; 0) (proposed over-assistance guard; not team spec)",
+                   "alpha " + APTXT + " x deficit capped so that T <= max(M_net; 0) (over-assistance guard; study option, not part of the device specification)",
                    False, "stance 1-100 %", profile_type="capped")
 
 # ---- Supplementary: Healthy full gait cycle (Winter 1987) ----

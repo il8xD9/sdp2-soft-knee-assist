@@ -1,6 +1,6 @@
 function ka_simulink_setup(p, cfg)
 %KA_SIMULINK_SETUP  Puts ka_p, ka_cfg and ka_sl in the base workspace for the Simulink model.
-%   ka_simulink_setup              DESIGN SYSTEM (Rev 27): 20 kPa, window 2, one MHJ10,
+%   ka_simulink_setup              DESIGN SYSTEM: 20 kPa, window 2, one MHJ10,
 %                                  demand pulse, two MHE3 at the port, one stride
 %   ka_simulink_setup(p, cfg)      any p from ka_setup and cfg (same as for ka_simulate)
 %   The model calls this itself (InitFcn) when ka_sl is missing.

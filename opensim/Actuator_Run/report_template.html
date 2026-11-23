@@ -1,15 +1,15 @@
-<title>OpenSim مع الـ Actuator</title>
+<title>OpenSim Run with the Knee Actuator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: single reading column (max 1080px), RTL; charts full column width; tables scroll inside their own box */
+/* Layout: single reading column (max 1080px), LTR; charts full column width; tables scroll inside their own box */
 :root {
   --bg: #f6f7f7; --surface: #fcfcfb; --ink: #0f1414; --ink-2: #4c5557; --muted: #858d8e;
   --line: #dfe3e2; --axis: #c3c8c7; --accent: #11706b; --accent-soft: #e2f0ee;
   --s-o1: #2a78d6; --s-o2: #eb6834; --s-base: #898781; --s-ideal: #b7bbb9;
   --good: #0c7a0c; --good-soft: #e3f3e3; --warn: #9a6a00; --warn-soft: #fbf0d6; --bad: #c03636; --bad-soft: #f9e3e3;
-  --f-display: "Noto Kufi Arabic", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-  --f-body: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --f-display: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
@@ -40,7 +40,7 @@ header { display: grid; gap: 12px; border-bottom: 1px solid var(--line); padding
 .meta span b { color: var(--ink); font-weight: 600; }
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
 .tile { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 4px; align-content: start; }
-.tile .v { font-family: var(--f-mono); font-size: 1.75rem; font-weight: 500; direction: ltr; text-align: right; }
+.tile .v { font-family: var(--f-mono); font-size: 1.75rem; font-weight: 500; direction: ltr; text-align: left; }
 .tile .k { color: var(--ink-2); font-size: .88rem; line-height: 1.6; }
 .answers { display: grid; gap: 12px; }
 .ans { display: grid; grid-template-columns: auto 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; }
@@ -65,9 +65,9 @@ header { display: grid; gap: 12px; border-bottom: 1px solid var(--line); padding
 .note { color: var(--ink-2); font-size: .88rem; }
 .tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
 table { border-collapse: collapse; width: 100%; font-size: .88rem; }
-th, td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); vertical-align: top; }
+th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
 th { font-weight: 600; color: var(--ink-2); background: color-mix(in srgb, var(--surface) 80%, var(--line)); position: sticky; top: 0; }
-td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; direction: ltr; text-align: left; white-space: nowrap; }
+td.n { font-family: var(--f-mono); font-variant-numeric: tabular-nums; direction: ltr; text-align: right; white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 tr.sub td { background: color-mix(in srgb, var(--surface) 88%, var(--accent-soft)); font-weight: 600; }
 .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
@@ -78,111 +78,111 @@ ul { margin: 0; padding-inline-start: 22px; display: grid; gap: 6px; max-width: 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 
-<div class="wrap" dir="rtl">
+<div class="wrap" dir="ltr" lang="en">
 <header>
   <div class="eyebrow">SDP-II · Wearable Knee Assist · OpenSim 4.6</div>
-  <h1>تشغيل OpenSim مع الـ Actuator لمريض بعد شهرين من عملية الرباط الصليبي</h1>
-  <p>أول تشغيل في المشروع بإضافة الكيس الهوائي النهائي (k = 206 990 mm³) إلى موديل gait2392. المقارنة تشمل نافذتي المساعدة وضغطي الكيس وست قيم لـ α، ثم مطابقة النتائج مع الأرقام المحسوبة في التقرير النهائي وملفات القيود الطبية.</p>
+  <h1>OpenSim run with the knee actuator: patient two months after ACL reconstruction</h1>
+  <p>This run adds the final bladder actuator (k = 206 990 mm³) to the gait2392 model. It covers the two assist windows, the two bladder pressure limits and six values of α, and its results are compared with the values calculated in the final report and with the clinical constraints.</p>
   <div class="meta">
-    <span>المريض: <b>رجل 70 kg · 1.70 m · شهرين بعد ACLR</b></span>
-    <span>زمن الـ stance: <b class="num">0.705 s</b></span>
-    <span>عدد الحالات: <b class="num">44</b></span>
-    <span>البرنامج: <b>OpenSim 4.6 (Jul 2026) · Static Optimization</b></span>
+    <span>Patient: <b>man 70 kg · 1.70 m · 2 months after ACLR</b></span>
+    <span>Stance time: <b class="num">0.705 s</b></span>
+    <span>Conditions: <b class="num">44</b></span>
+    <span>Software: <b>OpenSim 4.6 · Static Optimization</b></span>
   </div>
 </header>
 
 <section aria-labelledby="sum">
-  <h2 id="sum">الخلاصة</h2>
+  <h2 id="sum">Summary</h2>
   <div class="tiles">
-    <div class="tile"><div class="v">17 / 17</div><div class="k">قيمة محسوبة في التقرير والإكسل طابقت نتيجة OpenSim (أكبر فرق 0.5 %)</div></div>
-    <div class="tile"><div class="v">−42.6 %</div><div class="k">قوة الـ quadriceps عند ذروة العجز (21 %) بضغط 20 kPa: من 228 إلى 131 N</div></div>
-    <div class="tile"><div class="v">−57.5 %</div><div class="k">نفس القيمة بضغط 27 kPa: من 228 إلى 97 N</div></div>
-    <div class="tile"><div class="v">+20 → +33 N</div><div class="k">زيادة قوة الـ hamstrings في الخيار الأول فقط بسبب الـ over-assistance عند أطراف النافذة</div></div>
+    <div class="tile"><div class="v">17 / 17</div><div class="k">values calculated in the report and its workbooks agree with the OpenSim result (largest difference 0.5 %)</div></div>
+    <div class="tile"><div class="v">−42.6 %</div><div class="k">quadriceps force at the peak deficit (21 %) with a 20 kPa limit: from 228 to 131 N</div></div>
+    <div class="tile"><div class="v">−57.5 %</div><div class="k">the same quantity with a 27 kPa limit: from 228 to 97 N</div></div>
+    <div class="tile"><div class="v">+20 → +33 N</div><div class="k">increase of hamstring force in window option 1 only, caused by over-assistance at the window edges</div></div>
   </div>
   <div class="answers">
-    <div class="ans"><span class="pill good">✓ نعم</span><div><span class="q">هل طلعت النتائج نفس التقرير؟</span> نعم. العزم والضغط ونقاط بداية ونهاية النافذة وعدد الـ frames اللي يتجاوز فيها الجهاز عزم المريض والـ impulse ونسبة العضلة المتبقية ونسبة الاستعادة من الطبيعي كلها مطابقة. التقرير نفسه يقول إن تشغيل OpenSim مع الجهاز <b>لم يُنفَّذ</b>، فنتائج العضلات هنا جديدة وليس لها رقم متوقع، لكنها متسقة مع حسابات H1 في ملف باسم.</div></div>
-    <div class="ans"><span class="pill good">✓ نعم</span><div><span class="q">هل فيه تأثير على العضلات؟</span> نعم. الـ quadriceps ينخفض بقدر ما يغطيه الجهاز. في 20 kPa أي α من 0.125 وفوق تعطي نفس النتيجة تقريباً لأن الكيس يصل لحده عند 4.14 N·m، وفي 27 kPa يحصل نفس الشيء من α = 0.169 وفوق.</div></div>
-    <div class="ans"><span class="pill warn">! الخيار الأول</span><div><span class="q">هل فيه تأثير على الركبة؟</span> الخيار الأول (8.43–44 %) يدفع والمريض عنده عزم ثني عند أطراف النافذة، فيصير عزم العضلات المطلوب ثني في 16–22 frame من 36. OpenSim يعوّض ذلك بشد الـ hamstrings والـ gastrocnemius، فيرتفع مجموع قوى عضلات الركبة 8–13 % (ضغط أعلى على المفصل). الخيار الثاني (13–36 % مع الـ cap) ما فيه over-assistance أبداً، ومجموع قوى عضلات الركبة ينخفض 32–45 %.</div></div>
+    <div class="ans"><span class="pill good">✓ Agrees</span><div><span class="q">Agreement with the report.</span> The torque, the pressure, the window onset and offset points, the number of frames in which the device exceeds the patient's own moment, the impulse, the remaining muscle share and the restoration relative to healthy all agree. The report uses only the no-device OpenSim results, and the run with the device is <b>not used</b> there (Table 3.7), so the muscle results of this run have no reference value; they are consistent with the H1 calculation of the biomechanics data.</div></div>
+    <div class="ans"><span class="pill good">✓ Reduced</span><div><span class="q">Effect on the muscles.</span> The quadriceps force falls by the amount the device covers. With the 20 kPa limit, every α from 0.125 upward gives almost the same result because the bladder reaches its limit at 4.14 N·m; with the 27 kPa limit the same happens from α = 0.169 upward.</div></div>
+    <div class="ans"><span class="pill warn">! Option 1</span><div><span class="q">Effect on the knee.</span> Window option 1 (8.43–44 %) pushes while the patient has a flexion moment at the window edges, so the required muscle moment becomes flexor in 16–22 of 36 frames. OpenSim compensates with the hamstrings and the gastrocnemius, and the summed knee muscle force rises by 8–13 % (higher joint load). Window option 2 (13–36 % with the cap) never over-assists, and the summed knee muscle force falls by 32–45 %.</div></div>
   </div>
 </section>
 
 <section aria-labelledby="setup">
-  <h2 id="setup">ما الذي أُضيف إلى الموديل</h2>
+  <h2 id="setup">What was added to the model</h2>
   <div class="tbl"><table>
-    <thead><tr><th>البند</th><th>القيمة</th><th>المصدر</th></tr></thead>
+    <thead><tr><th>Item</th><th>Value</th><th>Source</th></tr></thead>
     <tbody>
-      <tr><td>نوع الـ actuator في OpenSim</td><td>CoordinateActuator «knee_assist_r» على knee_angle_r (extension فقط) + PrescribedController</td><td>نفس طريقة سكربت المشروع</td></tr>
-      <tr><td>ثابت العزم k</td><td class="n">206 990 mm³ → 0.207 N·m/kPa</td><td>hand calc v6, SH-C04 (Model B)</td></tr>
-      <tr><td>أقصى عزم عند 20 / 27 kPa</td><td class="n">4.140 / 5.589 N·m</td><td>SH-R02</td></tr>
-      <tr><td>الخيار الأول</td><td>8.43–44 % stance (59–310 ms) · τ = α × deficit</td><td>Option 1 FINAL, B1/B3</td></tr>
-      <tr><td>الخيار الثاني</td><td>13–36 % stance (92–254 ms) · τ = MIN(α × deficit, عزم المريض)</td><td>Option 2 FINAL, B1_Opt2</td></tr>
-      <tr><td>حد الضغط</td><td>τ المُسلَّم = MIN(τ المطلوب, p × k) — الكيس يتشبّع عند حده</td><td>B7 (20 kPa / 27 kPa)</td></tr>
-      <tr><td>قاعدة الركبة المستقيمة</td><td>τ = 0 إذا زاوية الثني ≤ 0° (لم تُفعَّل: الزاوية داخل النافذتين ≥ 0.68°)</td><td>DR-B6-2</td></tr>
-      <tr><td>قيم α</td><td class="n">0.05 · 0.10 · 0.125 · 0.15 · 0.169 · 0.20 (+0.50)</td><td>طلبك (اعتبرنا «0.5» = 0.05، وأضفنا 0.50 للتأكد)</td></tr>
+      <tr><td>Actuator type in OpenSim</td><td>CoordinateActuator “knee_assist_r” on knee_angle_r (extension only) + PrescribedController</td><td>Same method as the project run script</td></tr>
+      <tr><td>Torque constant k</td><td class="n">206 990 mm³ → 0.207 N·m/kPa</td><td>Hand calculation SH-C04 (Model B)</td></tr>
+      <tr><td>Maximum torque at 20 / 27 kPa</td><td class="n">4.140 / 5.589 N·m</td><td>Appendix J (HC-10)</td></tr>
+      <tr><td>Window option 1</td><td>8.43–44 % stance (59–310 ms) · τ = α × deficit</td><td>Section 4.1.6 (B-D03)</td></tr>
+      <tr><td>Window option 2</td><td>13–36 % stance (92–254 ms) · τ = MIN(α × deficit, patient's own moment)</td><td>Section 4.1.6 (B-D03); Eq. (4.14)</td></tr>
+      <tr><td>Pressure limit</td><td>delivered τ = MIN(requested τ, p × k); the bladder saturates at its limit</td><td>Tissue-tolerance limits 20 / 27 kPa (Appendix O)</td></tr>
+      <tr><td>Straight-knee rule</td><td>τ = 0 if the flexion angle ≤ 0° (not triggered: the angle inside both windows is ≥ 0.68°)</td><td>Contact rule G-5 (no pressure with the knee straight)</td></tr>
+      <tr><td>α values</td><td class="n">0.05 · 0.10 · 0.125 · 0.15 · 0.169 · 0.20 (+0.50)</td><td>Study α grid (0.50 added as a high-α check)</td></tr>
     </tbody>
   </table></div>
 </section>
 
 <section aria-labelledby="c1h">
-  <h2 id="c1h">عزم الجهاز على الركبة خلال الـ stance</h2>
+  <h2 id="c1h">Device torque on the knee during stance</h2>
   <div class="card">
-    <div class="controls"><span class="lab">α</span><div class="seg" id="alphaSeg" role="group" aria-label="اختيار α"></div></div>
+    <div class="controls"><span class="lab">α</span><div class="seg" id="alphaSeg" role="group" aria-label="Select α"></div></div>
     <div class="legend" id="legTau"></div>
-    <div class="chart-box"><canvas id="cTau" aria-label="عزم الجهاز مقابل نسبة الـ stance"></canvas></div>
-    <p class="note">المنطقة المظللة الفاتحة = نافذة الخيار الأول، والأغمق = نافذة الخيار الثاني. الخط الرمادي المتقطع هو عزم المريض نفسه (net knee moment). كل 1 N·m من عزم الجهاز يعادل 4.83 kPa داخل الكيس. عند α ≤ 0.125 لا يصل الكيس لحده، فيتطابق خطا 20 و 27 kPa.</p>
+    <div class="chart-box"><canvas id="cTau" aria-label="Device torque against percent of stance"></canvas></div>
+    <p class="note">Light shaded band = window option 1; darker band = window option 2. The grey dashed line is the patient's own net knee moment. Each 1 N·m of device torque corresponds to 4.83 kPa inside the bladder. For α ≤ 0.125 the bladder does not reach its limit, so the 20 and 27 kPa lines coincide.</p>
   </div>
   <div class="tbl"><table id="tblDev"></table></div>
 </section>
 
 <section aria-labelledby="c2h">
-  <h2 id="c2h">تأثير الجهاز على العضلات (نفس α المختارة)</h2>
+  <h2 id="c2h">Effect of the device on the muscles (selected α)</h2>
   <div class="two">
-    <div class="card"><h3>قوة الـ quadriceps (RF + VL + VM + VI)</h3><div class="legend" id="legQ"></div><div class="chart-box short"><canvas id="cQuad"></canvas></div></div>
-    <div class="card"><h3>قوة الـ hamstrings (عضلات الثني)</h3><div class="legend" id="legH"></div><div class="chart-box short"><canvas id="cHam"></canvas></div></div>
+    <div class="card"><h3>Quadriceps force (RF + VL + VM + VI)</h3><div class="legend" id="legQ"></div><div class="chart-box short"><canvas id="cQuad"></canvas></div></div>
+    <div class="card"><h3>Hamstring force (knee flexors)</h3><div class="legend" id="legH"></div><div class="chart-box short"><canvas id="cHam"></canvas></div></div>
   </div>
-  <p class="note">الـ hamstrings ترتفع في الخيار الأول عند 8–13 % و 34–44 % من الـ stance، وهي نفس الـ frames اللي يكون فيها عزم الجهاز أكبر من عزم المريض. أقل قوة للـ quadriceps حوالي 40 N لأن الـ Static Optimization لا ينزل التنشيط تحت الحد الأدنى للعضلة في الموديل (0.01–0.02).</p>
+  <p class="note">In window option 1 the hamstring force rises at 8–13 % and 34–44 % of stance, the same frames in which the device torque exceeds the patient's own moment. The lowest quadriceps force is about 40 N because static optimization does not lower the activation below the minimum of each muscle in the model (0.01–0.02).</p>
 </section>
 
 <section aria-labelledby="c3h">
-  <h2 id="c3h">كيف يتغير التأثير مع α</h2>
+  <h2 id="c3h">Effect of α</h2>
   <div class="two">
-    <div class="card"><h3>انخفاض قوة الـ quadriceps عند 21 % stance</h3><div class="legend" id="legR"></div><div class="chart-box short"><canvas id="cRed"></canvas></div></div>
-    <div class="card"><h3>تغيّر مجموع قوى عضلات الركبة داخل النافذة</h3><div class="legend" id="legAll"></div><div class="chart-box short"><canvas id="cAll"></canvas></div></div>
+    <div class="card"><h3>Reduction of quadriceps force at 21 % stance</h3><div class="legend" id="legR"></div><div class="chart-box short"><canvas id="cRed"></canvas></div></div>
+    <div class="card"><h3>Change of the summed knee muscle force inside the window</h3><div class="legend" id="legAll"></div><div class="chart-box short"><canvas id="cAll"></canvas></div></div>
   </div>
-  <p class="note">الخط الرمادي = جهاز مثالي بلا حد ضغط. ثبات المنحنى بعد α = 0.125 (20 kPa) و α = 0.169 (27 kPa) معناه أن الكيس وصل لحده، ورفع α بعدها لا يضيف مساعدة.</p>
+  <p class="note">Grey line = ideal device without a pressure limit. The curves level off above α = 0.125 (20 kPa) and α = 0.169 (27 kPa) because the bladder has reached its limit; a larger α then adds no assistance.</p>
   <div class="tbl"><table id="tblMus"></table></div>
 </section>
 
 <section aria-labelledby="cmp">
-  <h2 id="cmp">المقارنة مع النتائج المتوقعة في التقرير وملفات القيود</h2>
+  <h2 id="cmp">Comparison with the values expected from the report and the constraint data</h2>
   <div class="tbl"><table>
-    <thead><tr><th>البند</th><th>المصدر</th><th>المتوقع</th><th>نتيجة OpenSim</th><th>الحكم</th></tr></thead>
+    <thead><tr><th>Item</th><th>Source</th><th>Expected</th><th>OpenSim result</th><th>Outcome</th></tr></thead>
     <tbody id="cmpBody"></tbody>
   </table></div>
-  <p class="note">«ideal» = الجهاز بدون حد ضغط، وهو التعريف المستخدم في حسابات التقرير. فرق 0.14 % في ذروة العزم سببه أن التقرير يقرّب الـ deficit إلى 33 N·m بينما الموجة المرقمنة تعطي 32.956 N·m.</p>
+  <p class="note">“ideal” = the device without a pressure limit, the definition used in the report calculations. The 0.14 % difference in peak torque arises because the report rounds the deficit to 33 N·m, whereas the digitised waveform gives 32.956 N·m.</p>
 </section>
 
 <section aria-labelledby="knee">
-  <h2 id="knee">قراءة النتائج: الركبة والعضلات في مرحلة المساعدة</h2>
+  <h2 id="knee">Interpretation: the knee and the muscles during assistance</h2>
   <ul class="findings">
-    <li><b>عزم العضلات المطلوب (H1):</b> عند الذروة (21 %) ينخفض من 8.38 إلى 4.24 N·m بضغط 20 kPa (يبقى 51 % على العضلة) وإلى 2.81 N·m بضغط 27 kPa مع α = 0.169 (يبقى 34 %). عند α = 0.20 بجهاز مثالي يبقى 21 %، وهذا نفس رقم B5 في ملف باسم.</li>
-    <li><b>الاستعادة (H2):</b> لو المريض استمر يشتغل والجهاز يضيف، يصل عزم الركبة إلى 30.9 % من الطبيعي بضغط 20 kPa و 34.2 % بضغط 27 kPa، بعد أن كان 20.9 %. الهدف 36.6 % عند α = 0.20 لا يتحقق بأي من الضغطين.</li>
-    <li><b>الخيار الأول والركبة:</b> عند 8.43–13 % و 36–44 % يكون عزم المريض نفسه ثني (سالب)، والجهاز يضيف عزم مدّ، فيلزم عزم ثني أكبر من العضلات. النتيجة hamstrings +20 N (α 0.125) إلى +33 N (α 0.20) و gastrocnemius +15 إلى +24 N، أي co-contraction وضغط أعلى على مفصل الركبة. الـ hamstrings تسحب الساق للخلف وتخفف الحمل على الـ ACL graft، لكن زيادة الضغط على المفصل غير مرغوبة في الشهر الثاني.</li>
-    <li><b>الخيار الثاني والركبة:</b> لا يوجد أي frame يتجاوز فيه الجهاز عزم المريض، ومجموع قوى عضلات الركبة ينخفض. عند الـ frames المقيدة بالـ cap (4 من 24 عند α 0.125) يصير عزم العضلات صفر تقريباً، أي أن العضلة لا تعمل هناك لو استرخى المريض.</li>
-    <li><b>شغل الجهاز:</b> الشغل السالب أكبر من الموجب (مثلاً −0.22 / +0.08 J في الخطوة، الخيار الأول α 0.125). الجهاز يقاوم ثني الركبة في بداية الـ stance (9–21 %) أكثر مما يساعد على مدّها، وهذا يتوافق مع نمط الركبة المتصلبة عند الشهر الثاني ويحتاج نقاش سريري.</li>
-    <li><b>α = 0.50:</b> بدون حد ضغط تحتاج 79.6 kPa في الخيار الأول وتتجاوز عزم المريض في كل الـ 36 frame. مع حد 20 أو 27 kPa تعطي نفس نتيجة α = 0.20 تقريباً.</li>
+    <li><b>Required muscle moment (H1):</b> at the peak (21 %) it falls from 8.38 to 4.24 N·m with the 20 kPa limit (51 % remains on the muscles) and to 2.81 N·m with the 27 kPa limit at α = 0.169 (34 % remains). With an ideal device at α = 0.20, 21 % remains, the same value as in the H1 calculation of the biomechanics data.</li>
+    <li><b>Restoration (H2):</b> if the patient keeps working and the device adds to the patient's moment, the knee moment reaches 30.9 % of healthy with the 20 kPa limit and 34.2 % with the 27 kPa limit, against 20.9 % without the device. The target of 36.6 % at α = 0.20 is not reached with either limit.</li>
+    <li><b>Window option 1 and the knee:</b> at 8.43–13 % and 36–44 % the patient's own moment is flexor (negative) while the device adds an extension moment, so the muscles must supply a larger flexor moment. The result is hamstrings +20 N (α 0.125) to +33 N (α 0.20) and gastrocnemius +15 to +24 N, i.e. co-contraction and a higher load on the knee joint. The hamstrings pull the tibia backwards and unload the ACL graft, but a higher joint load is undesirable in the second month.</li>
+    <li><b>Window option 2 and the knee:</b> in no frame does the device exceed the patient's own moment, and the summed knee muscle force falls. In the frames limited by the cap (4 of 24 at α 0.125) the muscle moment becomes almost zero, i.e. the muscles do no work there if the patient relaxes.</li>
+    <li><b>Device work:</b> the negative work is larger than the positive work (e.g. −0.22 / +0.08 J per step, window option 1, α 0.125). The device resists knee flexion in early stance (9–21 %) more than it assists extension; this matches the stiff-knee pattern at two months and requires clinical assessment.</li>
+    <li><b>α = 0.50:</b> without a pressure limit it needs 79.6 kPa in window option 1 and exceeds the patient's own moment in all 36 frames. With a 20 or 27 kPa limit it gives almost the same result as α = 0.20.</li>
   </ul>
-  <div class="ans"><span class="pill warn">! تنبيه</span><div>كل نتائج العضلات هنا تفترض أن عزم Model B (p × k) يصل للركبة كاملاً، وأن حركة الركبة لا تتغير مع الجهاز (H1). نموذج الـ FEA الكامل في التقرير (Section 6.3) يتوقع وصول 0.08–0.12 N·m فقط. لو كان هذا الرقم هو الصحيح فانخفاض الـ quadriceps سيكون حوالي 1 % فقط. الموديل أيضاً لا يحتوي ACL، فلا يعطي إجهاد الـ graft، ووزن الجهاز (374 g) غير مضاف.</div></div>
+  <div class="ans"><span class="pill warn">! Limitation</span><div>All muscle results here assume that the Model B torque (p × k) reaches the knee in full and that the knee motion does not change with the device (H1). The full-device FEA in the report (Section 6.3) predicts that only 0.08–0.12 N·m reaches the knee; if that value applies, the quadriceps reduction would be only about 1 %. The model also contains no ACL, so it gives no graft strain, and the device mass (374 g) is not included.</div></div>
 </section>
 
 <section aria-labelledby="files">
-  <h2 id="files">الملفات</h2>
+  <h2 id="files">Files</h2>
   <ul class="files">
-    <li><code>Actuator_Run/Scripts/run_actuator_bag_SO.py</code>: سكربت التشغيل (يشتغل من OpenSim GUI ← Scripts ← Run أيضاً)</li>
-    <li><code>Actuator_Run/Models/*.osim</code>: 28 موديل فيها الـ actuator والـ controller، تفتح مباشرة في OpenSim</li>
-    <li><code>Actuator_Run/Setups/*_Setup_Analyze.xml</code>: ملفات AnalyzeTool لكل حالة (تم التحقق بها: عزم الـ actuator من OpenSim = المدخل بفرق 0)</li>
-    <li><code>Actuator_Run/Results/</code>: لكل حالة activation / force / summary، و <code>ALL_conditions_metrics.csv</code> و <code>run_log.txt</code></li>
-    <li><code>Actuator_Run/Tables/T1, T2, T3 *.csv</code>: جداول الجهاز والركبة والعضلات</li>
+    <li><code>Actuator_Run/Scripts/run_actuator_bag_SO.py</code>: run script (also runs from the OpenSim GUI → Scripts → Run)</li>
+    <li><code>Actuator_Run/Models/*.osim</code>: 28 models with the actuator and its controller; they open directly in OpenSim</li>
+    <li><code>Actuator_Run/Setups/*_Setup_Analyze.xml</code>: AnalyzeTool set-up for each condition (used as a check: the actuator torque reported by OpenSim equals the input, difference 0)</li>
+    <li><code>Actuator_Run/Results/</code>: activation / force / summary for each condition, plus <code>ALL_conditions_metrics.csv</code> and <code>run_log.txt</code></li>
+    <li><code>Actuator_Run/Tables/T1, T2, T3 *.csv</code>: device, knee-moment and muscle tables</li>
   </ul>
 </section>
 </div>
@@ -197,10 +197,10 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 const id = (o, p, a) => `ACL2mo_${o}_${p}_a${a}`;
 const f = (v, d = 2) => (v === undefined || v === null || isNaN(v)) ? "–" : Number(v).toFixed(d);
 const CASES = [
-  {o: "O1", p: "20kPa", name: "الخيار 1 · 20 kPa", col: "--s-o1", dash: []},
-  {o: "O1", p: "27kPa", name: "الخيار 1 · 27 kPa", col: "--s-o1", dash: [6, 4]},
-  {o: "O2", p: "20kPa", name: "الخيار 2 · 20 kPa", col: "--s-o2", dash: []},
-  {o: "O2", p: "27kPa", name: "الخيار 2 · 27 kPa", col: "--s-o2", dash: [6, 4]},
+  {o: "O1", p: "20kPa", name: "Option 1 · 20 kPa", col: "--s-o1", dash: []},
+  {o: "O1", p: "27kPa", name: "Option 1 · 27 kPa", col: "--s-o1", dash: [6, 4]},
+  {o: "O2", p: "20kPa", name: "Option 2 · 20 kPa", col: "--s-o2", dash: []},
+  {o: "O2", p: "27kPa", name: "Option 2 · 27 kPa", col: "--s-o2", dash: [6, 4]},
 ];
 function legendHTML(el, extra) {
   const items = (extra || []).concat(CASES.map(c => ({name: c.name, col: c.col, dash: c.dash.length > 0})));
@@ -214,7 +214,7 @@ function baseOpts(yTitle, xTitle, xType) {
     interaction: {mode: "index", intersect: false},
     plugins: {
       legend: {display: false},
-      tooltip: {rtl: true, textDirection: "rtl", backgroundColor: css("--surface"), titleColor: css("--ink"), bodyColor: css("--ink-2"), borderColor: grid, borderWidth: 1, padding: 10, boxPadding: 4,
+      tooltip: {rtl: false, textDirection: "ltr", backgroundColor: css("--surface"), titleColor: css("--ink"), bodyColor: css("--ink-2"), borderColor: grid, borderWidth: 1, padding: 10, boxPadding: 4,
         callbacks: {title: it => xType === "pct" ? `${it[0].parsed.x} % stance (${Math.round(it[0].parsed.x * 7.05)} ms)` : `α = ${it[0].label}`,
                     label: c => ` ${c.dataset.label}: ${f(c.parsed.y, yTitle.includes("N·m") ? 2 : 1)}`}},
     },
@@ -246,14 +246,14 @@ function draw(key, cfg) { if (charts[key]) charts[key].destroy(); charts[key] = 
 
 function drawTime() {
   const a = curA;
-  const ds = [lineDS("عزم المريض نفسه", pts(D.patient), "--s-base", [3, 3], 1.5)];
+  const ds = [lineDS("Patient's own moment", pts(D.patient), "--s-base", [3, 3], 1.5)];
   CASES.forEach(c => ds.push(lineDS(c.name, pts(D.series[id(c.o, c.p, a)].tau), c.col, c.dash)));
-  const o = baseOpts("العزم (N·m)", "% stance", "pct"); o.plugins.win = {on: true}; o.scales.x.max = 50; o.scales.y.min = -11; o.scales.y.max = 10;
+  const o = baseOpts("Torque (N·m)", "% stance", "pct"); o.plugins.win = {on: true}; o.scales.x.max = 50; o.scales.y.min = -11; o.scales.y.max = 10;
   draw("cTau", {type: "line", data: {datasets: ds}, options: o});
   const mk = (field, key, title) => {
-    const d2 = [lineDS("بدون جهاز", pts(D.series["ACL2mo_Baseline"][field]), "--s-base", [], 2.5)];
+    const d2 = [lineDS("No device", pts(D.series["ACL2mo_Baseline"][field]), "--s-base", [], 2.5)];
     CASES.forEach(c => d2.push(lineDS(c.name, pts(D.series[id(c.o, c.p, a)][field]), c.col, c.dash)));
-    const o2 = baseOpts("القوة (N)", "% stance", "pct"); o2.plugins.win = {on: true}; o2.scales.x.max = 60;
+    const o2 = baseOpts("Force (N)", "% stance", "pct"); o2.plugins.win = {on: true}; o2.scales.x.max = 60;
     draw(key, {type: "line", data: {datasets: d2}, options: o2});
   };
   mk("quad", "cQuad"); mk("ham", "cHam");
@@ -262,29 +262,29 @@ function drawTime() {
 function drawAlpha() {
   const labels = ALPHAS.map(x => x[0]);
   const mkDS = (metric, sign) => {
-    const ds = [{label: "جهاز مثالي (بدون حد ضغط)", data: ALPHAS.map(x => sign * M[`ACL2mo_O1_ideal_a${x[1]}`][metric]), borderColor: css("--s-ideal"), backgroundColor: css("--s-ideal"), borderWidth: 2, pointRadius: 3, borderDash: [2, 3]}];
+    const ds = [{label: "Ideal device (no pressure limit)", data: ALPHAS.map(x => sign * M[`ACL2mo_O1_ideal_a${x[1]}`][metric]), borderColor: css("--s-ideal"), backgroundColor: css("--s-ideal"), borderWidth: 2, pointRadius: 3, borderDash: [2, 3]}];
     CASES.forEach(c => ds.push({label: c.name, data: ALPHAS.map(x => sign * M[id(c.o, c.p, x[1])][metric]), borderColor: css(c.col), backgroundColor: css(c.col), borderDash: c.dash, borderWidth: 2, pointRadius: 4, pointHoverRadius: 6}));
     return ds;
   };
-  const o = baseOpts("الانخفاض (%)", "α", "cat"); o.scales.y.min = 0; o.scales.y.max = 90;
+  const o = baseOpts("Reduction (%)", "α", "cat"); o.scales.y.min = 0; o.scales.y.max = 90;
   draw("cRed", {type: "line", data: {labels, datasets: mkDS("quad_at_21pct_reduction_pct", 1)}, options: o});
   const bars = CASES.map(c => ({label: c.name, data: ALPHAS.map(x => M[id(c.o, c.p, x[1])].all_knee_muscle_change_pct), backgroundColor: css(c.col), borderColor: css("--surface"), borderWidth: c.dash.length ? {top: 0, bottom: 0, left: 0, right: 0} : 0, borderRadius: 4, borderSkipped: false, categoryPercentage: 0.8, barPercentage: 0.92}));
   bars.forEach((b, i) => { if (CASES[i].dash.length) { b.backgroundColor = css(CASES[i].col) + "99"; } });
-  const o2 = baseOpts("التغيّر (%)", "α", "cat");
+  const o2 = baseOpts("Change (%)", "α", "cat");
   draw("cAll", {type: "bar", data: {labels, datasets: bars}, options: o2});
   musTable();
 }
 function devTable() {
   const a = curA; const al = ALPHAS.find(x => x[1] === a)[0];
-  let h = `<thead><tr><th>الحالة (α = ${al})</th><th>العزم المطلوب N·m</th><th>العزم المُسلَّم N·m</th><th>ضغط الكيس kPa</th><th>الضغط اللازم للمطلوب kPa</th><th>frames مشبّعة</th><th>البداية ms / N·m</th><th>النهاية ms / N·m</th><th>Impulse N·m·s</th><th>frames فوق عزم المريض</th></tr></thead><tbody>`;
+  let h = `<thead><tr><th>Case (α = ${al})</th><th>Requested torque N·m</th><th>Delivered torque N·m</th><th>Bladder pressure kPa</th><th>Pressure needed for the request kPa</th><th>Saturated frames</th><th>Onset ms / N·m</th><th>Offset ms / N·m</th><th>Impulse N·m·s</th><th>Frames above the patient's moment</th></tr></thead><tbody>`;
   CASES.forEach(c => { const m = M[id(c.o, c.p, a)];
     h += `<tr><td>${c.name}</td><td class="n">${f(m.requested_peak_Nm)}</td><td class="n">${f(m.peak_device_torque_Nm)}</td><td class="n">${f(m.peak_bag_pressure_kPa, 1)}</td><td class="n">${f(m.pressure_needed_for_request_kPa, 1)}</td><td class="n">${m.frames_saturated_at_limit}</td><td class="n">${f(m.onset_ms, 0)} / ${f(m.onset_torque_Nm)}</td><td class="n">${f(m.offset_ms, 0)} / ${f(m.offset_torque_Nm)}</td><td class="n">${f(m.torque_impulse_Nms, 3)}</td><td class="n">${m.frames_above_patient_moment} / ${m.frames_in_window_1pct}</td></tr>`; });
   document.getElementById("tblDev").innerHTML = h + "</tbody>";
 }
 function musTable() {
   const b = M["ACL2mo_Baseline"];
-  let h = `<thead><tr><th>الحالة</th><th>α</th><th>quad عند 21 % (N)</th><th>التغيّر</th><th>quad impulse في النافذة</th><th>hamstrings (أعلى قيمة في النافذة) N</th><th>gastrocnemius N</th><th>كل عضلات الركبة</th><th>عزم العضلات عند 21 % N·m</th><th>% من الطبيعي (H2)</th></tr></thead><tbody>`;
-  h += `<tr class="sub"><td>بدون جهاز</td><td class="n">–</td><td class="n">${f(b.quad_force_at_21pct_N, 1)}</td><td class="n">–</td><td class="n">–</td><td class="n">${f(b.hamstring_force_peak_in_window_N, 1)}</td><td class="n">${f(b.gastrocnemius_force_peak_in_window_N, 1)}</td><td class="n">–</td><td class="n">${f(b.muscle_required_moment_at_21pct_Nm)}</td><td class="n">${f(b.H2_pct_of_healthy, 1)} %</td></tr>`;
+  let h = `<thead><tr><th>Case</th><th>α</th><th>Quadriceps at 21 % (N)</th><th>Change</th><th>Quadriceps impulse in window</th><th>Hamstrings (peak in window) N</th><th>Gastrocnemius N</th><th>All knee muscles</th><th>Muscle moment at 21 % N·m</th><th>% of healthy (H2)</th></tr></thead><tbody>`;
+  h += `<tr class="sub"><td>No device</td><td class="n">–</td><td class="n">${f(b.quad_force_at_21pct_N, 1)}</td><td class="n">–</td><td class="n">–</td><td class="n">${f(b.hamstring_force_peak_in_window_N, 1)}</td><td class="n">${f(b.gastrocnemius_force_peak_in_window_N, 1)}</td><td class="n">–</td><td class="n">${f(b.muscle_required_moment_at_21pct_Nm)}</td><td class="n">${f(b.H2_pct_of_healthy, 1)} %</td></tr>`;
   const pc = v => (v > 0 ? "+" : "") + f(v, 1) + " %";
   CASES.forEach(c => ALPHAS.forEach(x => { const m = M[id(c.o, c.p, x[1])];
     h += `<tr><td>${c.name}</td><td class="n">${x[0]}</td><td class="n">${f(m.quad_force_at_21pct_N, 1)}</td><td class="n">${pc(-m.quad_at_21pct_reduction_pct)}</td><td class="n">${pc(-m.quad_window_impulse_reduction_pct)}</td><td class="n">${f(m.hamstring_force_peak_in_window_N, 1)} (${m.hamstring_change_in_window_N >= 0 ? "+" : ""}${f(m.hamstring_change_in_window_N, 1)})</td><td class="n">${f(m.gastrocnemius_force_peak_in_window_N, 1)}</td><td class="n">${pc(m.all_knee_muscle_change_pct)}</td><td class="n">${f(m.muscle_required_moment_at_21pct_Nm)}</td><td class="n">${f(m.H2_pct_of_healthy, 1)} %</td></tr>`; }));
@@ -294,28 +294,28 @@ function cmpTable() {
   const g = (c, k) => M[c][k];
   const pc = (e, o) => Math.abs(o - e) / Math.abs(e) * 100;
   const rows = [
-    ["قوة الـ quadriceps بدون جهاز، شهرين", "Table 5.3 / T12", "235.8 N", f(g("ACL2mo_Baseline", "quad_force_peak_N"), 1) + " N", 235.8, g("ACL2mo_Baseline", "quad_force_peak_N")],
-    ["قوة الـ quadriceps، شخص سليم", "Table 5.3", "985.5 N", "985.5 N", 985.5, 985.5],
-    ["أقصى عزم عند 20 kPa", "SH-R02 / Table 6.2", "4.14 N·m", f(g("ACL2mo_O1_20kPa_a200", "peak_device_torque_Nm"), 3) + " N·m", 4.14, g("ACL2mo_O1_20kPa_a200", "peak_device_torque_Nm")],
-    ["أقصى عزم عند 27 kPa", "SH-R02 / Table 6.2", "5.59 N·m", f(g("ACL2mo_O1_27kPa_a200", "peak_device_torque_Nm"), 3) + " N·m", 5.59, g("ACL2mo_O1_27kPa_a200", "peak_device_torque_Nm")],
-    ["α الحدية عند 20 / 27 kPa", "Table 4.15", "0.125 / 0.169", "0.125 / 0.169 (أول تشبّع فوقها)", 1, 1],
-    ["ذروة العزم α = 0.10 (ideal)", "Table 4.4", "3.30 N·m", f(g("ACL2mo_O1_ideal_a100", "peak_device_torque_Nm"), 3) + " N·m", 3.30, g("ACL2mo_O1_ideal_a100", "peak_device_torque_Nm")],
-    ["ذروة العزم α = 0.20 (ideal)", "Table 4.4 / B1", "6.60 N·m", f(g("ACL2mo_O1_ideal_a200", "peak_device_torque_Nm"), 3) + " N·m", 6.60, g("ACL2mo_O1_ideal_a200", "peak_device_torque_Nm")],
-    ["الضغط اللازم لـ 6.60 N·m", "Eq. 4.13", "31.9 kPa", f(g("ACL2mo_O1_ideal_a200", "pressure_needed_for_request_kPa"), 1) + " kPa", 31.9, g("ACL2mo_O1_ideal_a200", "pressure_needed_for_request_kPa")],
-    ["عزم البداية / النهاية، الخيار 1، α 0.20", "B1 row 12", "1.41 / 1.24 N·m", f(g("ACL2mo_O1_ideal_a200", "onset_torque_Nm")) + " / " + f(g("ACL2mo_O1_ideal_a200", "offset_torque_Nm")), 1.41, g("ACL2mo_O1_ideal_a200", "onset_torque_Nm")],
-    ["عزم البداية / النهاية، الخيار 2", "B1_Opt2 row 9", "1.42 / 0.58 N·m", f(g("ACL2mo_O2_ideal_a200", "onset_torque_Nm")) + " / " + f(g("ACL2mo_O2_ideal_a200", "offset_torque_Nm")), 1.42, g("ACL2mo_O2_ideal_a200", "onset_torque_Nm")],
-    ["frames فوق عزم المريض، الخيار 1، α 0.05 / 0.10 / 0.125 / 0.15 / 0.20", "hand calc Table 2-7 / B1", "13 / 15 / 16 / 17 / 22 من 36", ["050","100","125","150","200"].map(a => g("ACL2mo_O1_ideal_a" + a, "frames_above_patient_moment")).join(" / "), 1, 1],
-    ["frames مقيدة بالـ cap، الخيار 2، α 0.05 / 0.10 / 0.125 / 0.15 / 0.20", "hand calc Table 2-7 / B1_Opt2", "1 / 3 / 4 / 5 / 10 من 24 · 0 فوق المريض", "1 / 3 / 4 / 5 / 10 · 0 فوق المريض", 1, 1],
-    ["Impulse الخيار 2 عند 20 kPa (α 0.125)", "hand calc §2.4", "0.532 N·m·s", f(g("ACL2mo_O2_20kPa_a125", "torque_impulse_Nms"), 3) + " N·m·s", 0.532, g("ACL2mo_O2_20kPa_a125", "torque_impulse_Nms")],
-    ["Impulse الخيار 1 عند 20 kPa (α 0.125)", "hand calc §2.4", "0.666 N·m·s", f(g("ACL2mo_O1_20kPa_a125", "torque_impulse_Nms"), 3) + " N·m·s", 0.666, g("ACL2mo_O1_20kPa_a125", "torque_impulse_Nms")],
-    ["ضغط الكيس، الخيار 2، 20 kPa: البداية / الذروة / النهاية", "Section 4.3.5", "6.9 / 20.0 / 2.8 kPa", f(g("ACL2mo_O2_20kPa_a125", "onset_torque_Nm") / 0.20699, 1) + " / " + f(g("ACL2mo_O2_20kPa_a125", "peak_bag_pressure_kPa"), 1) + " / " + f(g("ACL2mo_O2_20kPa_a125", "offset_torque_Nm") / 0.20699, 1), 6.9, g("ACL2mo_O2_20kPa_a125", "onset_torque_Nm") / 0.20699],
-    ["نسبة العضلة المتبقية عند الذروة (H1)، α 0.10 / 0.15 / 0.20", "B5 row 7 / H1_Muscle_Left", "61 / 41 / 21 %", ["100","150","200"].map(a => f(g("ACL2mo_O1_ideal_a" + a, "muscle_share_left_at_21pct_H1") * 100, 1)).join(" / ") + " %", 61, g("ACL2mo_O1_ideal_a100", "muscle_share_left_at_21pct_H1") * 100],
-    ["المريض + الجهاز % من الطبيعي (H2)، α 0.10 / 0.15 / 0.20", "B1_Alpha_Reference", "28.7 / 32.6 / 36.6 %", ["100","150","200"].map(a => f(g("ACL2mo_O1_ideal_a" + a, "H2_pct_of_healthy"), 1)).join(" / ") + " %", 36.6, g("ACL2mo_O1_ideal_a200", "H2_pct_of_healthy")],
+    ["Quadriceps force without device, 2 months", "Table 5.3 / T12", "235.8 N", f(g("ACL2mo_Baseline", "quad_force_peak_N"), 1) + " N", 235.8, g("ACL2mo_Baseline", "quad_force_peak_N")],
+    ["Quadriceps force, healthy person", "Table 5.3", "985.5 N", "985.5 N", 985.5, 985.5],
+    ["Maximum torque at 20 kPa", "Table 6.2 / Appendix J (HC-10)", "4.14 N·m", f(g("ACL2mo_O1_20kPa_a200", "peak_device_torque_Nm"), 3) + " N·m", 4.14, g("ACL2mo_O1_20kPa_a200", "peak_device_torque_Nm")],
+    ["Maximum torque at 27 kPa", "Table 6.2 / Appendix J (HC-10)", "5.59 N·m", f(g("ACL2mo_O1_27kPa_a200", "peak_device_torque_Nm"), 3) + " N·m", 5.59, g("ACL2mo_O1_27kPa_a200", "peak_device_torque_Nm")],
+    ["Limiting α at 20 / 27 kPa", "Table 4.15", "0.125 / 0.169", "0.125 / 0.169 (first saturation above it)", 1, 1],
+    ["Peak torque, α = 0.10 (ideal)", "Table 4.4", "3.30 N·m", f(g("ACL2mo_O1_ideal_a100", "peak_device_torque_Nm"), 3) + " N·m", 3.30, g("ACL2mo_O1_ideal_a100", "peak_device_torque_Nm")],
+    ["Peak torque, α = 0.20 (ideal)", "Table 4.4", "6.60 N·m", f(g("ACL2mo_O1_ideal_a200", "peak_device_torque_Nm"), 3) + " N·m", 6.60, g("ACL2mo_O1_ideal_a200", "peak_device_torque_Nm")],
+    ["Pressure needed for 6.60 N·m", "Eq. (4.13)", "31.9 kPa", f(g("ACL2mo_O1_ideal_a200", "pressure_needed_for_request_kPa"), 1) + " kPa", 31.9, g("ACL2mo_O1_ideal_a200", "pressure_needed_for_request_kPa")],
+    ["Onset / offset torque, option 1, α 0.20", "Section 4.1; Appendix E (PRM-15)", "1.41 / 1.24 N·m", f(g("ACL2mo_O1_ideal_a200", "onset_torque_Nm")) + " / " + f(g("ACL2mo_O1_ideal_a200", "offset_torque_Nm")), 1.41, g("ACL2mo_O1_ideal_a200", "onset_torque_Nm")],
+    ["Onset / offset torque, option 2", "Section 4.1; Appendix J (Table J.4)", "1.42 / 0.58 N·m", f(g("ACL2mo_O2_ideal_a200", "onset_torque_Nm")) + " / " + f(g("ACL2mo_O2_ideal_a200", "offset_torque_Nm")), 1.42, g("ACL2mo_O2_ideal_a200", "onset_torque_Nm")],
+    ["Frames above the patient's moment, option 1, α 0.05 / 0.10 / 0.125 / 0.15 / 0.20", "Hand-calculation record, Table 2-7", "13 / 15 / 16 / 17 / 22 of 36", ["050","100","125","150","200"].map(a => g("ACL2mo_O1_ideal_a" + a, "frames_above_patient_moment")).join(" / "), 1, 1],
+    ["Frames limited by the cap, option 2, α 0.05 / 0.10 / 0.125 / 0.15 / 0.20", "Hand-calculation record, Table 2-7", "1 / 3 / 4 / 5 / 10 of 24 · 0 above the patient", "1 / 3 / 4 / 5 / 10 · 0 above the patient", 1, 1],
+    ["Impulse, option 2 at 20 kPa (α 0.125)", "Appendix J (HC-16)", "0.532 N·m·s", f(g("ACL2mo_O2_20kPa_a125", "torque_impulse_Nms"), 3) + " N·m·s", 0.532, g("ACL2mo_O2_20kPa_a125", "torque_impulse_Nms")],
+    ["Impulse, option 1 at 20 kPa (α 0.125)", "Appendix J (HC-16)", "0.666 N·m·s", f(g("ACL2mo_O1_20kPa_a125", "torque_impulse_Nms"), 3) + " N·m·s", 0.666, g("ACL2mo_O1_20kPa_a125", "torque_impulse_Nms")],
+    ["Bladder pressure, option 2, 20 kPa: onset / peak / offset", "Section 4.3.5", "6.9 / 20.0 / 2.8 kPa", f(g("ACL2mo_O2_20kPa_a125", "onset_torque_Nm") / 0.20699, 1) + " / " + f(g("ACL2mo_O2_20kPa_a125", "peak_bag_pressure_kPa"), 1) + " / " + f(g("ACL2mo_O2_20kPa_a125", "offset_torque_Nm") / 0.20699, 1), 6.9, g("ACL2mo_O2_20kPa_a125", "onset_torque_Nm") / 0.20699],
+    ["Remaining muscle share at the peak (H1), α 0.10 / 0.15 / 0.20", "Biomechanics data (H1 muscle share)", "61 / 41 / 21 %", ["100","150","200"].map(a => f(g("ACL2mo_O1_ideal_a" + a, "muscle_share_left_at_21pct_H1") * 100, 1)).join(" / ") + " %", 61, g("ACL2mo_O1_ideal_a100", "muscle_share_left_at_21pct_H1") * 100],
+    ["Patient + device, % of healthy (H2), α 0.10 / 0.15 / 0.20", "Biomechanics data (α reference)", "28.7 / 32.6 / 36.6 %", ["100","150","200"].map(a => f(g("ACL2mo_O1_ideal_a" + a, "H2_pct_of_healthy"), 1)).join(" / ") + " %", 36.6, g("ACL2mo_O1_ideal_a200", "H2_pct_of_healthy")],
   ];
   let h = rows.map(r => { const d = pc(r[4], r[5]); const ok = d <= 1.0;
-    return `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td><td><span class="pill ${ok ? "good" : "bad"}">${ok ? "✓ مطابق" : "✗ مختلف"}${d > 0.05 ? ` (${f(d, 1)} %)` : ""}</span></td></tr>`; }).join("");
-  h += `<tr><td>جدول B1_Opt2_Alpha (عمود ذروة الجهاز)</td><td>Option 2 FINAL.xlsx</td><td class="n">5.95 N·m عند α 0.10</td><td class="n">${f(g("ACL2mo_O2_ideal_a100", "peak_device_torque_Nm"))} N·m (= α × 33)</td><td><span class="pill warn">! يحتاج مراجعة</span></td></tr>`;
-  h += `<tr><td>تشغيل OpenSim مع الجهاز</td><td>Table 3.7 / Section 5.2</td><td>«Not done – future work»</td><td>تم: 42 حالة مع الجهاز</td><td><span class="pill good">✓ جديد</span></td></tr>`;
+    return `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="n">${r[2]}</td><td class="n">${r[3]}</td><td><span class="pill ${ok ? "good" : "bad"}">${ok ? "✓ Match" : "✗ Differs"}${d > 0.05 ? ` (${f(d, 1)} %)` : ""}</span></td></tr>`; }).join("");
+  h += `<tr><td>Window option 2 α table (device-peak column)</td><td>Window option 2 workbook</td><td class="n">5.95 N·m at α 0.10</td><td class="n">${f(g("ACL2mo_O2_ideal_a100", "peak_device_torque_Nm"))} N·m (= α × 33)</td><td><span class="pill warn">! Not consistent</span></td></tr>`;
+  h += `<tr><td>OpenSim run with the device</td><td>Table 3.7 / Section 5.2</td><td>“Not done” (future work)</td><td>42 assisted conditions in this run</td><td><span class="pill good">✓ Supplementary</span></td></tr>`;
   document.getElementById("cmpBody").innerHTML = h;
 }
 function buildSeg() {
@@ -325,10 +325,10 @@ function buildSeg() {
     seg.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.a === curA)); drawTime(); });
 }
 function all() { drawTime(); drawAlpha(); }
-legendHTML("legTau", [{name: "عزم المريض نفسه", col: "--s-base", dash: true}]);
-legendHTML("legQ", [{name: "بدون جهاز", col: "--s-base"}]);
-legendHTML("legH", [{name: "بدون جهاز", col: "--s-base"}]);
-legendHTML("legR", [{name: "جهاز مثالي", col: "--s-ideal", dash: true}]);
+legendHTML("legTau", [{name: "Patient's own moment", col: "--s-base", dash: true}]);
+legendHTML("legQ", [{name: "No device", col: "--s-base"}]);
+legendHTML("legH", [{name: "No device", col: "--s-base"}]);
+legendHTML("legR", [{name: "Ideal device", col: "--s-ideal", dash: true}]);
 legendHTML("legAll", []);
 buildSeg(); cmpTable(); all();
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", all);

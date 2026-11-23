@@ -1,5 +1,5 @@
 function R = run27_n5(make_figs)
-%RUN27_N5  N5 fail-safe venting, Rev 27 (no pressure-relief valve: future work).
+%RUN27_N5  N5 fail-safe venting (no pressure-relief valve).
 %   Every fault starts at the set point; faults that keep filling are also started
 %   from 21 pressures between 0 and the most the trip allows. Worst of both heat
 %   cases, receiver 70 kPa(g). Trip = set point + 2.6 kPa (22.6 / 29.6).
@@ -8,10 +8,10 @@ function R = run27_n5(make_figs)
 if nargin < 1, make_figs = true; end
 fprintf('\n===== N5 fail-safe venting =====\n');
 t0 = tic;
-base  = ka_setup(1, 1, 2, 'timing', false);      % Rev 27 system: one MHJ10
+base  = ka_setup(1, 1, 2, 'timing', false);      % design system: one MHJ10
 base2 = ka_setup(1, 2, 2, 'timing', false);      % comparison: two MHJ10
 R = struct();
-bases = {1, 0, 'cb', 'close-out basis (one MHE3 through the tube)';
+bases = {1, 0, 'cb', 'single-exhaust basis (one MHE3 through the tube)';
          2, 1, 'cs', 'complete system (two MHE3 at the port)'};
 
 %% ---- fault table, both exhaust arrangements ----
@@ -40,7 +40,7 @@ for pc = 1:2
     fprintf('  [%.0f s]\n', toc(t0));
 end
 
-%% ---- limits on the protection hardware (close-out basis, as Rev 25 Table 9) ----
+%% ---- limits on the protection hardware (single-exhaust basis) ----
 for pc = 1:2
     p = ka_case(base, pc, 2);  lim = p.limit_kPa;  o = p.opt_short;
     f = @(x) fault_worst(setf(p, 'supply_holdup', x), {'fault','power_loss','init','filling','t_end',0.7}, lim, 1, 0) - 303;
@@ -76,7 +76,7 @@ for i = 1:numel(trips)
 end
 fprintf('  FS-3 curve done [%.0f s]\n', toc(t0));
 
-%% ---- sensitivity (fault at the set point, design trip, close-out basis) ----
+%% ---- sensitivity (fault at the set point, design trip, single-exhaust basis) ----
 rows = {'base', 'Base case (b 0.36, C 0.82)',  {};
         'b0',   'Exhaust b 0 (C 1.00)',          {'exh_b', 0};
         'b528', 'Exhaust b 0.528 (C 0.72)',      {'exh_b', 0.528};
@@ -94,7 +94,7 @@ for i = 1:size(rows, 1)
         v = fault_worst(p, {'fault','power_loss','init','filling','pr_kPa',pr}, lim, 1, 0);
         [~, pk] = fault_worst(p, {'fault','inlet_open','init','filling','watchdog',true, ...
                      'trip_kPa',p.trip_kPa,'trip_err_kPa',p.sens_err_kPa,'pr_kPa',pr}, min(lim, p.trip_kPa + p.sens_err_kPa), 1, 0);
-        ka_report('add', sprintf('S.%s.pl.%s', rows{i,1}, p.opt_short), sprintf('%s, %s: power loss vented (close-out basis)', rows{i,2}, p.opt_short), v, NaN, 'ms');
+        ka_report('add', sprintf('S.%s.pl.%s', rows{i,1}, p.opt_short), sprintf('%s, %s: power loss vented (single-exhaust basis)', rows{i,2}, p.opt_short), v, NaN, 'ms');
         ka_report('add', sprintf('S.%s.tp.%s', rows{i,1}, p.opt_short), sprintf('%s, %s: inlet fault + trip, peak', rows{i,2}, p.opt_short), pk, NaN, 'kPa');
     end
 end
@@ -105,7 +105,7 @@ p = ka_case(base, 1, 2);  p2 = ka_case(base2, 1, 2);
 prs = [70 100 150];
 for j = 1:3
     ka_report('add', sprintf('SO.%d.n2', prs(j)), sprintf('One MHJ10 stuck open, receiver %d kPa(g), two MHE3 at the port open: settles at', prs(j)), ka_stuck_open(p, prs(j), 2, true), NaN, 'kPa');
-    ka_report('add', sprintf('SO.%d.n5', prs(j)), sprintf('Same, five MHE3 at the port (Rev 26 arrangement)', prs(j)), ka_stuck_open(p, prs(j), 5, true), NaN, 'kPa');
+    ka_report('add', sprintf('SO.%d.n5', prs(j)), sprintf('Same, five MHE3 at the port (comparison)', prs(j)), ka_stuck_open(p, prs(j), 5, true), NaN, 'kPa');
     ka_report('add', sprintf('SO.%d.n2.in2', prs(j)), sprintf('Two MHJ10 stuck open, receiver %d kPa(g), two MHE3 open', prs(j)), ka_stuck_open(p2, prs(j), 2, true), NaN, 'kPa');
 end
 
@@ -137,14 +137,14 @@ if make_figs
     ka_savefig('fig06_n5_faults');
 
     figure('Name', 'FS-3 against the trip', 'Color', 'w', 'Position', [60 60 1000 420]);  hold on;  grid on;
-    plot(R.trips, R.tp1, 'o-', 'Color', C.s1, 'LineWidth', 1.8, 'DisplayName', 'one MHJ10 (Rev 27 system)');
+    plot(R.trips, R.tp1, 'o-', 'Color', C.s1, 'LineWidth', 1.8, 'DisplayName', 'one MHJ10 (design system)');
     plot(R.trips, R.tp2, 's--', 'Color', C.ink, 'LineWidth', 1.4, 'DisplayName', 'two MHJ10 (comparison)');
     yline(28.9, '-r', 'pain onset 28.9 kPa (FS-3)', 'HandleVisibility', 'off');
     xline(22.6, ':', 'design trip 22.6 (20 kPa)', 'Color', C.s1, 'HandleVisibility', 'off');
     xline(29.6, ':', 'design trip 29.6 (27 kPa)', 'Color', C.s2, 'HandleVisibility', 'off');
     xline(R.trip_max, '--', sprintf('highest trip %.1f kPa (one MHJ10) -> set point %.1f kPa', R.trip_max, R.trip_max - 2.6), 'Color', C.s3, 'HandleVisibility', 'off');
     xlabel('trip setting (kPa(g))');  ylabel('peak with the inlet held open (kPa(g))');  legend('Location', 'northwest');
-    title('FS-3: inlet held open, fault starts at trip + 1.25 kPa, no relief valve (future work)');
+    title('FS-3: inlet held open, fault starts at trip + 1.25 kPa, no relief valve');
     ka_savefig('fig07_fs3_trip_peak');
 end
 fprintf('N5 done in %.1f min\n', toc(t0) / 60);

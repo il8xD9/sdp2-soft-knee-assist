@@ -1,7 +1,7 @@
 function R = run27_n1_n4(make_figs)
-%RUN27_N1_N4  N1 pressure at the onset and N4 free knee flexion at the design alpha, Rev 27.
+%RUN27_N1_N4  N1 pressure at the onset and N4 free knee flexion at the design alpha.
 %   Demand-following pulse: rise to the onset demand, then MIN(tau_req / k, set point)
-%   on Basem's window (window 2: capped at the patient's moment). Fill command and
+%   on the assistance window (window 2: capped at the patient's moment). Fill command and
 %   G-5 floor from ka_fill_timing. Complete system: two MHE3 at the bladder port.
 %   Cases: window 2 (main) and window 1 (comparison) x 20 / 27 kPa x one / two MHJ10;
 %   each with the clock -4 / 0 / +4 ms and four heat / receiver cases.

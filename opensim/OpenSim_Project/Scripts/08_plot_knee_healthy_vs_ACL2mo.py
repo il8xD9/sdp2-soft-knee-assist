@@ -124,7 +124,7 @@ def legend(fig):
     fig.legend(h, lab, loc="upper right", ncol=2, frameon=False, fontsize=9.5)
 
 
-SRC = ("OpenSim 4.6 no-device baseline (run 30 Oct 2026, Healthy_Baseline and ACL_2Months/Baseline). Input waveforms from Buttner et al. 2025 "
+SRC = ("OpenSim 4.6 no-device baseline (Healthy_Baseline and ACL_2Months/Baseline). Input waveforms from Buttner et al. 2025 "
        "(stance only - no swing data for ACLR). Moment = net knee moment (taken from Buttner, not an independent calculation). Reference man 70 kg, 1.70 m.")
 
 fig, axs = plt.subplots(2, 2, figsize=(13, 8.6))

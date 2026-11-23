@@ -1,5 +1,5 @@
 function res = ka_simulate(p, cfg)
-%KA_SIMULATE  One run of the Rev 25 pneumatic system (explicit Euler, p.dt).
+%KA_SIMULATE  One run of the pneumatic system (explicit Euler, p.dt).
 %   res = ka_simulate(p, cfg)   p from ka_setup (or ka_params + ka_prepare),
 %                               cfg from ka_default_cfg
 %

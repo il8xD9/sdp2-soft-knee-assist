@@ -1,5 +1,5 @@
 function p = ka_prepare(p)
-%KA_PREPARE  Derived values, valve flow tables, Basem's waveforms and the
+%KA_PREPARE  Derived values, valve flow tables, gait waveforms and the
 %   fastest-fill reference. Call again after changing any hardware, tube or
 %   volume value (or p.n_in); after changing only the option, ka_derived(p)
 %   is enough.
@@ -34,7 +34,7 @@ gb = 0 : p.in_db : 250;
 p.in_tab = ka_series_flow('inlet', PR, PB, 1, 0, p);
 p.in_nr = numel(gr);  p.in_nb = numel(gb);
 
-% ---- Basem's B3 demand shape and B4 knee angle ----
+% ---- B3 demand shape and B4 knee angle ----
 p = ka_gait_data(p);
 
 % ---- option-dependent values ----

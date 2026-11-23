@@ -1,21 +1,20 @@
 function [floor_w, fill_w, scan] = ka_fill_timing(p)
-%KA_FILL_TIMING  G-5 floor and demand-pulse fill command (Rev 23 rules, Rev 27 search).
+%KA_FILL_TIMING  G-5 floor and demand-pulse fill command.
 %   [floor_w, fill_w] = ka_fill_timing(p)      times on the window clock (s)
 %   [~, ~, scan] = ...                         scan = [fill command (s), onset % slowest case]
 %
 %   G-5 floor (D-B4-4): the earliest fill command for which the fastest case
 %   (no heat exchange, receiver 70 kPa(g)) stays at or below 2.4 kPa(g) until
 %   43 ms (1 ms past the 42 ms at which the knee passes 0 deg) with the window
-%   clock 4 ms early (Rev 23 footswitches, +-4 ms). Bisection.
+%   clock 4 ms early (footswitches, +-4 ms). Bisection.
 %
 %   Fill command: the latest command, on a 0.5 ms grid from the floor to the
 %   onset - 2.5 ms, at which the slowest case (room temperature, receiver
 %   53 kPa(g)) still holds at least MIN(91 %, best - 1 point) of the onset
-%   demand at the window onset. Rev 27: the onset is 59.4 ms (window 1) or
-%   91.65 ms (window 2). Rev 25 kept the best onset within 1 point; in window 2
-%   that put the fill 50 ms before the onset and pushed 11 % of the torque x time
-%   early (N1-2), so Rev 27 waits as long as N1-1 (90 %, +1 point margin)
-%   allows. The search scans every 2 ms and then the 0.5 ms points of the last
+%   demand at the window onset. The onset is 59.4 ms (window 1) or 91.65 ms
+%   (window 2). Keeping the best onset within 1 point would put the fill 50 ms
+%   before the onset in window 2 and push 11 % of the torque x time early (N1-2),
+%   so the command waits as long as N1-1 (90 %, +1 point margin) allows. The search scans every 2 ms and then the 0.5 ms points of the last
 %   passing step. Complete system: p.n_exh_sys MHE3 at the port.
 f = @(fw) 2.4 - max_until(p, fw);
 floor_w = bisect(f, 0.020, 0.059);

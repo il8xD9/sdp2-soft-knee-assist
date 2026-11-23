@@ -17,7 +17,7 @@ V3,Torque impulse alpha 0.50 (N.m.s) 6 months,2.135,2.134,0.001,0.01,PASS,Table 
 V4,Peak torque alpha 1.00 (N.m) 6 months,25.9305,25.93,0.0005,0.02,PASS,Table 6B (sheet 08)
 V3,Torque impulse alpha 0.50 (N.m.s) 12 months,1.3724,1.372,0.0004,0.01,PASS,Table 6B (sheet 08)
 V4,Peak torque alpha 1.00 (N.m) 12 months,17.96,17.96,-0.0,0.02,PASS,Table 6B (sheet 08)
-V5,Torque capability at 100 kPa (N.m),10.756,10.76,-0.004,0.01,PASS,CAD V4.1: 100 kPa x 3140.3 mm2 x 34.25 mm = 10.76 N.m (Eq. 4.14)
+V5,Torque capability at 100 kPa (N.m),10.756,10.76,-0.004,0.01,PASS,CAD V4.1: 100 kPa x 3140.3 mm2 x 34.25 mm = 10.76 N.m
 V6,alpha reached at 100 kPa 2 Months,0.3262,0.3263,-0.0001,0.001,PASS,CAD V4.1 T_max / CALC-BIO-03 Table 6B peak
 V6,alpha reached at 100 kPa 4 Months,0.4197,0.4197,0.0,0.001,PASS,CAD V4.1 T_max / CALC-BIO-03 Table 6B peak
 V6,alpha reached at 100 kPa 6 Months,0.4148,0.4148,0.0,0.001,PASS,CAD V4.1 T_max / CALC-BIO-03 Table 6B peak

@@ -1,22 +1,22 @@
 function ka_system_diagram()
-%KA_SYSTEM_DIAGRAM  Structure of the Rev 27 system (one leg): air path, power, signals.
-%   Draws results\fig19_system_structure.png. Values are those of the Rev 27 runs
-%   (one MHJ10, two MHE3 at the port, relief valve = future work).
+%KA_SYSTEM_DIAGRAM  Structure of the pneumatic system (one leg): air path, power, signals.
+%   Draws results\fig19_system_structure.png. Values are those of the model runs
+%   (one MHJ10, two MHE3 at the port, no relief valve).
 air = [0.16 0.47 0.85];  pwr = [0.91 0.40 0.20];  sig = [0.15 0.55 0.40];
 fa = [0.93 0.96 1.00];  fp = [1.00 0.95 0.93];  fs = [0.92 0.96 0.94];
 f = figure('Color', 'w', 'Position', [40 40 1500 870], 'Visible', 'off');
 ax = axes(f, 'Position', [0 0 1 1]);  hold(ax, 'on');  axis(ax, [-10 2000 -20 1160]);  axis(ax, 'off');
 set(ax, 'YDir', 'reverse');
-text(ax, 45, 30, 'Rev 27 pneumatic system (one leg) - air path (blue), electrical power (orange), signals (green)', ...
+text(ax, 45, 30, 'Pneumatic system (one leg) - air path (blue), electrical power (orange), signals (green)', ...
      'FontSize', 13, 'FontWeight', 'bold', 'Color', [0.15 0.15 0.15], 'Interpreter', 'none');
 B = @(x, y, w, h, ttl, body, ec, fc, ls) box(ax, x, y, w, h, ttl, body, ec, fc, ls);
 B(40, 110, 230, 150, 'Pump', {'KNF NMP 850.1.2 HP', '15 l/min, 2.2 bar(g)', 'switched 55 / 70 kPa(g)'}, air, fa, '-');
 B(330, 110, 230, 150, 'Receiver 1.5 L', {'check valve, bypass relief', 'receiver relief <= 1.5 bar(g)'}, air, fa, '-');
 B(620, 110, 260, 150, '1 x MHJ10 (NC)', {'inlet', 'C 0.66 l/(s bar), b 0.36', 'open 1.0 / close 0.5 ms'}, air, fa, '-');
-B(940, 110, 200, 150, 'Tube', {'tupe-15', '4 mm x 80 mm', 'K = 1.5'}, air, fa, '-');
-B(1200, 100, 330, 170, 'Bladder actuator-V8', {'391.9 mL with tube', 'k3D = 0.207 N m/kPa', '4.14 / 5.59 N m at 20 / 27 kPa'}, air, fa, '-');
+B(940, 110, 200, 150, 'Tube', {'PEN-6x1', '4 mm x 80 mm', 'K = 1.5'}, air, fa, '-');
+B(1200, 100, 330, 170, 'Bladder actuator', {'391.9 mL with tube', 'k3D = 0.207 N m/kPa', '4.14 / 5.59 N m at 20 / 27 kPa'}, air, fa, '-');
 B(1590, 110, 360, 150, '2 x MHE3 (NO) at the port', {'exhausts, port 3 sealed', 'C 0.82 l/(s bar) each (b 0.36)', '0.44 l/s at 2.4 kPa -> silencer'}, air, fa, '-');
-B(1235, 300, 260, 120, 'Relief valve L500', {'FUTURE WORK', 'not fitted in Rev 27'}, [0.55 0.55 0.55], [0.96 0.96 0.96], '--');
+B(1235, 300, 260, 120, 'Relief valve L500', {'not fitted', '(considered, not adopted)'}, [0.55 0.55 0.55], [0.96 0.96 0.96], '--');
 arrow(ax, [270 330], [185 185], air);  arrow(ax, [560 620], [185 185], air);  arrow(ax, [880 940], [185 185], air);
 arrow(ax, [1140 1200], [185 185], air);  arrow(ax, [1530 1590], [185 185], air);
 arrow(ax, [1770 1770], [260 300], air);  text(ax, 1788, 278, 'to air', 'Color', air, 'FontSize', 10);

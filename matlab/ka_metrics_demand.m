@@ -9,7 +9,7 @@ function m = ka_metrics_demand(p, res, T_stance)
 %   first_above_ms, back_rest_ms   first above 2.4 kPa(g), back at 2.4 kPa(g)
 %   p_straight_kPa  highest pressure while the knee is at or past straight (N4-4)
 %   p_deadline_kPa  pressure at the push-off deadline (N4-1); margin_ms to it
-%   Rev 27: the target is tau_req (ka_torque_req: window 2 capped at the patient's
+%   The target is tau_req (ka_torque_req: window 2 capped at the patient's
 %   moment) limited to k x set point; torque = k3D x pressure.
 if nargin < 3, T_stance = p.T_stance; end
 L = res.log;  t = L.t;  dtl = t(min(2, numel(t))) - t(1);

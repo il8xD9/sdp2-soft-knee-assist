@@ -1,20 +1,20 @@
 # How to run the OpenSim step (one script)
 
-## الخطوات (Steps)
+## Steps
 
-1. فكّ ضغط `OpenSim_Project.zip` في مسار إنجليزي فقط (ASCII path)، مثل `C:\sdp2_opensim\OpenSim_Project`.
-   لا تضع المجلد داخل مسار فيه حروف عربية، لأن OpenSim لا يفتح الملفات من مسار غير ASCII.
-2. افتح **OpenSim 4.6** (GUI). لا تحتاج إلى فتح أي model.
-3. من القائمة: **Scripts → Run…**، ثم اختر الملف `OpenSim_Project\Scripts\run_opensim_knee_SO.py`.
-4. انتظر حتى تظهر في نافذة الرسائل (Messages) جملة `FINISHED: 116 of 116 conditions`، وقد يستغرق ذلك نحو 5 إلى 15 دقيقة. وللتجربة السريعة أولًا ضع `ONLY_PRIMARY_12 = True` (السطر 67) فيعمل على 12 حالة فقط.
-5. لرسم الأشكال Fig03 و04 و08 و11 و14 و20 وإكمال جداول العضلات، شغّل:
+1. Place the `OpenSim_Project` folder in a path with English letters only (ASCII path), e.g. `C:\sdp2_opensim\OpenSim_Project`.
+   Do not put the folder inside a path that contains non-ASCII (for example Arabic) letters, because OpenSim cannot open files from a non-ASCII path.
+2. Open **OpenSim 4.6** (GUI). No model needs to be opened.
+3. From the menu: **Scripts → Run…**, then select the file `OpenSim_Project\Scripts\run_opensim_knee_SO.py`.
+4. Wait until the Messages window shows `FINISHED: 116 of 116 conditions`; this can take about 5 to 15 minutes. For a quick test first, set `ONLY_PRIMARY_12 = True` (line 67) so that only 12 conditions are run.
+5. To draw figures Fig03, 04, 08, 11, 14 and 20 and complete the muscle tables, run:
    `python Scripts\05_postprocess_opensim_results.py`
 
 ## If something goes wrong
 
 | Message in the log | Fix |
 |---|---|
-| `project folder not found` | Open the script in a text editor and set `PROJECT_DIR = r"C:\...\OpenSim_Project"` (line 53) |
+| `project folder not found` | Open the script in a text editor and set `PROJECT_DIR = r"C:\...\OpenSim_Project"` (line 56) |
 | `gait2392_simbody.osim not found` | Set `MODEL_PATH` to your file, usually `C:\Users\<you>\Documents\OpenSim\4.6\Models\Gait2392_Simbody\gait2392_simbody.osim` |
 | `scaling failed` | The run continues with the generic (unscaled) model, and this is written in `run_log.txt` |
 | `native AnalyzeTool skipped` | Optional cross-check only; the static-optimization results are still complete |

@@ -9,7 +9,7 @@ function [dP, dm, dpr, md_in, md_out, T] = ka_plant_deriv(P, m, pr, in_open, n_o
 %              balance); false: room temperature (isothermal)
 %   rec_dyn    true: receiver pressure changes (pump and draw); false: fixed
 %   at_port    exhausts at the bladder port (true) or behind the tube (false)
-%   rel_open   relief valve open (Rev 24e, Circle Seal L500; hysteresis kept by the caller)
+%   rel_open   relief valve open (Circle Seal L500, screening only; hysteresis kept by the caller)
 %
 %   Bladder (rigid volume V, Xavier 2022 Eq. 4 with n = 1 or gamma):
 %     no heat exchange: dP/dt = gam R / V (T0 mdot_in - T mdot_out),  T = P V / (m R)

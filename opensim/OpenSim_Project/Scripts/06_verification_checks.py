@@ -3,7 +3,7 @@
 06_verification_checks.py
 -------------------------
 PURPOSE : Independent checks of the computed results against values published in the
-          team's own documents (closure workbook / Acuator_data.docx) and an independent
+          biomechanics workbook and the actuator design data, and an independent
           numerical check of the static-optimization solver used in run_opensim_knee_SO.py.
           Reference values are re-read from the source workbook here (not from Input_Data).
 OUTPUT  : Results/verification_checks.csv
@@ -58,10 +58,10 @@ for r in rows[4:40]:
         add("V4", "Peak torque alpha 1.00 (N.m) " + r[0],
             met.loc[e + "_Assisted_" + ATAG, "act_peak_torque_Nm"] / AP, float(r[8]), 0.02, "Table 6B (sheet 08)")
 
-# V5 actuator capability and alpha_max vs Acuator_data.docx Table 6-1 / Section 6
+# V5 actuator capability and alpha_max vs the CAD V4.1 actuator data
 act = pd.read_csv(os.path.join(ROOT, "Actuator", "actuator_capability_check.csv")).set_index("epoch")
 add("V5", "Torque capability at 100 kPa (N.m)", float(act["capability_100kPa_Nm"].iloc[0]), 10.76, 0.01,
-    "CAD V4.1: 100 kPa x 3140.3 mm2 x 34.25 mm = 10.76 N.m (Eq. 4.14)")
+    "CAD V4.1: 100 kPa x 3140.3 mm2 x 34.25 mm = 10.76 N.m")
 # references: CAD V4.1 T_max = 10.7555 N.m divided by CALC-BIO-03 Table 6B full-deficit peaks
 for ep, ref in [("2 Months", 0.3263), ("4 Months", 0.4197), ("6 Months", 0.4148), ("12 Months", 0.5990)]:
     add("V6", "alpha reached at 100 kPa " + ep, float(act.loc[ep, "alpha_max_at_100kPa"]), ref, 0.001,

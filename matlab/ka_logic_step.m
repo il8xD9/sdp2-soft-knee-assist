@@ -1,6 +1,6 @@
 function [in_cmd, e1_pow, e2_pow, pump, w, S] = ka_logic_step(cmd, a1, a2, a3)
 %KA_LOGIC_STEP  The controller board, one time step: contact rules G-1..G-5,
-%   window clock, PI + feedforward + anti-windup (Rev 22), 200 Hz PWM (one
+%   window clock, PI + feedforward + anti-windup, 200 Hz PWM (one
 %   pulse per period), faults, hardware trip, watchdog, 24 V supply switch and
 %   the receiver pump switch.
 %
@@ -20,12 +20,12 @@ function [in_cmd, e1_pow, e2_pow, pump, w, S] = ka_logic_step(cmd, a1, a2, a3)
 %   The same function runs inside ka_simulate.m and inside the Simulink
 %   model (sl_ka_logic.m), so both use identical control code.
 %
-%   Rev 27: the reference is tau_req / k from ka_torque_req (window option 2:
+%   The reference is tau_req / k from ka_torque_req (window option 2:
 %   MIN(alpha x deficit, patient moment); window option 1: alpha x deficit),
 %   with the 3D torque constant k3D.
-%   Rev 25 against Rev 21: no D term and no cap guard (Rev 22); feedforward on
-%   the release through one exhaust; set point = B7 limit; two footswitches read
-%   at 1 kHz with the window clock at detection - 5.6 ms (Rev 23); fill command
+%   No D term and no cap guard; feedforward on the release through one exhaust;
+%   set point = B7 limit; two footswitches read at 1 kHz with the window clock
+%   at detection - 5.6 ms; fill command
 %   from ka_fill_timing (p.t_fill_demand), never before the G-5 floor;
 %   forced abort cfg.abort_w and the 'stuck_all' fault (relief-valve runs).
 
@@ -61,7 +61,7 @@ if S0.pulse_code > 0
         end
     elseif k == S0.k_next_foot
         % footswitch sample at 1 kHz; the signal lags the true contact by the
-        % insole delay and the 100 Hz filter (Rev 23, Section 3.3)
+        % insole delay and the 100 Hz filter
         S0.k_next_foot = S0.k_next_foot + S0.n_foot;
         c = contact_true(cfg, p, t - S0.sense_lag, S0.stance);
         if ~S0.active
@@ -284,7 +284,7 @@ elseif S.pulse_code == 1
     S.t_fill_w = p.t_detect_bound;
 elseif S.pulse_code == 2
     if ~isnan(p.t_fill_demand)
-        S.t_fill_w = max(p.t_fill_demand, floor_w);               % ka_fill_timing (Rev 25)
+        S.t_fill_w = max(p.t_fill_demand, floor_w);               % ka_fill_timing
     else
         [tl, ~] = ka_open_fill(p, 53, false, p.p_on_kPa, 0.6);    % slowest case (PR-15)
         S.t_fill_w = max(p.t_on - tl(end) - S.stagger, floor_w);  % G-5 floor

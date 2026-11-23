@@ -4,7 +4,7 @@ function V = rpt_fig_4_9(p)
 %           (uncapped) and the device at 20 kPa(g), alpha = 0.125 (capped):
 %           tau_req = MIN(alpha x tau_full, MAX(M_patient, 0)), 13-36 % stance (Eq. 4.14)
 %   Bottom: bladder pressure the device must follow, p = tau_req / k (k3D, 0.207 N m/kPa)
-%   Frame by frame on Basem's 1 % stance frames (1 % = 7.05 ms); shaded where the cap acts.
+%   Frame by frame on the 1 % stance frames (1 % = 7.05 ms); shaded where the cap acts.
 if nargin < 1 || isempty(p), p = rpt_base(1, 2); end
 p = ka_set_window(p, 2);
 p = ka_set_option(p, 1);
@@ -12,7 +12,7 @@ p = ka_derived(p);
 C = ka_colours();
 k = p.k_Nm_per_kPa;
 
-s  = 13:36;                                                % % stance, Basem's frames
+s  = 13:36;                                                % % stance frames
 tf = interp1(p.b3_pct, p.b3_def, s);                       % tau_full (N m)
 mp = interp1(p.pm_pct, p.pm_Nm, s);                        % patient's own moment (N m)
 dev = min(p.alpha * tf, max(mp, 0));                       % device torque (N m)

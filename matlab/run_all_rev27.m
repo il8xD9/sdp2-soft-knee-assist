@@ -1,10 +1,10 @@
-%RUN_ALL_REV27  Runs the whole Rev 27 model (Week 11) and writes results\rev27_results.csv.
+%RUN_ALL_REV27  Runs the whole Rev 27 model and writes results\rev27_results.csv.
 %
 %   Order: inputs -> N2/N3 -> N5 -> N1/N4 -> N6 -> N7 -> Simulink check.
 %   Figures go to results\ (PNG and FIG). Each value is printed with the hand
-%   calculation next to it where one exists (Nawaf_Rev27_Hand_Calculations).
-%   HARDWARE VALUES ARE PROPOSED, NOT APPROVED - see ka_params.m.
-%   The pressure-relief valve is FUTURE WORK and is not in any Rev 27 run.
+%   calculation next to it where one exists (Appendix J of the final report).
+%   Hardware values: see ka_params.m.
+%   The pressure-relief valve is not fitted and is not in any run.
 here = fileparts(mfilename('fullpath'));
 addpath(here);
 if ~exist(fullfile(here, 'results'), 'dir'), mkdir(fullfile(here, 'results')); end

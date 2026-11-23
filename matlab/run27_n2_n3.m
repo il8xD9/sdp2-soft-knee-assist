@@ -1,5 +1,5 @@
 function R = run27_n2_n3(make_figs)
-%RUN27_N2_N3  Controller, set point and exposure (N2, N3), Rev 27.
+%RUN27_N2_N3  Controller, set point and exposure (N2, N3).
 %   Bounding pulse: fastest fill to the set point (fill command at 20 ms), hold to
 %   the window offset, vent. Four cases: room temperature / no heat exchange x
 %   receiver 53 / 70 kPa(g); worst kept. Close-out basis: one MHJ10 (system), one MHE3
@@ -7,7 +7,7 @@ function R = run27_n2_n3(make_figs)
 %   Figures 4 (fill at the slowest case) and 5 (bounding pulse over a stride).
 if nargin < 1, make_figs = true; end
 fprintf('\n===== N2 / N3: controller, set point, exposure =====\n');
-base = ka_setup(1, 1, 2, 'timing', false);      % Rev 27 system: one MHJ10
+base = ka_setup(1, 1, 2, 'timing', false);      % design system: one MHJ10
 cases = [0 53; 0 70; 1 53; 1 70];
 R = struct();
 for pc = 1:2
@@ -28,19 +28,19 @@ for pc = 1:2
     ka_report('add', ['N2.true.' o], sprintf('%s: highest true pressure = peak + 1.25', p.opt_name), pk + p.sens_err_kPa, p.cap_kPa + 1.25, 'kPa');
     ka_report('add', ['N2.low.' o],  sprintf('%s: lowest true pressure at the hold', p.opt_name), p.cap_kPa - max([M.mean_err_kPa]) - p.sens_err_kPa, NaN, 'kPa');
     ka_report('add', ['N2.trip.' o], sprintf('%s: trip setting = set point + 2 x 1.25 + 0.1', p.opt_name), p.trip_kPa, pick(pc, 22.6, 29.6), 'kPa');
-    % N3 exposure over one stride, both windows, close-out basis and complete system
+    % N3 exposure over one stride, both windows, single-exhaust basis and complete system
     for w = [2 1]
         pw = ka_case(base, pc, w);  ow = [o '.' pw.win_short];
         M = run_cases(pw, cases, {'pulse','bounding','t_end',pw.T_stride});
-        ka_report('add', ['N3.above.' ow], sprintf('%s, %s, close-out basis: time above 2.4 kPa per stride', pw.opt_name, pw.win_name), max([M.above_ms]), NaN, 'ms');
-        ka_report('add', ['N3.defl.' ow],  sprintf('%s, %s, close-out basis: vented after the offset', pw.opt_name, pw.win_name), max([M.deflated_ms]), NaN, 'ms');
+        ka_report('add', ['N3.above.' ow], sprintf('%s, %s, single-exhaust basis: time above 2.4 kPa per stride', pw.opt_name, pw.win_name), max([M.above_ms]), NaN, 'ms');
+        ka_report('add', ['N3.defl.' ow],  sprintf('%s, %s, single-exhaust basis: vented after the offset', pw.opt_name, pw.win_name), max([M.deflated_ms]), NaN, 'ms');
         M2 = run_cases(pw, cases, {'pulse','bounding','n_exh',2,'exh_at_port',true,'t_end',pw.T_stride});
         ka_report('add', ['N3.above2.' ow], sprintf('%s, %s, two MHE3 at the port: time above 2.4 kPa', pw.opt_name, pw.win_name), max([M2.above_ms]), NaN, 'ms');
         ka_report('add', ['N3.defl2.' ow],  sprintf('%s, %s, two MHE3 at the port: vented after the offset', pw.opt_name, pw.win_name), max([M2.deflated_ms]), NaN, 'ms');
         ka_report('add', ['N3.pon2.' ow],   sprintf('%s, %s, bounding pulse: pressure at the onset (worst)', pw.opt_name, pw.win_name), min([M2.p_onset_kPa]), NaN, 'kPa');
         M5 = run_cases(pw, cases, {'pulse','bounding','n_exh',5,'exh_at_port',true,'t_end',pw.T_stride});
-        ka_report('add', ['N3.above5.' ow], sprintf('%s, %s, five MHE3 at the port (Rev 26): time above 2.4 kPa', pw.opt_name, pw.win_name), max([M5.above_ms]), NaN, 'ms');
-        ka_report('add', ['N3.defl5.' ow],  sprintf('%s, %s, five MHE3 at the port (Rev 26): vented after the offset', pw.opt_name, pw.win_name), max([M5.deflated_ms]), NaN, 'ms');
+        ka_report('add', ['N3.above5.' ow], sprintf('%s, %s, five MHE3 at the port (comparison): time above 2.4 kPa', pw.opt_name, pw.win_name), max([M5.above_ms]), NaN, 'ms');
+        ka_report('add', ['N3.defl5.' ow],  sprintf('%s, %s, five MHE3 at the port (comparison): vented after the offset', pw.opt_name, pw.win_name), max([M5.deflated_ms]), NaN, 'ms');
     end
 end
 
@@ -76,7 +76,7 @@ if make_figs
         p = ka_case(base, pc, 2);
         r = ka_simulate(p, ka_default_cfg('pulse','bounding','adiabatic',false,'pr_kPa',53,'t_end',p.T_stride));
         r5 = ka_simulate(p, ka_default_cfg('pulse','bounding','adiabatic',false,'pr_kPa',53,'n_exh',2,'exh_at_port',true,'t_end',p.T_stride));
-        plot(r.log.t*1e3, r.log.p, 'Color', col{pc}, 'LineWidth', 1.8, 'DisplayName', sprintf('%s: one MHE3 through the tube (close-out basis)', p.opt_name));
+        plot(r.log.t*1e3, r.log.p, 'Color', col{pc}, 'LineWidth', 1.8, 'DisplayName', sprintf('%s: one MHE3 through the tube (single-exhaust basis)', p.opt_name));
         plot(r5.log.t*1e3, r5.log.p, '--', 'Color', col{pc}, 'LineWidth', 1.5, 'DisplayName', sprintf('%s: two MHE3 at the port (system)', p.opt_name));
         yline(p.trip_kPa, ':', sprintf('trip %.1f', p.trip_kPa), 'Color', col{pc}, 'HandleVisibility', 'off');
     end

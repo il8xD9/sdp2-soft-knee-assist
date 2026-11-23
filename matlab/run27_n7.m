@@ -1,5 +1,5 @@
 function R = run27_n7(P, make_figs)
-%RUN27_N7  N7 air supply over 40 strides, pump duty and electrical power, Rev 27.
+%RUN27_N7  N7 air supply over 40 strides, pump duty and electrical power.
 %   P = R.p from run27_n1_n4. Receiver 1.5 L starting at 70 kPa(g); pump on at 55,
 %   off at 70 kPa(g). Complete system (two MHE3 at the port), room temperature.
 %   Figure 13 (receiver over 40 strides).
@@ -8,7 +8,7 @@ if nargin < 2, make_figs = true; end
 fprintf('\n===== N7 air supply, 40 strides =====\n');
 t0 = tic;
 N = 40;
-base = ka_setup(1, 1, 2, 'timing', false);      % Rev 27 system: one MHJ10
+base = ka_setup(1, 1, 2, 'timing', false);      % design system: one MHJ10
 Ttot = N * base.T_stride;   % (stray 'D' removed)
 R = struct();
 runs = {};   % {label, p, pulse, Vr}
@@ -46,9 +46,9 @@ for i = 1:size(runs, 1)
 end
 tau = base.Vr * base.pump_pmax_kPa * 1e3 / (base.p_anr * base.pump_Qfree);
 ka_report('add', 'N7.charge', 'Receiver 1.5 L: charge from 0 to 70 kPa(g) on the pump line', -tau * log(1 - 70 / base.pump_pmax_kPa), 5.06, 's');
-ka_report('add', 'P.peak.sys', 'Peak electrical power: pump + one MHJ10 + two MHE3 switching (Rev 27)', base.pump_W + 1*base.in_W + 2*base.exh_W, 51.2, 'W');
+ka_report('add', 'P.peak.sys', 'Peak electrical power: pump + one MHJ10 + two MHE3 switching (design system)', base.pump_W + 1*base.in_W + 2*base.exh_W, 51.2, 'W');
 ka_report('add', 'P.peak.in2', 'Peak electrical power: pump + two MHJ10 + two MHE3', base.pump_W + 2*base.in_W + 2*base.exh_W, 58.2, 'W');
-ka_report('add', 'P.peak.26', 'Peak electrical power, Rev 26: one MHJ10 + five MHE3', base.pump_W + 1*base.in_W + 5*base.exh_W, 70.7, 'W');
+ka_report('add', 'P.peak.26', 'Peak electrical power, comparison: one MHJ10 + five MHE3', base.pump_W + 1*base.in_W + 5*base.exh_W, 70.7, 'W');
 
 %% ---- figure ----
 if make_figs

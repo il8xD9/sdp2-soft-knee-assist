@@ -5,8 +5,8 @@ cfg.pulse            = 'bounding';  % 'bounding' | 'demand' | 'none'
 cfg.adiabatic        = false;       % heat case: false = room temperature, true = no heat exchange
 cfg.pr_kPa           = 53;          % receiver, kPa(g) (start value if dynamic)
 cfg.receiver_dynamic = false;       % true: receiver drawn down and refilled by the pump
-cfg.n_exh            = 1;           % installed MHE3 exhausts: 1 = close-out basis, 2 = complete
-                                    % system, 5 = v7 swing squeeze (exhaust 1 makes the corrections)
+cfg.n_exh            = 1;           % installed MHE3 exhausts: 1 = single-exhaust basis, 2 = complete
+                                    % system, 5 = swing-squeeze check (exhaust 1 makes the corrections)
 cfg.exh_at_port      = false;       % false: exhaust behind the tube; true: at the bladder port
 cfg.n_strides        = 1;
 cfg.t_end            = NaN;         % s; NaN = n_strides x stride

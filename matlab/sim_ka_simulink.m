@@ -1,5 +1,5 @@
 function out = sim_ka_simulink(p, pulse, adiabatic, pr_kPa, tag)
-%SIM_KA_SIMULINK  Runs the Simulink model and checks it against the script model (Rev 27).
+%SIM_KA_SIMULINK  Runs the Simulink model and checks it against the script model.
 %   sim_ka_simulink                       DESIGN SYSTEM: 20 kPa, window 2, one MHJ10,
 %                                         two MHE3, demand pulse, room temp., receiver 53
 %   sim_ka_simulink(p, 'bounding', true, 70, 'P27')   p from ka_setup / ka_case with its

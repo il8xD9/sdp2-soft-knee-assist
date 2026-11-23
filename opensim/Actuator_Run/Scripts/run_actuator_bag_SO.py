@@ -2,14 +2,14 @@
 run_actuator_bag_SO.py  -  OpenSim 4.6 knee static optimisation WITH the final bladder actuator
 ==============================================================================================
 Patient : man 70 kg / 1.70 m, 2 months after ACLR (Buttner 2025 group-mean waveforms, stance 0.705 s)
-Model   : gait2392 scaled x0.9444 to 70 kg / 1.70 m (same file as the 30 Oct 2026 no-device run)
+Model   : gait2392 scaled x0.9444 to 70 kg / 1.70 m (same model as the no-device run of OpenSim_Project)
 Device  : knee_assist_r = CoordinateActuator on knee_angle_r (extension only) + PrescribedController
-          torque constant k = 206 990 mm^3 (Model B, 3-D virtual work, hand calc v6 SH-C04)
+          torque constant k = 206 990 mm^3 (Model B, 3-D virtual work, hand calculation SH-C04)
           -> max torque  20 kPa : 4.140 N.m      27 kPa : 5.589 N.m
-Torque laws (Basem B1-B8 FINAL):
+Torque laws (assist windows of the biomechanics data):
    Option 1  8.43-44 % stance : tau = alpha x deficit
    Option 2  13-36 %  stance  : tau = MIN(alpha x deficit, MAX(patient moment, 0))
-   then  tau_delivered = MIN(tau, p_lim x k)   (bag pressure limit)  and tau = 0 if knee flexion <= 0 deg (DR-B6-2)
+   then  tau_delivered = MIN(tau, p_lim x k)   (bag pressure limit)  and tau = 0 if knee flexion <= 0 deg (straight-knee rule)
 alpha  : 0.05, 0.10, 0.125, 0.15, 0.169, 0.20 (+ 0.50 as an extra check)
 Runs   : Healthy baseline, ACL 2 mo baseline, 2 options x 2 pressures x 7 alpha (delivered),
          2 options x 7 alpha (requested = ideal torque source, no pressure limit) -> 44 conditions.
@@ -213,7 +213,7 @@ def torque_profile(d, opt, alpha, plim_kpa):
             if opt == "O2":
                 t = min(t, max(m, 0.0))
             t = max(t, 0.0)
-        if fl <= 0.0:                 # DR-B6-2: no torque with the knee straight / hyperextended
+        if fl <= 0.0:                 # straight-knee rule: no torque with the knee straight / hyperextended
             t = 0.0
         req.append(t)
         dev.append(min(t, tmax) if tmax is not None else t)
@@ -435,7 +435,7 @@ def metrics(cid, meta, cols, rows, base_rows, window):
     baq = g(base_rows, "a_quad_mean")
     lo, hi = window
     inw = [i for i, x in enumerate(pct) if lo - 1e-9 <= x <= hi + 1e-9]
-    grid1 = [i for i in inw if abs(pct[i] - round(pct[i])) < 1e-9]     # 1 % frames only (Basem's frame count)
+    grid1 = [i for i in inw if abs(pct[i] - round(pct[i])) < 1e-9]     # 1 % frames only (frame count of the hand calculation)
     on = [i for i in inw if tau[i] > 0]
     i21 = pct.index(21.0)
     pk = max(tau)
@@ -567,7 +567,7 @@ def main():
     mb = metrics("ACL2mo_Baseline", meta, bcols, brows, brows, (8.43, 44.0))
     allm.append(mb)
     hq = max([r[20] for r in hrows])
-    log("Reference: healthy peak quad %.1f N (30 Oct run: 985.5)  ACL 2 mo peak quad %.1f N (30 Oct run: 235.8)" %
+    log("Reference: healthy peak quad %.1f N (no-device run: 985.5)  ACL 2 mo peak quad %.1f N (no-device run: 235.8)" %
         (hq, mb["quad_force_peak_N"]))
     conds = []
     for opt in ["O1", "O2"]:

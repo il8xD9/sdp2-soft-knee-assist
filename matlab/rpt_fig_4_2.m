@@ -5,7 +5,7 @@ function V = rpt_fig_4_2(p)
 %
 %   Window option 1: tau = alpha x tau_full(t),                       8.43-44 % stance
 %   Window option 2: tau = MIN(alpha x tau_full(t), M_patient(t)),     13-36 % stance
-%   tau_full and M_patient are Basem's O1 v10 / O2 v3 curves (data\*.csv, ka_gait_data).
+%   tau_full and M_patient are the curves of the biomechanics model (data\*.csv, ka_gait_data).
 %   The legend quotes alpha x 33 N m (the report's reference torques 6.60 / 8.25 N m).
 if nargin < 1 || isempty(p), p = rpt_base(); end
 C = ka_colours();

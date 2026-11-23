@@ -1,9 +1,9 @@
 function R = run27_inputs(make_figs)
-%RUN27_INPUTS  Rev 27 inputs: Basem's curves, the torque relation, alpha, onset
+%RUN27_INPUTS  Model inputs: gait curves, the torque relation, alpha, onset
 %   demands, exhaust capacity and the swing squeeze (no time simulation).
-%   Figures 1 (Basem inputs), 2 (torque - pressure), 3 (swing squeeze).
+%   Figures 1 (gait inputs), 2 (torque - pressure), 3 (swing squeeze).
 if nargin < 1, make_figs = true; end
-fprintf('\n===== Rev 27 inputs: Basem curves, torque relation, swing squeeze =====\n');
+fprintf('\n===== Model inputs: gait curves, torque relation, swing squeeze =====\n');
 base = ka_setup(1, 1, 2, 'timing', false);
 R.base = base;
 C = ka_colours();
@@ -40,7 +40,7 @@ ka_report('add', 'vent.W2', 'Time to vent, window 2 offset to 613 ms', (0.87 - 0
 %% ---- exhaust capacity at 2.4 kPa and swing squeeze ----
 rho24 = (base.rest_kPa * 1e3 + base.p_atm) / (base.R * base.T0);
 Qsw3 = base.swing_dVdeg * base.knee_rate / 1e3;     % l/s, 3D
-Qsw2 = 4.03 * base.knee_rate / 1e3;                 % l/s, Rev 25 flat estimate
+Qsw2 = 4.03 * base.knee_rate / 1e3;                 % l/s, flat-section estimate
 ka_report('add', 'swing.dVdeg', 'Swing squeeze, 3D: k3D x pi/180', base.k3D * 1e9 * pi / 180 / 1e3, 3.613, 'mL/deg');
 ka_report('add', 'swing.Q', 'Swing squeeze flow at 261 deg/s (3D)', Qsw3, 0.943, 'l/s');
 ka_report('add', 'swing.V', 'Air pushed out over 27.8 -> 65 deg (3D)', base.swing_dVdeg * (65 - 27.81), 134.4, 'mL');
@@ -56,7 +56,7 @@ for n = 1:base.ex_nmax
     if n >= 2
         R.peq3(n) = swing_peq(base, Qsw3, n);  R.peq2(n) = swing_peq(base, Qsw2, n);
         ka_report('add', sprintf('peq.3D.n%d', n), sprintf('Bag pushing %.3f l/s through %d MHE3 at the port: pressure', Qsw3, n), R.peq3(n), NaN, 'kPa');
-        ka_report('add', sprintf('peq.2D.n%d', n), sprintf('Bag pushing %.3f l/s (Rev 25 flat) through %d MHE3: pressure', Qsw2, n), R.peq2(n), NaN, 'kPa');
+        ka_report('add', sprintf('peq.2D.n%d', n), sprintf('Bag pushing %.3f l/s (flat section) through %d MHE3: pressure', Qsw2, n), R.peq2(n), NaN, 'kPa');
     end
 end
 ka_report('add', 'n.exh.needed', 'MHE3 needed at the port for the 3D swing squeeze (<= 2.4 kPa)', find(R.cap_port >= Qsw3, 1), 5, '-');
@@ -64,18 +64,18 @@ R.Qsw3 = Qsw3;  R.Qsw2 = Qsw2;
 
 %% ---- figures ----
 if make_figs
-    % Figure 1: Basem's inputs
+    % Figure 1: gait inputs
     p2 = R.case{1, 2};  p1 = R.case{1, 1};  p27 = R.case{2, 2};  p17 = R.case{2, 1};
-    figure('Name', 'Basem inputs', 'Color', 'w', 'Position', [60 60 1150 820]);
+    figure('Name', 'Gait inputs', 'Color', 'w', 'Position', [60 60 1150 820]);
     tg = (0:0.25:400) / 1e3;
     subplot(3, 1, 1);  hold on;  grid on;
-    s = p1.b3_pct;  plot(s / 100 * 705, p1.b3_def, 'Color', C.ink, 'LineWidth', 1.8, 'DisplayName', '\tau_{full}: full deficit (\alpha = 1), pchip through Basem''s points');
+    s = p1.b3_pct;  plot(s / 100 * 705, p1.b3_def, 'Color', C.ink, 'LineWidth', 1.8, 'DisplayName', '\tau_{full}: full deficit (\alpha = 1), pchip through the data points');
     plot(p1.b3_pts(:,1) / 100 * 705, p1.b3_pts(:,2), 'o', 'Color', C.ink, 'MarkerSize', 4, 'HandleVisibility', 'off');
     plot(p1.pm_pct / 100 * 705, p1.pm_Nm, 's-', 'Color', C.s3, 'LineWidth', 1.6, 'MarkerSize', 4, 'DisplayName', 'patient''s own moment (window 2 cap)');
     patch([59.4 310.2 310.2 59.4], [0 0 36 36], C.s1, 'FaceAlpha', 0.06, 'EdgeColor', 'none', 'DisplayName', 'window 1, 8.43-44 %');
     patch([91.65 253.8 253.8 91.65], [0 0 36 36], C.s2, 'FaceAlpha', 0.10, 'EdgeColor', 'none', 'DisplayName', 'window 2, 13-36 % (main)');
     xlim([0 400]);  ylim([0 36]);  ylabel('moment (N m)');  legend('Location', 'northeast');
-    title('Basem O1 v10 / O2 v3: deficit and patient moment (2 months after ACLR, 70 kg, 1.70 m, 1.17 m/s)');
+    title('Deficit and patient moment (2 months after ACLR, 70 kg, 1.70 m, 1.17 m/s)');
     subplot(3, 1, 2);  hold on;  grid on;
     cases = {p2, p27, p1, p17};  st = {'-', '-', '--', '--'};  cl = {C.s1, C.s2, C.s1, C.s2};
     for j = 1:4
@@ -92,7 +92,7 @@ if make_figs
     yline(0, ':', 'straight', 'Color', C.ink);  xline(42, ':', '0 deg at 42 ms', 'Color', C.ink);
     xline(613.35, '--', '613 ms: 10.4 deg', 'Color', C.ink);  xline(705, ':', 'toe-off 27.8 deg', 'Color', C.ink);
     xlim([0 1175]);  xlabel('time after initial contact (ms)');  ylabel('knee flexion (deg)');
-    title('Basem B4 knee angle (O1 v10) with the healthy swing peak 65 deg');
+    title('B4 knee angle with the healthy swing peak 65 deg');
     ka_savefig('fig01_basem_inputs');
 
     % Figure 2: torque - pressure
@@ -126,12 +126,12 @@ if make_figs
     subplot(1, 2, 1);  hold on;  grid on;
     bar(1:6, R.cap_port, 0.6, 'FaceColor', C.s1, 'EdgeColor', 'none', 'DisplayName', 'n MHE3 at the port, at 2.4 kPa');
     yline(Qsw3, '-', sprintf('3D squeeze %.2f l/s', Qsw3), 'Color', C.s2, 'LineWidth', 1.6, 'HandleVisibility', 'off');
-    yline(Qsw2, '--', sprintf('Rev 25 flat estimate %.2f l/s', Qsw2), 'Color', C.ink, 'HandleVisibility', 'off');
+    yline(Qsw2, '--', sprintf('flat-section estimate %.2f l/s', Qsw2), 'Color', C.ink, 'HandleVisibility', 'off');
     xlabel('number of MHE3 exhausts at the bladder port');  ylabel('flow at the 2.4 kPa rest level (l/s)');
     title('Exhaust capacity against the swing squeeze');
     subplot(1, 2, 2);  hold on;  grid on;
-    plot(2:6, R.peq3(2:6), 'o-', 'Color', C.s2, 'LineWidth', 1.8, 'DisplayName', sprintf('3D: %.3f l/s (Rev 27)', Qsw3));
-    plot(2:6, R.peq2(2:6), 's--', 'Color', C.ink, 'LineWidth', 1.4, 'DisplayName', sprintf('flat: %.3f l/s (Rev 25)', Qsw2));
+    plot(2:6, R.peq3(2:6), 'o-', 'Color', C.s2, 'LineWidth', 1.8, 'DisplayName', sprintf('3D: %.3f l/s', Qsw3));
+    plot(2:6, R.peq2(2:6), 's--', 'Color', C.ink, 'LineWidth', 1.4, 'DisplayName', sprintf('flat: %.3f l/s', Qsw2));
     yline(2.4, ':r', '2.4 kPa rest limit', 'HandleVisibility', 'off');
     set(gca, 'YScale', 'log');  xlabel('number of MHE3 at the port');  ylabel('bladder pressure in swing (kPa(g))');
     legend('Location', 'northeast');  title('Pressure the swing squeeze builds (equilibrium bound)');

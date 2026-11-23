@@ -1,6 +1,6 @@
 function p = ka_set_window(p, window)
-%KA_SET_WINDOW  Assistance window (Basem O1 v10 B3 / O2 v3 B3_Opt2, Rev 27).
-%   2: window option 2 (MAIN, decision D-2): 13-36 % stance = 91.65-253.8 ms;
+%KA_SET_WINDOW  Assistance window (biomechanics tables B3 and B3 option 2).
+%   2: window option 2 (main): 13-36 % stance = 91.65-253.8 ms;
 %      tau_req = MIN(alpha x tau_full, patient's own moment)
 %   1: window option 1 (comparison): 8.43-44 % stance = 59.4-310.2 ms;
 %      tau_req = alpha x tau_full

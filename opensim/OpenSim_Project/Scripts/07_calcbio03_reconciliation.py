@@ -2,7 +2,7 @@
 """
 07_calcbio03_reconciliation.py
 ------------------------------
-PURPOSE : Check that the OpenSim inputs (extracted from the CALC-BIO-02 workbook) are numerically
+PURPOSE : Check that the OpenSim inputs (extracted from Biomechanics_Master_Data.xlsx) are numerically
           identical to CALC-BIO-03 (Biomechanics_Master_Data_CALC-BIO-03.xlsx), so that the OpenSim
           conditions can be labelled CALC-BIO-03 without re-extracting.
 INPUT   : Input_Data/*.csv, Actuator/actuator_capability_check.csv,

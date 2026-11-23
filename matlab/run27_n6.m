@@ -1,5 +1,5 @@
 function R = run27_n6(P, make_figs)
-%RUN27_N6  N6 assistance at the wrong time (trigger faults), Rev 27.
+%RUN27_N6  N6 assistance at the wrong time (trigger faults).
 %   P = R.p from run27_n1_n4 (parameters with their fill timing).
 %   Window 2 (main), 20 / 27 kPa, one MHJ10 (system) and two MHJ10 (comparison);
 %   complete system (two MHE3 at the port); worst of the four heat / receiver cases.

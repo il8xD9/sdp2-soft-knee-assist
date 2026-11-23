@@ -19,7 +19,7 @@ WHAT IT DOES (all automatic):
   2. For every condition listed in Simulations/conditions_manifest.csv (116 conditions:
      6 baselines; alpha sweep 0.10-1.00 (11 values) x 6 groups as 'requested' torque (66);
      'device-limited' copies where the request exceeds 10.76 N.m (CAD V4.1); 6 'capped'; 2 Winter
-     full-cycle). The 12 primary conditions = 6 baselines + alpha 0.20 (team working case):
+     full-cycle). The 12 primary conditions = 6 baselines + alpha 0.20 (working case):
        - adds the knee-assist actuator  'knee_assist_r'  (CoordinateActuator on
          knee_angle_r, extension only, max 10.76 N.m) + a PrescribedController that
          carries the condition's torque-vs-time profile;
@@ -70,7 +70,7 @@ ONLY_PRIMARY_12 = True     # True = run only the 12 primary conditions (fast tes
 SAVE_ALL_MODELS = False    # False = save .osim only for the 12 primary conditions (others ~1 MB each)
 # =====================================================================================
 
-T_DEVICE_MAX = 10.7555     # N.m  (100 kPa x 3140.3 mm2 x 34.25 mm; CAD V4.1, Eq. 4.14 -> 10.76 N.m)
+T_DEVICE_MAX = 10.7555     # N.m  (100 kPa x 3140.3 mm2 x 34.25 mm; CAD V4.1 -> 10.76 N.m)
 KNEE = "knee_angle_r"
 QUAD_KEYS = [("RF", ("rect_fem", "recfem")), ("VL", ("vas_lat", "vaslat")),
              ("VM", ("vas_med", "vasmed")), ("VI", ("vas_int", "vasint"))]
