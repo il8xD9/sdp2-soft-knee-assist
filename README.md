@@ -13,7 +13,7 @@ Design Project II (ME 400_481) · Yanbu Industrial College · 1st Semester 2026�
 
 Supervised by Dr. Akram Faqeeh
 
-## Abstract (from the final report)
+## Abstract 
 
 After anterior cruciate ligament reconstruction (ACLR), quadriceps weakness persists and published gait data show a smaller internal knee-extension moment in the operated limb during the first half of stance. This project assesses, by calculation and simulation only, whether a wearable soft-pneumatic device, a thermoplastic-polyurethane bladder behind the knee filled and vented once per stride, can supply part of that missing moment.
 
